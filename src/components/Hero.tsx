@@ -19,9 +19,8 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat dark:bg-[url('https://raw.githubusercontent.com/babamohammed2022/CLEO_Snippet_Fetcher/refs/heads/main/file_00000000ff5461fa9664a4620095ba2b_conversation_id67fce5d9-13d0-800c-906f-586df3adde0bmessage_ide03c0d3b-617e-4327-81f3-013a4e376e40.webp')] light:bg-[url('https://raw.githubusercontent.com/babamohammed2022/CLEO_Snippet_Fetcher/main/ChatGPT%20Image%2017%20apr%202025%2C%2009_06_31.png')]"
         style={{
-          backgroundImage: `url('https://raw.githubusercontent.com/babamohammed2022/CLEO_Snippet_Fetcher/refs/heads/main/file_00000000ff5461fa9664a4620095ba2b_conversation_id67fce5d9-13d0-800c-906f-586df3adde0bmessage_ide03c0d3b-617e-4327-81f3-013a4e376e40.webp')`,
           transform: `translateY(${scrollY * 0.5}px)`
         }}
       />
@@ -42,12 +41,8 @@ const Hero = () => {
 
         {/* Title */}
         <h1 className="text-4xl md:text-7xl font-heading font-black mb-6 text-gradient animate-glow">
-          San Andreas Stories
-        </h1>
-        
-        <h2 className="text-xl md:text-3xl font-heading font-bold mb-4 text-secondary">
           The Return of Ryder (1987)
-        </h2>
+        </h1>
         
         <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
           Experience a whole new gangsta storyline in Los Santos, 1987. 

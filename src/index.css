@@ -28,8 +28,8 @@
     /* Interactive Elements */
     --muted: 220 13% 15%;
     --muted-foreground: 0 0% 65%;
-    --accent: 270 95% 75%;
-    --accent-foreground: 220 13% 6%;
+    --accent: 0 75% 45%;
+    --accent-foreground: 0 0% 98%;
 
     /* Status Colors */
     --destructive: 0 84% 60%;
@@ -93,7 +93,7 @@
     --secondary-foreground: 0 0% 98%;
     --secondary-glow: 24 95% 63%;
     
-    --accent: 270 95% 65%;
+    --accent: 0 75% 45%;
     --accent-foreground: 0 0% 98%;
     
     /* Status colors remain the same */
