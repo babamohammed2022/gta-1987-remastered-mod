@@ -8,63 +8,51 @@ const GallerySection = () => {
   const images = [
     {
       url: "https://raw.githubusercontent.com/AdevAbdullah/Mod-website/main/c.png",
-      alt: "Grove Street Scene",
-      caption: "The iconic Grove Street in 1987"
+      alt: "Grove Street Scene"
     },
     {
       url: "https://raw.githubusercontent.com/AdevAbdullah/Mod-website/main/Picsart_24-08-24_12-12-14-625.jpg",
-      alt: "Vice City Vibes",
-      caption: "Vice City influences in the mod"
+      alt: "Vice City Vibes"
     },
     {
       url: "https://raw.githubusercontent.com/AdevAbdullah/Mod-website/main/image.png",
-      alt: "Los Santos Skyline",
-      caption: "Los Santos skyline at dusk"
+      alt: "Los Santos Skyline"
     },
     {
       url: "https://raw.githubusercontent.com/babamohammed2022/CLEO_Snippet_Fetcher/refs/heads/main/captura_by_FrankoU_28_2.webp",
-      alt: "Gang Territory",
-      caption: "Gang territories and conflicts"
+      alt: "Gang Territory"
     },
     {
       url: "https://raw.githubusercontent.com/AdevAbdullah/Mod-website/main/upscale.PNG",
-      alt: "Weapon Selection",
-      caption: "Enhanced weapon selection"
+      alt: "Weapon Selection"
     },
     {
       url: "https://raw.githubusercontent.com/babamohammed2022/CLEO_Snippet_Fetcher/main/Media_Player_6_8_2025_12_16_01_P%20(1).png",
-      alt: "Safe House Interior",
-      caption: "Detailed safe house interiors"
+      alt: "Safe House Interior"
     },
     {
       url: "https://raw.githubusercontent.com/babamohammed2022/babamohammed2022/main/2.webp",
-      alt: "Vintage Billboard",
-      caption: "1987 vintage billboards"
+      alt: "Vintage Billboard"
     },
     {
       url: "https://raw.githubusercontent.com/babamohammed2022/babamohammed2022/main/Template_Paint.NET.webp",
-      alt: "Character Lineup",
-      caption: "Main character lineup"
+      alt: "Character Lineup"
     },
     {
       url: "https://raw.githubusercontent.com/babamohammed2022/small-cheese/main/Media_Player_12_7_2024_8_35_16_PM.webp",
-      alt: "Mission Briefing",
-      caption: "Mission briefing scenes"
+      alt: "Mission Briefing"
     },
     {
       url: "https://raw.githubusercontent.com/babamohammed2022/small-cheese/main/captura_by_FrankoU_28_18.webp",
-      alt: "Car Chase",
-      caption: "High-speed car chases"
+      alt: "Car Chase"
     },
     {
       url: "https://raw.githubusercontent.com/babamohammed2022/small-cheese/main/captura_by_FrankoU_28_19.webp",
-      alt: "Custom Vehicle",
-      caption: "Custom vehicle modifications"
+      alt: "Custom Vehicle"
     },
     {
       url: "https://raw.githubusercontent.com/babamohammed2022/CLEO_Snippet_Fetcher/refs/heads/main/image.webp",
-      alt: "Script UI Preview",
-      caption: "Enhanced UI elements"
+      alt: "Script UI Preview"
     }
   ];
 
@@ -130,13 +118,6 @@ const GallerySection = () => {
             <div className="absolute bottom-4 right-4 bg-black/50 text-white p-2 rounded-full">
               <ZoomIn className="h-4 w-4" />
             </div>
-          </div>
-
-          {/* Image Caption */}
-          <div className="text-center mt-4">
-            <p className="text-lg font-semibold text-foreground">
-              {images[currentIndex].caption}
-            </p>
           </div>
         </div>
 
