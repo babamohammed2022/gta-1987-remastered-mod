@@ -1,0 +1,177 @@
+import { useState } from "react";
+import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const GallerySection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const images = [
+    {
+      url: "https://raw.githubusercontent.com/AdevAbdullah/Mod-website/main/c.png",
+      alt: "Grove Street Scene",
+      caption: "The iconic Grove Street in 1987"
+    },
+    {
+      url: "https://raw.githubusercontent.com/AdevAbdullah/Mod-website/main/Picsart_24-08-24_12-12-14-625.jpg",
+      alt: "Vice City Vibes",
+      caption: "Vice City influences in the mod"
+    },
+    {
+      url: "https://raw.githubusercontent.com/AdevAbdullah/Mod-website/main/image.png",
+      alt: "Los Santos Skyline",
+      caption: "Los Santos skyline at dusk"
+    },
+    {
+      url: "https://raw.githubusercontent.com/babamohammed2022/CLEO_Snippet_Fetcher/refs/heads/main/captura_by_FrankoU_28_2.webp",
+      alt: "Gang Territory",
+      caption: "Gang territories and conflicts"
+    },
+    {
+      url: "https://raw.githubusercontent.com/AdevAbdullah/Mod-website/main/upscale.PNG",
+      alt: "Weapon Selection",
+      caption: "Enhanced weapon selection"
+    },
+    {
+      url: "https://raw.githubusercontent.com/babamohammed2022/CLEO_Snippet_Fetcher/main/Media_Player_6_8_2025_12_16_01_P%20(1).png",
+      alt: "Safe House Interior",
+      caption: "Detailed safe house interiors"
+    },
+    {
+      url: "https://raw.githubusercontent.com/babamohammed2022/babamohammed2022/main/2.webp",
+      alt: "Vintage Billboard",
+      caption: "1987 vintage billboards"
+    },
+    {
+      url: "https://raw.githubusercontent.com/babamohammed2022/babamohammed2022/main/Template_Paint.NET.webp",
+      alt: "Character Lineup",
+      caption: "Main character lineup"
+    },
+    {
+      url: "https://raw.githubusercontent.com/babamohammed2022/small-cheese/main/Media_Player_12_7_2024_8_35_16_PM.webp",
+      alt: "Mission Briefing",
+      caption: "Mission briefing scenes"
+    },
+    {
+      url: "https://raw.githubusercontent.com/babamohammed2022/small-cheese/main/captura_by_FrankoU_28_18.webp",
+      alt: "Car Chase",
+      caption: "High-speed car chases"
+    },
+    {
+      url: "https://raw.githubusercontent.com/babamohammed2022/small-cheese/main/captura_by_FrankoU_28_19.webp",
+      alt: "Custom Vehicle",
+      caption: "Custom vehicle modifications"
+    },
+    {
+      url: "https://raw.githubusercontent.com/babamohammed2022/CLEO_Snippet_Fetcher/refs/heads/main/image.webp",
+      alt: "Script UI Preview",
+      caption: "Enhanced UI elements"
+    }
+  ];
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const goToImage = (index: number) => {
+    setCurrentIndex(index);
+  };
+
+  return (
+    <section id="screenshots" className="py-20 px-4 bg-muted/20">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
+            Game Gallery
+          </h2>
+          <p className="text-xl text-muted-foreground">
+            Explore the visual world of 1987 Los Santos
+          </p>
+        </div>
+
+        {/* Main Image Display */}
+        <div className="relative mb-8">
+          <div className="relative aspect-video max-h-96 mx-auto rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src={images[currentIndex].url}
+              alt={images[currentIndex].alt}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+            
+            {/* Navigation Buttons */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={prevImage}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </Button>
+            
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={nextImage}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </Button>
+
+            {/* Image Counter */}
+            <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+              {currentIndex + 1} / {images.length}
+            </div>
+
+            {/* Zoom Icon */}
+            <div className="absolute bottom-4 right-4 bg-black/50 text-white p-2 rounded-full">
+              <ZoomIn className="h-4 w-4" />
+            </div>
+          </div>
+
+          {/* Image Caption */}
+          <div className="text-center mt-4">
+            <p className="text-lg font-semibold text-foreground">
+              {images[currentIndex].caption}
+            </p>
+          </div>
+        </div>
+
+        {/* Thumbnail Grid */}
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2 mb-8">
+          {images.map((image, index) => (
+            <button
+              key={index}
+              onClick={() => goToImage(index)}
+              className={`relative aspect-video rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 ${
+                index === currentIndex 
+                  ? 'ring-2 ring-primary shadow-neon' 
+                  : 'opacity-70 hover:opacity-100'
+              }`}
+            >
+              <img
+                src={image.url}
+                alt={image.alt}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </button>
+          ))}
+        </div>
+
+        {/* Disclaimer */}
+        <div className="text-center">
+          <p className="text-sm text-muted-foreground italic">
+            <strong>Disclaimer:</strong> This mod is not affiliated with Rockstar Games in any way. 
+            It's a fan-made project created purely for entertainment purposes, with no monetization involved.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default GallerySection;
