@@ -1,4 +1,4 @@
-import { ExternalLink, Heart } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -24,26 +24,34 @@ const Footer = () => {
               Quick Links
             </h3>
             <div className="space-y-2">
-              <a href="https://discord.gg/t5SjMrAJNh" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="https://discord.gg/t5SjMrAJNh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
                 <ExternalLink className="h-3 w-3 mr-2" />
                 Discord Community
               </a>
-              <a href="https://gtasasmanual.netlify.app/" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="https://gtasasmanual.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
                 <ExternalLink className="h-3 w-3 mr-2" />
                 User Manual
               </a>
-              <a href="#download" 
-                 className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
-                 onClick={(e) => {
-                   e.preventDefault();
-                   document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' });
-                 }}>
+              <a
+                href="#download"
+                className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .getElementById("download")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
                 Downloads
               </a>
             </div>
@@ -65,15 +73,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-            © {currentYear} GTA San Andreas Stories. Made with 
-            <Heart className="h-3 w-3 mx-1 inline text-primary" />
-            by the community.
-          </div>
-          
-          <div className="text-sm text-muted-foreground">
-            Developed by <span className="text-primary font-semibold">babamohammed2022</span> & Team
-            <br />
-            Coding expertise by <span className="text-primary font-semibold">Uraafael Games</span>
+            © {currentYear} GTA San Andreas Stories.
           </div>
         </div>
       </div>
