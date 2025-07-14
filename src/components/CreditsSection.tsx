@@ -17,9 +17,10 @@ const CreditsSection = () => {
     { name: "karammii", role: "Billboards Design" },
     { name: "Jmanuc", role: "Screenshots, Suggestions, Supervision, Optimization" },
     { name: "Rayane", role: "Suggestions, Voices, Supervision" },
-    { name: "Seve267", role: "Scripting Help, DYOM Modder, Other misc, Bug fixer" },
+    { name: "Seve267", role: "Scripting Help, DYOM Modder, Bug Fixer, Miscellaneous" },
     { name: "Forge", role: "Scripting Help" },
-    { name: "Elrico", role: "Mission Testing, Promotional Screenshots, Server Contribution" }
+    { name: "Elrico", role: "Mission Testing, Promotional Screenshots, Server Contribution" },
+    { name: "urafael games", role: "Coding Expertise, System Development" } // <-- Newly added here
   ];
 
   const specialContributors = [
@@ -117,15 +118,6 @@ const CreditsSection = () => {
             </p>
           </CardContent>
         </Card>
-
-        {/* Coding Expertise Credit */}
-        <div className="text-center mt-12">
-          <div className="card-glass p-6 max-w-2xl mx-auto">
-            <p className="text-lg text-muted-foreground">
-              <span className="text-primary font-semibold">Coding expertise by urafael games</span>
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );
