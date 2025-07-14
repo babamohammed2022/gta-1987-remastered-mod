@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { AlertTriangle, ExternalLink } from "lucide-react";
+import { AlertTriangle, ExternalLink, MessageSquare } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
 const InfoSection = () => {
@@ -41,10 +41,10 @@ const InfoSection = () => {
               <div className="pt-4">
                 <Button 
                   asChild
-                  className="btn-gaming w-full sm:w-auto"
+                  className="w-full sm:w-auto bg-sky-500 hover:bg-sky-600 text-white border-sky-500 hover:border-sky-600 font-semibold"
                 >
                   <a href="https://discord.gg/t5SjMrAJNh" target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" />
+                    <MessageSquare className="mr-2 h-4 w-4" />
                     Join Discord Community
                   </a>
                 </Button>

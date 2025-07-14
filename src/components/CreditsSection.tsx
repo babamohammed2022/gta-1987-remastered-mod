@@ -118,17 +118,11 @@ const CreditsSection = () => {
           </CardContent>
         </Card>
 
-        {/* Community Message */}
+        {/* Coding Expertise Credit */}
         <div className="text-center mt-12">
-          <div className="card-glass p-8 max-w-3xl mx-auto">
-            <h3 className="text-2xl font-heading font-bold mb-4 text-gradient">
-              Thank You to Our Community
-            </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              This project wouldn't be possible without the passion and dedication of the 
-              GTA modding community. From beta testers to content creators, every contribution 
-              has helped shape San Andreas Stories into what it is today. 
-              <span className="text-primary font-semibold"> Grove Street Forever!</span>
+          <div className="card-glass p-6 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground">
+              <span className="text-primary font-semibold">Coding expertise by urafael games</span>
             </p>
           </div>
         </div>
