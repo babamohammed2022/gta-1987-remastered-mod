@@ -72,6 +72,8 @@ const Footer = () => {
           
           <div className="text-sm text-muted-foreground">
             Developed by <span className="text-primary font-semibold">babamohammed2022</span> & Team
+            <br />
+            Coding expertise by <span className="text-primary font-semibold">Uraafael Games</span>
           </div>
         </div>
       </div>

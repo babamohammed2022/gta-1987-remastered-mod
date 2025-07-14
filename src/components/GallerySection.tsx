@@ -75,9 +75,6 @@ const GallerySection = () => {
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
             Game Gallery
           </h2>
-          <p className="text-xl text-muted-foreground">
-            Explore the visual world of 1987 Los Santos
-          </p>
         </div>
 
         {/* Main Image Display */}
