@@ -112,15 +112,7 @@
   body {
     @apply text-foreground font-body;
     font-family: var(--font-body);
-    /* Default (Dark mode) background image */
-    background: url('https://raw.githubusercontent.com/babamohammed2022/CLEO_Snippet_Fetcher/refs/heads/main/file_00000000ff5461fa9664a4620095ba2b_conversation_id67fce5d9-13d0-800c-906f-586df3adde0bmessage_ide03c0d3b-617e-4327-81f3-013a4e376e40.webp') center/cover no-repeat fixed;
-    background-attachment: fixed;
     min-height: 100vh;
-  }
-
-  /* Light mode background override */
-  .light body {
-    background-image: url('https://raw.githubusercontent.com/babamohammed2022/CLEO_Snippet_Fetcher/main/ChatGPT%20Image%2017%20apr%202025%2C%2009_06_31.png');
   }
 
   h1, h2, h3, h4, h5, h6 {
