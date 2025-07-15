@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo, useEffect } from "react";
 import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -7,6 +7,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import screenshot5 from "@/assets/screenshot5.webp";
@@ -14,6 +15,7 @@ import screenshot6 from "@/assets/screenshot6.webp";
 
 const GallerySection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
 
   const images = useMemo(() => [
     {
@@ -73,6 +75,13 @@ const GallerySection = () => {
       alt: "Mission Cutscene"
     }
   ], []);
+
+  // Sync carousel with current index
+  useEffect(() => {
+    if (carouselApi) {
+      carouselApi.scrollTo(currentIndex);
+    }
+  }, [currentIndex, carouselApi]);
 
   const nextImage = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -153,6 +162,7 @@ const GallerySection = () => {
                 stopOnMouseEnter: true,
               }),
             ]}
+            setApi={setCarouselApi}
             className="w-full"
           >
             <CarouselContent className="-ml-2 md:-ml-4">
