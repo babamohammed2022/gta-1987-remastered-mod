@@ -1,6 +1,13 @@
 import { useState, useCallback, useMemo } from "react";
 import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import screenshot5 from "@/assets/screenshot5.webp";
 import screenshot6 from "@/assets/screenshot6.webp";
 
@@ -130,27 +137,42 @@ const GallerySection = () => {
           </div>
         </div>
 
-        {/* Thumbnail Grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2 mb-8">
-          {images.map((image, index) => (
-            <button
-              key={index}
-              onClick={() => goToImage(index)}
-              className={`relative aspect-video rounded-lg overflow-hidden transition-all duration-200 will-change-transform ${
-                index === currentIndex 
-                  ? 'ring-2 ring-primary shadow-neon scale-105' 
-                  : 'opacity-70 hover:opacity-100 hover:scale-105'
-              }`}
-            >
-              <img
-                src={image.url}
-                alt={image.alt}
-                className="w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-            </button>
-          ))}
+        {/* Scrolling Thumbnail Carousel */}
+        <div className="mb-8">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+              skipSnaps: false,
+              dragFree: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {images.map((image, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/3 sm:basis-1/4 md:basis-1/6">
+                  <button
+                    onClick={() => goToImage(index)}
+                    className={`relative aspect-video rounded-lg overflow-hidden transition-all duration-200 will-change-transform w-full ${
+                      index === currentIndex 
+                        ? 'ring-2 ring-primary shadow-neon scale-105' 
+                        : 'opacity-70 hover:opacity-100 hover:scale-105'
+                    }`}
+                  >
+                    <img
+                      src={image.url}
+                      alt={image.alt}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-0" />
+            <CarouselNext className="right-0" />
+          </Carousel>
         </div>
 
         {/* Disclaimer */}
