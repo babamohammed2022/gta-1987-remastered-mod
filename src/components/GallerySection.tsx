@@ -8,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import screenshot5 from "@/assets/screenshot5.webp";
 import screenshot6 from "@/assets/screenshot6.webp";
 
@@ -103,7 +104,6 @@ const GallerySection = () => {
               className="w-full h-full object-cover transition-opacity duration-300"
               loading="lazy"
               decoding="async"
-              fetchPriority="high"
             />
             
             {/* Navigation Buttons */}
@@ -146,6 +146,13 @@ const GallerySection = () => {
               skipSnaps: false,
               dragFree: true,
             }}
+            plugins={[
+              Autoplay({
+                delay: 3000,
+                stopOnInteraction: true,
+                stopOnMouseEnter: true,
+              }),
+            ]}
             className="w-full"
           >
             <CarouselContent className="-ml-2 md:-ml-4">
