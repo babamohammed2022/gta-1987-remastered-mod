@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import screenshot5 from "@/assets/screenshot5.webp";
+import screenshot6 from "@/assets/screenshot6.webp";
 
 const GallerySection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const images = [
+  const images = useMemo(() => [
     {
       url: "https://raw.githubusercontent.com/AdevAbdullah/Mod-website/main/c.png",
       alt: "Grove Street Scene"
@@ -53,20 +55,28 @@ const GallerySection = () => {
     {
       url: "https://raw.githubusercontent.com/babamohammed2022/CLEO_Snippet_Fetcher/refs/heads/main/image.webp",
       alt: "Script UI Preview"
+    },
+    {
+      url: screenshot5,
+      alt: "Enhanced Gameplay"
+    },
+    {
+      url: screenshot6,
+      alt: "Mission Cutscene"
     }
-  ];
+  ], []);
 
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
-  };
+  }, [images.length]);
 
-  const prevImage = () => {
+  const prevImage = useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
+  }, [images.length]);
 
-  const goToImage = (index: number) => {
+  const goToImage = useCallback((index: number) => {
     setCurrentIndex(index);
-  };
+  }, []);
 
   return (
     <section id="screenshots" className="py-20 px-4 bg-muted/20">
@@ -83,8 +93,10 @@ const GallerySection = () => {
             <img
               src={images[currentIndex].url}
               alt={images[currentIndex].alt}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-opacity duration-300"
               loading="lazy"
+              decoding="async"
+              fetchPriority="high"
             />
             
             {/* Navigation Buttons */}
@@ -124,10 +136,10 @@ const GallerySection = () => {
             <button
               key={index}
               onClick={() => goToImage(index)}
-              className={`relative aspect-video rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 ${
+              className={`relative aspect-video rounded-lg overflow-hidden transition-all duration-200 will-change-transform ${
                 index === currentIndex 
-                  ? 'ring-2 ring-primary shadow-neon' 
-                  : 'opacity-70 hover:opacity-100'
+                  ? 'ring-2 ring-primary shadow-neon scale-105' 
+                  : 'opacity-70 hover:opacity-100 hover:scale-105'
               }`}
             >
               <img
@@ -135,6 +147,7 @@ const GallerySection = () => {
                 alt={image.alt}
                 className="w-full h-full object-cover"
                 loading="lazy"
+                decoding="async"
               />
             </button>
           ))}

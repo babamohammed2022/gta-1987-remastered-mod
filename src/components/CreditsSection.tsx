@@ -32,6 +32,7 @@ const CreditsSection = () => {
     { name: "Lost MC Claude", role: "Bug Testing" },
     { name: "Cerdquad", role: "Fixed radar icons" },
     { name: "MAHMOGAMER", role: "Project Supervision" },
+    { name: "MaxMakoShark", role: "Server Supervision" },
     { name: "Tix", role: "Gameplay Testing" },
     { name: "Raul", role: "Visual Enhancements, Mission Testing and Enhancing, Storyline Improvements, Video Recording, Supervision, Bug Reports" }
   ];
