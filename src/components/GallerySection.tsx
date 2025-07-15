@@ -79,7 +79,10 @@ const GallerySection = () => {
   // Sync carousel with current index
   useEffect(() => {
     if (carouselApi) {
-      carouselApi.scrollTo(currentIndex);
+      // Use a small delay to ensure the carousel is ready
+      setTimeout(() => {
+        carouselApi.scrollTo(currentIndex, false);
+      }, 100);
     }
   }, [currentIndex, carouselApi]);
 
