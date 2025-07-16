@@ -2,26 +2,38 @@ import { useEffect, useState } from "react";
 import { MessageCircle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const CHATBASE_ID = "nbc_Bja1rJfenTKjTtFjm"; // Replace with your actual Chatbase ID
+
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scriptLoaded, setScriptLoaded] = useState(false);
 
   const toggleChat = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
+
+    // Toggle the chatbot visibility via Chatbase API
+    if (typeof window !== "undefined" && window.chatbase) {
+      window.chatbase("toggle");
+    }
   };
 
+  // Load Chatbase script on first open
   useEffect(() => {
-    if (isOpen) {
-      const existingScript = document.getElementById("nbc_Bja1rJfenTKjTtFjm");
+    if (isOpen && !scriptLoaded) {
+      const existingScript = document.getElementById("chatbase-script");
       if (!existingScript) {
         const script = document.createElement("script");
+        script.id = "chatbase-script";
         script.src = "https://www.chatbase.co/embed.min.js";
-        script.id = "nbc_Bja1rJfenTKjTtFjm";
-        script.setAttribute("chatbase", "nbc_Bja1rJfenTKjTtFjm"); // optional for custom config
         script.async = true;
+        script.setAttribute("chatbase", CHATBASE_ID);
+        script.onload = () => setScriptLoaded(true);
         document.body.appendChild(script);
+      } else {
+        setScriptLoaded(true);
       }
     }
-  }, [isOpen]);
+  }, [isOpen, scriptLoaded]);
 
   return (
     <>
@@ -31,6 +43,7 @@ const ChatBot = () => {
           onClick={toggleChat}
           className="w-14 h-14 rounded-full bg-primary hover:bg-primary-glow shadow-neon hover:shadow-glow transition-all duration-300 hover:scale-110"
           size="icon"
+          aria-label="Toggle ChatBot"
         >
           {isOpen ? (
             <X className="h-6 w-6 text-primary-foreground" />
@@ -40,10 +53,10 @@ const ChatBot = () => {
         </Button>
       </div>
 
-      {/* Optional Backdrop for mobile */}
+      {/* Optional Backdrop for Mobile */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-30 md:hidden"
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300"
           onClick={toggleChat}
         />
       )}
