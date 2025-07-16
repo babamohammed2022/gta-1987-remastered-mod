@@ -16,7 +16,6 @@ import screenshot6 from "@/assets/screenshot6.webp";
 const GallerySection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
-  const [slideDirection, setSlideDirection] = useState<'left' | 'right' | null>(null);
 
   const images = useMemo(() => [
     {
@@ -77,10 +76,8 @@ const GallerySection = () => {
     }
   ], []);
 
-  // Sync carousel with current index
   useEffect(() => {
     if (carouselApi) {
-      // Use a small delay to ensure the carousel is ready
       setTimeout(() => {
         carouselApi.scrollTo(currentIndex, false);
       }, 100);
@@ -88,30 +85,16 @@ const GallerySection = () => {
   }, [currentIndex, carouselApi]);
 
   const nextImage = useCallback(() => {
-    setSlideDirection('left');
-    setTimeout(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
-      setTimeout(() => setSlideDirection(null), 50);
-    }, 250);
+    setCurrentIndex((prev) => (prev + 1) % images.length);
   }, [images.length]);
 
   const prevImage = useCallback(() => {
-    setSlideDirection('right');
-    setTimeout(() => {
-      setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-      setTimeout(() => setSlideDirection(null), 50);
-    }, 250);
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   }, [images.length]);
 
   const goToImage = useCallback((index: number) => {
-    if (index !== currentIndex) {
-      setSlideDirection(index > currentIndex ? 'left' : 'right');
-      setTimeout(() => {
-        setCurrentIndex(index);
-        setTimeout(() => setSlideDirection(null), 50);
-      }, 250);
-    }
-  }, [currentIndex]);
+    setCurrentIndex(index);
+  }, []);
 
   return (
     <section id="screenshots" className="py-20 px-4 bg-muted/20">
@@ -122,51 +105,53 @@ const GallerySection = () => {
           </h2>
         </div>
 
-        {/* Main Image Display */}
-        <div className="relative mb-8">
-          <div className="relative aspect-video max-h-96 mx-auto rounded-2xl overflow-hidden shadow-2xl">
-            <img
-              src={images[currentIndex].url}
-              alt={images[currentIndex].alt}
-              className={`w-full h-full object-cover transition-transform duration-500 ease-in-out ${
-                slideDirection === 'left' 
-                  ? 'transform translate-x-full' 
-                  : slideDirection === 'right' 
-                    ? 'transform -translate-x-full' 
-                    : 'transform translate-x-0'
-              }`}
-              loading="lazy"
-              decoding="async"
-            />
-            
-            {/* Navigation Buttons */}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={prevImage}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </Button>
-            
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={nextImage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </Button>
+        {/* Main Image Display with Scrolling Effect */}
+        <div className="relative mb-8 overflow-hidden rounded-2xl shadow-2xl max-w-5xl mx-auto aspect-video">
+          <div
+            className="flex transition-transform duration-500 ease-in-out w-full h-full"
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+              width: `${images.length * 100}%`,
+            }}
+          >
+            {images.map((img, idx) => (
+              <img
+                key={idx}
+                src={img.url}
+                alt={img.alt}
+                className="w-full h-full object-cover shrink-0 grow-0 basis-full"
+                loading="lazy"
+                decoding="async"
+              />
+            ))}
+          </div>
 
-            {/* Image Counter */}
-            <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
-              {currentIndex + 1} / {images.length}
-            </div>
+          {/* Navigation Buttons */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={prevImage}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white z-10"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={nextImage}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white z-10"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </Button>
 
-            {/* Zoom Icon */}
-            <div className="absolute bottom-4 right-4 bg-black/50 text-white p-2 rounded-full">
-              <ZoomIn className="h-4 w-4" />
-            </div>
+          {/* Image Counter */}
+          <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm z-10">
+            {currentIndex + 1} / {images.length}
+          </div>
+
+          {/* Zoom Icon */}
+          <div className="absolute bottom-4 right-4 bg-black/50 text-white p-2 rounded-full z-10">
+            <ZoomIn className="h-4 w-4" />
           </div>
         </div>
 
