@@ -76,8 +76,10 @@ const GallerySection = () => {
     }
   ], []);
 
+  // Sync carousel with current index
   useEffect(() => {
     if (carouselApi) {
+      // Use a small delay to ensure the carousel is ready
       setTimeout(() => {
         carouselApi.scrollTo(currentIndex, false);
       }, 100);
@@ -105,53 +107,48 @@ const GallerySection = () => {
           </h2>
         </div>
 
-        {/* Main Image Display with Scrolling Effect */}
-        <div className="relative mb-8 overflow-hidden rounded-2xl shadow-2xl max-w-5xl mx-auto aspect-video">
-          <div
-            className="flex transition-transform duration-500 ease-in-out w-full h-full"
-            style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
-              width: `${images.length * 100}%`,
-            }}
-          >
-            {images.map((img, idx) => (
-              <img
-                key={idx}
-                src={img.url}
-                alt={img.alt}
-                className="w-full h-full object-cover shrink-0 grow-0 basis-full"
-                loading="lazy"
-                decoding="async"
-              />
-            ))}
-          </div>
+        {/* Main Image Display */}
+        <div className="relative mb-8">
+          <div className="relative aspect-video max-h-96 mx-auto rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src={images[currentIndex].url}
+              alt={images[currentIndex].alt}
+              className="w-full h-full object-cover transition-all duration-500 ease-in-out transform"
+              loading="lazy"
+              decoding="async"
+              style={{
+                transform: 'translateX(0%)',
+              }}
+            />
+            
+            {/* Navigation Buttons */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={prevImage}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </Button>
+            
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={nextImage}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </Button>
 
-          {/* Navigation Buttons */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={prevImage}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white z-10"
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={nextImage}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white z-10"
-          >
-            <ChevronRight className="h-6 w-6" />
-          </Button>
+            {/* Image Counter */}
+            <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+              {currentIndex + 1} / {images.length}
+            </div>
 
-          {/* Image Counter */}
-          <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm z-10">
-            {currentIndex + 1} / {images.length}
-          </div>
-
-          {/* Zoom Icon */}
-          <div className="absolute bottom-4 right-4 bg-black/50 text-white p-2 rounded-full z-10">
-            <ZoomIn className="h-4 w-4" />
+            {/* Zoom Icon */}
+            <div className="absolute bottom-4 right-4 bg-black/50 text-white p-2 rounded-full">
+              <ZoomIn className="h-4 w-4" />
+            </div>
           </div>
         </div>
 
@@ -179,11 +176,11 @@ const GallerySection = () => {
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/3 sm:basis-1/4 md:basis-1/6">
                   <button
                     onClick={() => goToImage(index)}
-                    className={`relative aspect-video rounded-lg overflow-hidden transition-all duration-200 will-change-transform w-full ${
+                    className={relative aspect-video rounded-lg overflow-hidden transition-all duration-200 will-change-transform w-full ${
                       index === currentIndex 
                         ? 'ring-2 ring-primary shadow-neon scale-105' 
                         : 'opacity-70 hover:opacity-100 hover:scale-105'
-                    }`}
+                    }}
                   >
                     <img
                       src={image.url}
