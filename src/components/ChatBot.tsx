@@ -30,19 +30,19 @@ const ChatBot = () => {
       {isOpen && (
         <div className="fixed bottom-24 right-6 w-96 max-w-[calc(100vw-3rem)] h-[600px] max-h-[calc(100vh-8rem)] z-40 rounded-xl shadow-card border border-border/20 bg-card overflow-hidden flex flex-col sm:w-96 sm:right-6 sm:bottom-24 max-sm:right-4 max-sm:bottom-20 max-sm:w-[calc(100vw-2rem)] max-sm:h-[70vh]">
           {/* Chat Header */}
-          <div className="bg-gradient-primary p-4 text-primary-foreground flex-shrink-0">
+          <div className="bg-gradient-primary p-3 text-primary-foreground flex-shrink-0">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <MessageCircle className="h-5 w-5" />
-                <span className="font-heading font-semibold">SAS-GPT</span>
+                <MessageCircle className="h-4 w-4" />
+                <span className="font-heading font-medium text-sm">SAS-GPT</span>
               </div>
               <Button
                 onClick={toggleChat}
                 variant="ghost"
                 size="sm"
-                className="text-primary-foreground hover:bg-white/10 h-6 w-6 p-0"
+                className="text-primary-foreground hover:bg-white/10 h-5 w-5 p-0"
               >
-                <X className="h-4 w-4" />
+                <X className="h-3 w-3" />
               </Button>
             </div>
           </div>

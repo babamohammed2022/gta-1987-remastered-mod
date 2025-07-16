@@ -113,9 +113,12 @@ const GallerySection = () => {
             <img
               src={images[currentIndex].url}
               alt={images[currentIndex].alt}
-              className="w-full h-full object-cover transition-opacity duration-300"
+              className="w-full h-full object-cover transition-all duration-500 ease-in-out transform"
               loading="lazy"
               decoding="async"
+              style={{
+                transform: 'translateX(0%)',
+              }}
             />
             
             {/* Navigation Buttons */}
