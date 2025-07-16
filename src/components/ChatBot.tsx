@@ -11,20 +11,23 @@ const ChatBot = () => {
 
   return (
     <>
-      {/* Floating Chat Button */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <Button
-          onClick={toggleChat}
-          className="w-14 h-14 rounded-full bg-primary hover:bg-primary-glow shadow-neon hover:shadow-glow transition-all duration-300 hover:scale-110"
-          size="icon"
-        >
-          {isOpen ? (
-            <X className="h-6 w-6 text-primary-foreground" />
-          ) : (
-            <MessageCircle className="h-6 w-6 text-primary-foreground" />
-          )}
-        </Button>
-      </div>
+      {/* Floating Chat Button - HIDDEN */}
+      {/* Removed or comment out this entire div to hide the open chat button */}
+      {false && (
+        <div className="fixed bottom-6 right-6 z-50">
+          <Button
+            onClick={toggleChat}
+            className="w-14 h-14 rounded-full bg-primary hover:bg-primary-glow shadow-neon hover:shadow-glow transition-all duration-300 hover:scale-110"
+            size="icon"
+          >
+            {isOpen ? (
+              <X className="h-6 w-6 text-primary-foreground" />
+            ) : (
+              <MessageCircle className="h-6 w-6 text-primary-foreground" />
+            )}
+          </Button>
+        </div>
+      )}
 
       {/* Chat Window */}
       {isOpen && (
