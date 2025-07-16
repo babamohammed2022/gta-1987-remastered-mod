@@ -16,6 +16,7 @@ import screenshot6 from "@/assets/screenshot6.webp";
 const GallerySection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const [slideDirection, setSlideDirection] = useState<'left' | 'right' | null>(null);
 
   const images = useMemo(() => [
     {
@@ -87,16 +88,30 @@ const GallerySection = () => {
   }, [currentIndex, carouselApi]);
 
   const nextImage = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
+    setSlideDirection('left');
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+      setTimeout(() => setSlideDirection(null), 50);
+    }, 250);
   }, [images.length]);
 
   const prevImage = useCallback(() => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+    setSlideDirection('right');
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+      setTimeout(() => setSlideDirection(null), 50);
+    }, 250);
   }, [images.length]);
 
   const goToImage = useCallback((index: number) => {
-    setCurrentIndex(index);
-  }, []);
+    if (index !== currentIndex) {
+      setSlideDirection(index > currentIndex ? 'left' : 'right');
+      setTimeout(() => {
+        setCurrentIndex(index);
+        setTimeout(() => setSlideDirection(null), 50);
+      }, 250);
+    }
+  }, [currentIndex]);
 
   return (
     <section id="screenshots" className="py-20 px-4 bg-muted/20">
@@ -113,12 +128,15 @@ const GallerySection = () => {
             <img
               src={images[currentIndex].url}
               alt={images[currentIndex].alt}
-              className="w-full h-full object-cover transition-all duration-500 ease-in-out transform"
+              className={`w-full h-full object-cover transition-transform duration-500 ease-in-out ${
+                slideDirection === 'left' 
+                  ? 'transform translate-x-full' 
+                  : slideDirection === 'right' 
+                    ? 'transform -translate-x-full' 
+                    : 'transform translate-x-0'
+              }`}
               loading="lazy"
               decoding="async"
-              style={{
-                transform: 'translateX(0%)',
-              }}
             />
             
             {/* Navigation Buttons */}
