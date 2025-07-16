@@ -8,6 +8,7 @@ import TrailerSection from "@/components/TrailerSection";
 import GallerySection from "@/components/GallerySection";
 import CreditsSection from "@/components/CreditsSection";
 import Footer from "@/components/Footer";
+import ChatBot from "@/components/ChatBot";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <GallerySection />
       <CreditsSection />
       <Footer />
+      <ChatBot />
     </div>
   );
 };
