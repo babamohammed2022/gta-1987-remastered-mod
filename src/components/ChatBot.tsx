@@ -28,9 +28,9 @@ const ChatBot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-96 h-[500px] z-40 rounded-xl shadow-card border border-border/20 bg-card overflow-hidden">
+        <div className="fixed bottom-24 right-6 w-96 h-[600px] z-40 rounded-xl shadow-card border border-border/20 bg-card overflow-hidden flex flex-col">
           {/* Chat Header */}
-          <div className="bg-gradient-primary p-4 text-primary-foreground">
+          <div className="bg-gradient-primary p-4 text-primary-foreground flex-shrink-0">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <MessageCircle className="h-5 w-5" />
@@ -48,7 +48,7 @@ const ChatBot = () => {
           </div>
 
           {/* Chatbot Iframe */}
-          <div className="h-full">
+          <div className="flex-1 min-h-0">
             <iframe
               src="https://www.chatbase.co/chatbot-iframe/nbc_Bja1rJfenTKjTtFjm"
               width="100%"
