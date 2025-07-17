@@ -5,7 +5,7 @@ import { Users, Star, Heart } from "lucide-react";
 const CreditsSection = () => {
   const developmentTeam = [
     { name: "babamohammed2022", role: "Project Owner, Lead Mission Designer, Storywriting" },
-    { name: "Abdullah", role: "Website Design, Models, Suggestions" },
+    { name: "Abdullah", role: "Website Design, Models, Suggestions, Programming" },
     { name: "FrankoU", role: "Mapping Specialist, Artist, Server Administration, Retexturing, Screenshot Production, Artworks" },
     { name: "avixreal", role: "Supervision, AI Voices, Website Assistance, Website Design" },
     { name: "The Small Chese", role: "Mission Design, Creative Direction" },
