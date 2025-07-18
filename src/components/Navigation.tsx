@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Info, HelpCircle, Settings, Users, Download, Video, Image, BookOpen, Bell } from "lucide-react";
+import { Menu, Info, HelpCircle, Settings, Users, Download, Video, Image, BookOpen } from "lucide-react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,7 +25,6 @@ const Navigation = () => {
     { id: 'download', label: 'Download', icon: Download },
     { id: 'trailer', label: 'Trailer', icon: Video },
     { id: 'screenshots', label: 'Gallery', icon: Image },
-    { id: 'updates', label: 'Updates', icon: Bell },
     { id: 'credits', label: 'Credits', icon: Users },
   ];
 

@@ -6,7 +6,6 @@ import RequirementsSection from "@/components/RequirementsSection";
 import DownloadSection from "@/components/DownloadSection";
 import TrailerSection from "@/components/TrailerSection";
 import GallerySection from "@/components/GallerySection";
-import UpdatesSection from "@/components/UpdatesSection";
 import CreditsSection from "@/components/CreditsSection";
 import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
@@ -19,7 +18,6 @@ const Index = () => {
       <InfoSection />
       <TrailerSection />
       <GallerySection />
-      <UpdatesSection />
       <CreditsSection />
       <FAQSection />
       <RequirementsSection />
