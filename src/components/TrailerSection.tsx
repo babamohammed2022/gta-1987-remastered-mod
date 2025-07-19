@@ -1,18 +1,20 @@
 import { useState } from "react";
 import { Play, Volume2, VolumeX } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const TrailerSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <section id="trailer" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
-            Official Trailer
+            {t('trailer.title')}
           </h2>
           <p className="text-xl text-muted-foreground">
-            Get a taste of the action and atmosphere
+            {t('trailer.subtitle')}
           </p>
         </div>
 
@@ -38,11 +40,10 @@ const TrailerSection = () => {
         <div className="text-center mt-8">
           <div className="card-glass p-6 max-w-2xl mx-auto">
             <h3 className="text-xl font-heading font-bold mb-2 text-secondary">
-              Chapter 2 Trailer - Updated
+              {t('trailer.chapterTitle')}
             </h3>
             <p className="text-muted-foreground">
-              Watch Ryder navigate the dangerous streets of 1987 Los Santos, facing new enemies 
-              and old allies in this action-packed preview of the latest chapter.
+              {t('trailer.description')}
             </p>
           </div>
         </div>

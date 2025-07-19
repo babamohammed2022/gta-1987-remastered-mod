@@ -12,10 +12,12 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import screenshot5 from "@/assets/screenshot5.webp";
 import screenshot6 from "@/assets/screenshot6.webp";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const GallerySection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const { t } = useLanguage();
 
   const images = useMemo(
     () => [
@@ -105,7 +107,7 @@ const GallerySection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
-            Game Gallery
+            {t('gallery.title')}
           </h2>
         </div>
 
@@ -206,9 +208,7 @@ const GallerySection = () => {
         {/* Disclaimer */}
         <div className="text-center">
           <p className="text-sm text-muted-foreground italic">
-            <strong>Disclaimer:</strong> This mod is not affiliated with Rockstar
-            Games in any way. It's a fan-made project created purely for
-            entertainment purposes, with no monetization involved.
+            <strong>Disclaimer:</strong> {t('gallery.disclaimer')}
           </p>
         </div>
       </div>

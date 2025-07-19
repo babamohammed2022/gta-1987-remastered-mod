@@ -2,14 +2,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Download, Package, BookOpen, Wrench, Clock } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const DownloadSection = () => {
+  const { t } = useLanguage();
+  
   const downloads = [
     {
       id: "modpack",
-      title: "Modpack",
-      status: "UPDATED",
-      description: "Includes all essential files for the mod. Updated assets, models, and configurations required to play the latest version.",
+      title: t('dl.modpack'),
+      status: t('dl.updated'),
+      description: t('dl.modpackDesc'),
       url: "https://drive.google.com/file/d/1dAkfNU57kns57v0UWPkNs6mLBlKZYSN6/view",
       icon: Package,
       required: true,
@@ -17,9 +20,9 @@ const DownloadSection = () => {
     },
     {
       id: "storyline",
-      title: "Storyline",
-      status: "UPDATED",
-      description: "The full narrative experience of Chapter 2, including updated missions, new cutscenes, and dialogues. Chapter 1 is also included. Requires DYOM 8.1 Stable.",
+      title: t('dl.storyline'),
+      status: t('dl.updated'),
+      description: t('dl.storylineDesc'),
       url: "https://drive.google.com/file/d/1w81owBoehbU3ianyG5Czmj-qNobUoAxi/view?usp=sharing",
       icon: BookOpen,
       required: true,
@@ -27,9 +30,9 @@ const DownloadSection = () => {
     },
     {
       id: "patch",
-      title: "Latest Patch",
+      title: t('dl.patch'),
       status: "v1.0.0",
-      description: "Optional fixes and tweaks. Patch updates will be released separately to improve stability and performance.",
+      description: t('dl.patchDesc'),
       url: "#",
       icon: Wrench,
       required: false,
@@ -42,10 +45,10 @@ const DownloadSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
-            Download Section
+            {t('dl.title')}
           </h2>
           <p className="text-xl text-muted-foreground">
-            Get everything you need to start your Los Santos journey
+            {t('dl.subtitle')}
           </p>
         </div>
 
@@ -60,14 +63,14 @@ const DownloadSection = () => {
                       <Icon className="h-5 w-5 mr-2" />
                       {item.title}
                     </CardTitle>
-                    <Badge variant={item.status === "UPDATED" ? "default" : "secondary"} 
-                           className={item.status === "UPDATED" ? "bg-primary text-primary-foreground" : ""}>
+                    <Badge variant={item.status === t('dl.updated') ? "default" : "secondary"} 
+                           className={item.status === t('dl.updated') ? "bg-primary text-primary-foreground" : ""}>
                       {item.status}
                     </Badge>
                   </div>
                   {item.required && (
                     <Badge variant="outline" className="bg-red-500/10 text-red-400 border-red-500/20 w-fit">
-                      Required
+                      {t('dl.required')}
                     </Badge>
                   )}
                 </CardHeader>
@@ -84,7 +87,7 @@ const DownloadSection = () => {
                     >
                       <a href={item.url} target="_blank" rel="noopener noreferrer">
                         <Download className="mr-2 h-4 w-4" />
-                        Download {item.title}
+                        {t('download')} {item.title}
                       </a>
                     </Button>
                   ) : (
@@ -93,7 +96,7 @@ const DownloadSection = () => {
                       className="w-full opacity-50 cursor-not-allowed"
                     >
                       <Clock className="mr-2 h-4 w-4" />
-                      Coming Soon...
+                      {t('dl.comingSoon')}
                     </Button>
                   )}
                 </CardContent>
@@ -105,24 +108,24 @@ const DownloadSection = () => {
         <div className="mt-12 text-center">
           <div className="card-glass p-6 max-w-3xl mx-auto">
             <h3 className="text-2xl font-heading font-bold mb-4 text-secondary">
-              Installation Instructions
+              {t('dl.installTitle')}
             </h3>
             <div className="text-left space-y-3 text-muted-foreground">
               <div className="flex items-start space-x-3">
                 <span className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold mt-0.5">1</span>
-                <span>Download and install all required tools from the Requirements section</span>
+                <span>{t('dl.step1')}</span>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold mt-0.5">2</span>
-                <span>Download the Modpack and extract it to your GTA San Andreas directory</span>
+                <span>{t('dl.step2')}</span>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold mt-0.5">3</span>
-                <span>Download the Storyline and place DYOM files in the DYOM folder</span>
+                <span>{t('dl.step3')}</span>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold mt-0.5">4</span>
-                <span>Launch the game and enjoy your Los Santos adventure!</span>
+                <span>{t('dl.step4')}</span>
               </div>
             </div>
           </div>

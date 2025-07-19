@@ -1,7 +1,9 @@
 import { ExternalLink } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="bg-card border-t border-border py-12 px-4">
@@ -13,15 +15,14 @@ const Footer = () => {
               GTA San Andreas Stories
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              A fan-made mod bringing you back to 1987 Los Santos with Ryder's return. 
-              Experience new missions, enhanced graphics, and immersive gang warfare.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-heading font-semibold mb-4 text-foreground">
-              Quick Links
+              {t('footer.quickLinks')}
             </h3>
             <div className="space-y-2">
               <a
@@ -31,7 +32,7 @@ const Footer = () => {
                 className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <ExternalLink className="h-3 w-3 mr-2" />
-                Discord Community
+                {t('footer.discordCommunity')}
               </a>
               <a
                 href="https://gtasasmanual.netlify.app/"
@@ -40,7 +41,7 @@ const Footer = () => {
                 className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <ExternalLink className="h-3 w-3 mr-2" />
-                User Manual
+                {t('footer.userManual')}
               </a>
               <a
                 href="#download"
@@ -52,7 +53,7 @@ const Footer = () => {
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                Downloads
+                {t('footer.downloads')}
               </a>
             </div>
           </div>
@@ -60,12 +61,10 @@ const Footer = () => {
           {/* Disclaimer */}
           <div>
             <h3 className="text-lg font-heading font-semibold mb-4 text-foreground">
-              Legal
+              {t('footer.legal')}
             </h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              This mod is not affiliated with Rockstar Games. 
-              GTA San Andreas Stories is a fan-made project created for entertainment purposes only. 
-              No monetization is involved.
+              {t('footer.disclaimer')}
             </p>
           </div>
         </div>

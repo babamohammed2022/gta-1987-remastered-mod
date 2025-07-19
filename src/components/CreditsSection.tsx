@@ -1,8 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, Star, Heart } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const CreditsSection = () => {
+  const { t } = useLanguage();
   const developmentTeam = [
     { name: "babamohammed2022", role: "Project Owner, Lead Mission Designer, Storywriting" },
     { name: "Abdullah", role: "Website Design, Models, Suggestions, Programming" },
@@ -46,10 +48,10 @@ const CreditsSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
-            Development Team
+            {t('credits.title')}
           </h2>
           <p className="text-xl text-muted-foreground">
-            The talented creators behind GTA San Andreas Stories
+            {t('credits.subtitle')}
           </p>
         </div>
 
@@ -59,7 +61,7 @@ const CreditsSection = () => {
             <CardHeader>
               <CardTitle className="text-2xl font-heading text-primary flex items-center">
                 <Users className="h-6 w-6 mr-2" />
-                Core Development Team
+                {t('credits.coreTeam')}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -79,7 +81,7 @@ const CreditsSection = () => {
             <CardHeader>
               <CardTitle className="text-2xl font-heading text-primary flex items-center">
                 <Star className="h-6 w-6 mr-2" />
-                Special Contributors
+                {t('credits.contributors')}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -100,12 +102,12 @@ const CreditsSection = () => {
           <CardHeader>
             <CardTitle className="text-2xl font-heading text-primary flex items-center justify-center">
               <Heart className="h-6 w-6 mr-2" />
-              Special Thanks
+              {t('credits.thanks')}
             </CardTitle>
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-muted-foreground mb-4">
-              This mod integrates work from talented creators including:
+              {t('credits.thanksDesc')}
             </p>
             <div className="flex flex-wrap justify-center gap-2 mb-4">
               {specialThanks.map((name, index) => (
@@ -115,7 +117,7 @@ const CreditsSection = () => {
               ))}
             </div>
             <p className="text-sm text-muted-foreground italic">
-              Full credits available in modpack files and many others who contributed to this project.
+              {t('credits.fullCredits')}
             </p>
           </CardContent>
         </Card>
