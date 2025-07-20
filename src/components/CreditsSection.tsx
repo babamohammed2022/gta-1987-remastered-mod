@@ -23,7 +23,6 @@ const CreditsSection = () => {
     { name: "Forge", role: "Scripting Help" },
     { name: "Elrico", role: "Mission Testing, Promotional Screenshots, Server Contribution" },
     { name: "Reaper", role: "HUD improvements, Weapon Icons, Supervision" },
-    { name: "Urafael games", role: "Coding Expertise and ASI Development" } 
   ];
 
   const specialContributors = [
@@ -38,6 +37,7 @@ const CreditsSection = () => {
     { name: "MaxMakoShark", role: "Server Supervision" },
     { name: "Tix", role: "Gameplay Testing" },
     { name: "Raul", role: "Visual Enhancements, Mission Testing and Enhancing, Storyline Improvements, Video Recording, Supervision, Bug Reports" }
+    { name: "Urafael Games", role: "Coding Expertise and ASI Development" } 
   ];
 
   const specialThanks = [
