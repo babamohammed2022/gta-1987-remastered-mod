@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Info, HelpCircle, Settings, Users, Download, Video, Image, BookOpen, Languages } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { Menu, Info, HelpCircle, Settings, Users, Download, Video, Image, BookOpen } from "lucide-react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,13 +19,13 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { id: 'info', label: t('nav.info'), icon: Info },
-    { id: 'faq', label: t('nav.faq'), icon: HelpCircle },
-    { id: 'requirements', label: t('nav.requirements'), icon: Settings },
-    { id: 'download', label: t('nav.download'), icon: Download },
-    { id: 'trailer', label: t('nav.trailer'), icon: Video },
-    { id: 'screenshots', label: t('nav.gallery'), icon: Image },
-    { id: 'credits', label: t('nav.credits'), icon: Users },
+    { id: 'info', label: 'Info', icon: Info },
+    { id: 'faq', label: 'FAQ', icon: HelpCircle },
+    { id: 'requirements', label: 'Requirements', icon: Settings },
+    { id: 'download', label: 'Download', icon: Download },
+    { id: 'trailer', label: 'Trailer', icon: Video },
+    { id: 'screenshots', label: 'Gallery', icon: Image },
+    { id: 'credits', label: 'Credits', icon: Users },
   ];
 
   return (
@@ -69,18 +67,8 @@ const Navigation = () => {
             >
               <a href="https://gtasasmanual.netlify.app/" target="_blank" rel="noopener noreferrer">
                 <BookOpen className="h-4 w-4 mr-2" />
-                {t('nav.manual')}
+                Manual
               </a>
-            </Button>
-            
-            {/* Language Toggle */}
-            <Button
-              variant="ghost"
-              onClick={toggleLanguage}
-              className="text-sm font-medium hover:text-primary hover:bg-primary/10"
-            >
-              <Languages className="h-4 w-4 mr-2" />
-              {language === 'en' ? 'ES' : 'EN'}
             </Button>
           </div>
 
@@ -116,18 +104,8 @@ const Navigation = () => {
                   >
                     <a href="https://gtasasmanual.netlify.app/" target="_blank" rel="noopener noreferrer">
                       <BookOpen className="h-4 w-4 mr-2" />
-                      {t('nav.manual')}
+                      Manual
                     </a>
-                  </Button>
-                  
-                  {/* Language Toggle Mobile */}
-                  <Button
-                    variant="ghost"
-                    onClick={toggleLanguage}
-                    className="justify-start text-left"
-                  >
-                    <Languages className="h-4 w-4 mr-2" />
-                    {language === 'en' ? 'Español' : 'English'}
                   </Button>
                 </div>
               </SheetContent>
