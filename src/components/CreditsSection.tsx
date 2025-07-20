@@ -22,6 +22,7 @@ const CreditsSection = () => {
     { name: "Seve267", role: "Scripting Help, DYOM Modder, Bug Fixer, Miscellaneous" },
     { name: "Forge", role: "Scripting Help" },
     { name: "Elrico", role: "Mission Testing, Promotional Screenshots, Server Contribution" },
+    { name: "Reaper", role: "HUD improvements, Weapon Icons, Supervision" },
     { name: "Urafael games", role: "Coding Expertise and ASI Development" } 
   ];
 
