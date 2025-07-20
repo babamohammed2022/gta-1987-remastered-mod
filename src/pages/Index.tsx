@@ -1,3 +1,4 @@
+import { LanguageProvider } from "@/contexts/LanguageContext";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import InfoSection from "@/components/InfoSection";
@@ -12,19 +13,21 @@ import ChatBot from "@/components/ChatBot";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
-      <Hero />
-      <InfoSection />
-      <TrailerSection />
-      <GallerySection />
-      <CreditsSection />
-      <FAQSection />
-      <RequirementsSection />
-      <DownloadSection />
-      <Footer />
-      <ChatBot />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen bg-background">
+        <Navigation />
+        <Hero />
+        <InfoSection />
+        <TrailerSection />
+        <GallerySection />
+        <CreditsSection />
+        <FAQSection />
+        <RequirementsSection />
+        <DownloadSection />
+        <Footer />
+        <ChatBot />
+      </div>
+    </LanguageProvider>
   );
 };
 
