@@ -11,7 +11,7 @@ const DownloadSection = () => {
     {
       id: "modpack",
       title: t('dl.modpack'),
-      status: "UPDATED",
+      status: "UPDATED · 23 July 2025",
       description: t('dl.modpackDesc'),
       url: "https://mega.nz/file/LrwUwKCQ#4WBJR25lvqsWcv3XvvGyoJeXCUOzvdKUwd9x3r6PuFk",
       icon: Package,
@@ -21,7 +21,7 @@ const DownloadSection = () => {
     {
       id: "storyline",
       title: t('dl.storyline'),
-      status: t('dl.updated'),
+      status: "UPDATED · 19 June 2025",
       description: t('dl.storylineDesc'),
       url: "https://drive.google.com/file/d/1w81owBoehbU3ianyG5Czmj-qNobUoAxi/view?usp=sharing",
       icon: BookOpen,
@@ -63,8 +63,8 @@ const DownloadSection = () => {
                       <Icon className="h-5 w-5 mr-2" />
                       {item.title}
                     </CardTitle>
-                    <Badge variant={item.status === "UPDATED" ? "default" : "secondary"} 
-                           className={item.status === "UPDATED" ? "bg-primary text-primary-foreground" : ""}>
+                    <Badge variant={item.status.includes("UPDATED") ? "default" : "secondary"} 
+                           className={item.status.includes("UPDATED") ? "bg-primary text-primary-foreground" : ""}>
                       {item.status}
                     </Badge>
                   </div>
