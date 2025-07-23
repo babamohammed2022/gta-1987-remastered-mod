@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"; 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Info, HelpCircle, Settings, Users, Download, Video, Image, BookOpen } from "lucide-react";
@@ -20,12 +20,12 @@ const Navigation = () => {
 
   const navItems = [
     { id: 'info', label: 'Info', icon: Info },
-    { id: 'faq', label: 'FAQ', icon: HelpCircle },
-    { id: 'requirements', label: 'Requirements', icon: Settings },
-    { id: 'download', label: 'Download', icon: Download },
     { id: 'trailer', label: 'Trailer', icon: Video },
     { id: 'screenshots', label: 'Gallery', icon: Image },
     { id: 'credits', label: 'Credits', icon: Users },
+    { id: 'faq', label: 'FAQ', icon: HelpCircle },
+    { id: 'requirements', label: 'Requirements', icon: Settings },
+    { id: 'download', label: 'Download', icon: Download },
   ];
 
   return (
@@ -58,7 +58,7 @@ const Navigation = () => {
                 </Button>
               );
             })}
-            
+
             {/* Manual Link */}
             <Button
               variant="ghost"
@@ -72,9 +72,8 @@ const Navigation = () => {
             </Button>
           </div>
 
-          {/* Right Section */}
+          {/* Mobile Menu */}
           <div className="flex items-center space-x-2">
-            {/* Mobile Menu */}
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
