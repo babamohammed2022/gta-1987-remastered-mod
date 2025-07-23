@@ -36,7 +36,7 @@ const CreditsSection = () => {
     { name: "MAHMOGAMER", role: "Project Supervision" },
     { name: "MaxMakoShark", role: "Server Supervision" },
     { name: "Tix", role: "Gameplay Testing" },
-    { name: "Raul", role: "Visual Enhancements, Mission Testing and Enhancing, Storyline Improvements, Video Recording, Supervision, Bug Reports" }
+    { name: "Raul", role: "Visual Enhancements, Mission Testing and Enhancing, Storyline Improvements, Video Recording, Supervision, Bug Reports" }, // <-- comma added here
     { name: "Urafael Games", role: "Coding Expertise and ASI Development" } 
   ];
 
