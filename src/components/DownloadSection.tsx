@@ -11,9 +11,9 @@ const DownloadSection = () => {
     {
       id: "modpack",
       title: t('dl.modpack'),
-      status: t('dl.updated'),
+      status: "UPDATED",
       description: t('dl.modpackDesc'),
-      url: "https://drive.google.com/file/d/1dAkfNU57kns57v0UWPkNs6mLBlKZYSN6/view",
+      url: "https://mega.nz/file/LrwUwKCQ#4WBJR25lvqsWcv3XvvGyoJeXCUOzvdKUwd9x3r6PuFk",
       icon: Package,
       required: true,
       available: true
@@ -63,8 +63,8 @@ const DownloadSection = () => {
                       <Icon className="h-5 w-5 mr-2" />
                       {item.title}
                     </CardTitle>
-                    <Badge variant={item.status === t('dl.updated') ? "default" : "secondary"} 
-                           className={item.status === t('dl.updated') ? "bg-primary text-primary-foreground" : ""}>
+                    <Badge variant={item.status === "UPDATED" ? "default" : "secondary"} 
+                           className={item.status === "UPDATED" ? "bg-primary text-primary-foreground" : ""}>
                       {item.status}
                     </Badge>
                   </div>
