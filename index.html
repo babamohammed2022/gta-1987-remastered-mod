@@ -54,15 +54,37 @@
     <meta name="twitter:title" content="GTA San Andreas Stories | 1987 Gang Life Mod" />
     <meta name="twitter:description" content="Play GTA San Andreas like never before. Total conversion mod set in 1987 Los Santos. New gangs. New missions. Same chaos." />
     <meta name="twitter:image" content="https://raw.githubusercontent.com/babamohammed2022/gtasasmanual/main/Immagine%202025-04-23%20220835.png" />
-    
     <!-- Favicon -->
-    <link rel="icon" href="https://raw.githubusercontent.com/babamohammed2022/gtasashtml/main/gtasasicon.png" type="image/png">
-    
+    <link rel="icon" href="https://raw.githubusercontent.com/babamohammed2022/gtasashtml/main/gtasasicon.png" type="image/png" />
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body>
+  <body class="bg-[hsl(var(--background))] text-foreground font-body">
+    <!-- Hero Section -->
+    <section 
+      class="relative min-h-screen bg-cover bg-center flex items-center justify-center text-center px-6 py-24"
+      style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://raw.githubusercontent.com/babamohammed2022/CLEO_Snippet_Fetcher/refs/heads/main/file_00000000ff5461fa9664a4620095ba2b_conversation_id67fce5d9-13d0-800c-906f-586df3adde0bmessage_ide03c0d3b-617e-4327-81f3-013a4e376e40.webp');"
+    >
+      <div class="z-10 text-white max-w-4xl">
+        <h1 class="text-5xl md:text-7xl font-bold text-gradient mb-6">San Andreas Stories</h1>
+        <h2 class="text-xl md:text-2xl text-orange-400 font-semibold mb-4">The Return of Ryder (1987)</h2>
+        <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">
+          Experience a whole new gangsta storyline in Los Santos, 1987. Ryder returns from Vice City to help the Grove Street Families during CJ's absence.
+          <span class="text-red-500 font-semibold"> New gangs. New missions. Same chaos.</span>
+        </p>
+        <div class="flex justify-center gap-4">
+          <a href="#" class="btn-gaming">Download Now</a>
+          <a href="#" class="btn-gaming-outline">Watch Trailer</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Root -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
