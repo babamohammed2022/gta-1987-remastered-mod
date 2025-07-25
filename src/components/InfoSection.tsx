@@ -98,9 +98,10 @@ const InfoSection = () => {
           <AlertDescription className="text-warning-foreground">
             <strong className="font-semibold">Important Compatibility Notes:</strong>
             <ul className="mt-2 space-y-1 text-sm">
-              <li>• <strong>Widescreen mod</strong> may cause crashes - remove from Modloader</li>
+              <li>• <strong>Widescreen mods</strong> may cause crashes - having multiple widescreen mods at once can create conflicts</li>
               <li>• <strong>SAMP (San Andreas Multiplayer)</strong> is incompatible</li>
-              <li>• <strong>Animation/Ragdoll mods</strong> not supported</li>
+              <li>• <strong>Animation/Ragdoll mods</strong> are not supported</li>
+              <li>• <strong>Highly suggested:</strong> Avoid adding multiple modpacks as this may cause compatibility issues, crashes or other problems</li>
               <li>• <strong>Recommended:</strong> Clean GTA San Andreas v1.0 installation</li>
             </ul>
           </AlertDescription>
