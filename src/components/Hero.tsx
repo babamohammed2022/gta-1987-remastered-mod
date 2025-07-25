@@ -17,17 +17,19 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
+      {/* Background Image with Parallax */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat dark:bg-[url('https://raw.githubusercontent.com/babamohammed2022/CLEO_Snippet_Fetcher/refs/heads/main/file_00000000ff5461fa9664a4620095ba2b_conversation_id67fce5d9-13d0-800c-906f-586df3adde0bmessage_ide03c0d3b-617e-4327-81f3-013a4e376e40.webp')] light:bg-[url('https://raw.githubusercontent.com/babamohammed2022/CLEO_Snippet_Fetcher/main/ChatGPT%20Image%2017%20apr%202025%2C%2009_06_31.png')]"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          transform: `translateY(${scrollY * 0.5}px)`
+          backgroundImage: `url('https://raw.githubusercontent.com/babamohammed2022/CLEO_Snippet_Fetcher/refs/heads/main/file_00000000ff5461fa9664a4620095ba2b_conversation_id67fce5d9-13d0-800c-906f-586df3adde0bmessage_ide03c0d3b-617e-4327-81f3-013a4e376e40.webp')`,
+          transform: `translateY(${scrollY * 0.5}px)`,
+          transition: "transform 0.1s ease-out",
         }}
       />
-      
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/90" />
-      
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-[hsl(var(--background)/0.85)] backdrop-brightness-75" />
+
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
         {/* Logo */}
