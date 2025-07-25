@@ -12,7 +12,7 @@ const InfoSection = () => {
             Mod Overview
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Dive deep into the streets of 1987 Los Santos with this immersive total conversion
+            Dive deep into the streets of 1987 Los Santos
           </p>
         </div>
 
@@ -28,8 +28,8 @@ const InfoSection = () => {
               <p className="text-muted-foreground leading-relaxed">
                 <strong className="text-foreground">GTA San Andreas Stories</strong>, also known as 
                 <strong className="text-secondary"> GTA San Andreas Stories: The Return of Ryder</strong> or 
-                <strong className="text-accent"> GTA San Andreas Stories: 1987</strong>, is a fan-made mod 
-                developed by <strong className="text-primary">babamohammed2022</strong>.
+                <strong className="text-accent"> GTA San Andreas Stories: 1987</strong>, is a fan-made prequel 
+                to the classic <strong className="text-primary">Grand Theft Auto: San Andreas</strong>.
               </p>
               
               <p className="text-muted-foreground leading-relaxed">
