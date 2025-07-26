@@ -58,6 +58,10 @@ const FAQSection = () => {
       answer: t('faq.a12')
     },
     {
+  question: "How do I become a developer/staff?",
+  answer: "Join the Discord server and open a ticket to apply for staff/developer positions. Share at least one of your works, and the owner/staff will decide if you are in or not."
+    },
+    {
       question: "Where do I install the modpack?",
       answer: "Install the modpack in your main GTA San Andreas folder. It must be a clean installation without SAMP or any other mods."
     },
@@ -67,7 +71,7 @@ const FAQSection = () => {
     },
     {
       question: "What are the limitations of this mod?",
-      answer: "This mod does not support multiplayer (like SAMP), heavy CLEO mods, or total conversion packs. It’s built for clean, single-player gameplay with a focus on custom missions and storyline."
+      answer: "This mod does not support multiplayer (like SAMP), heavy CLEO mods, or total conversion packs."
     }
   ];
 
