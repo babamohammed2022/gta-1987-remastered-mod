@@ -56,6 +56,18 @@ const FAQSection = () => {
     {
       question: t('faq.q12'),
       answer: t('faq.a12')
+    },
+    {
+      question: "Where do I install the modpack?",
+      answer: "Install the modpack in your main GTA San Andreas folder. It must be a clean installation without SAMP or any other mods."
+    },
+    {
+      question: "Where do I install DYOM and the storyline?",
+      answer: "Install DYOM and the storyline into your GTA San Andreas User Files folder (found in Documents). CLEO 5 is required. Do NOT place the storyline into the main game directory or the modpack into the User Files — this will break the mod."
+    },
+    {
+      question: "What are the limitations of this mod?",
+      answer: "This mod does not support multiplayer (like SAMP), heavy CLEO mods, or total conversion packs. It’s built for clean, single-player gameplay with a focus on custom missions and storyline."
     }
   ];
 
