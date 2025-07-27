@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Info, HelpCircle, Settings, Users, Download, Video, Image, BookOpen } from "lucide-react";
-import LanguageToggle from "@/components/LanguageToggle";
+// Removed: import LanguageToggle from "@/components/LanguageToggle";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -72,15 +72,16 @@ const Navigation = () => {
               </a>
             </Button>
 
-            {/* Language Toggle */}
-            <LanguageToggle />
+            {/* Language Toggle removed */}
+            {/* <LanguageToggle /> */}
           </div>
 
           {/* Mobile Menu */}
           <div className="flex items-center space-x-2">
-            <div className="md:hidden">
+            {/* Language Toggle removed from mobile */}
+            {/* <div className="md:hidden">
               <LanguageToggle />
-            </div>
+            </div> */}
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
