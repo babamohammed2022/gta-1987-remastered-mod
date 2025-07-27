@@ -21,13 +21,12 @@ const Navigation = () => {
 
   const navItems = [
     { id: 'info', label: 'Info', icon: Info },
-    { id: 'news', label: 'News', icon: Video },
     { id: 'trailer', label: 'Trailer', icon: Video },
-    { id: 'screenshots', label: 'Gallery', icon: Image },
-    { id: 'credits', label: 'Credits', icon: Users },
+    { id: 'gallery', label: 'Gallery', icon: Image },
     { id: 'faq', label: 'FAQ', icon: HelpCircle },
     { id: 'requirements', label: 'Requirements', icon: Settings },
     { id: 'download', label: 'Download', icon: Download },
+    { id: 'credits', label: 'Credits', icon: Users }
   ];
 
   return (
