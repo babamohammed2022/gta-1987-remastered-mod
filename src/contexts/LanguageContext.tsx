@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState } from 'react';
 
 type Language = 'en' | 'es';
@@ -20,14 +19,17 @@ const translations = {
     'nav.gallery': 'Gallery',
     'nav.credits': 'Credits',
     'nav.manual': 'Manual',
-    
+
     // Hero
     'hero.title': 'GTA San Andreas Stories',
     'hero.subtitle': 'Experience the streets of San Andreas like never before',
     'hero.description': 'Immerse yourself in a completely redesigned Grand Theft Auto experience with enhanced missions, improved graphics, and an engaging storyline that will keep you on the edge of your seat.',
     'hero.playNow': 'Play Now',
     'hero.watchTrailer': 'Watch Trailer',
-    
+    // Additional hero keys
+    'hero.tagline': 'The Return of Ryder (1987)',
+    'hero.intro': 'Experience a new gangster story in Los Santos, 1987. Ryder returns from Vice City to help the Grove Street Families during CJ\'s absence. New gangs. New missions. Same chaos.',
+
     // Info Section
     'info.title': 'About GTA SAS',
     'info.description': 'GTA San Andreas Stories is a comprehensive modification that transforms your gaming experience with new missions, enhanced graphics, and immersive storytelling.',
@@ -38,13 +40,13 @@ const translations = {
     'info.feature3.title': 'Improved Graphics',
     'info.feature3.desc': 'Enhanced textures and visual effects for a modern gaming experience.',
     'info.joinDiscord': 'Join Discord Community',
-    
+
     // FAQ Section
     'faq.title': 'Frequently Asked Questions',
     'faq.subtitle': 'Everything you need to know about the mod',
     'faq.search': 'Search FAQs...',
     'faq.noResults': 'No FAQs found matching your search.',
-    
+
     // FAQ Content
     'faq.q1': 'Where is the setting of the mod?',
     'faq.a1': 'The mod is set in 1987 in the city of Los Santos, a place on the brink of chaos where gangs, including the Grove Street Families, battle for control.',
@@ -70,7 +72,7 @@ const translations = {
     'faq.a11': 'Ryder worked for Tommy Vercetti in Vice City before returning to Los Santos to reconnect with the Grove Street Families and continue his role in the gang.',
     'faq.q12': 'Are there any side missions in the mod?',
     'faq.a12': 'Yes, the mod includes side missions like Pizza Delivery, Trash Dash, and Drug Bust Operation, with vehicles available at various locations around the map, including Idlewood and Willowfield.',
-    
+
     // Requirements Section
     'req.title': 'System Requirements',
     'req.subtitle': 'Ensure optimal performance and stability',
@@ -92,7 +94,7 @@ const translations = {
     'req.cleoPlusDesc': 'Enhanced CLEO features',
     'req.essentials': 'Essentials Pack',
     'req.essentialsDesc': 'All-in-one requirement pack',
-    
+
     // Download Section
     'dl.title': 'Download Section',
     'dl.subtitle': 'Get everything you need to start your Los Santos journey',
@@ -110,17 +112,37 @@ const translations = {
     'dl.step2': 'Download the Modpack and extract it to your GTA San Andreas directory',
     'dl.step3': 'Download the Storyline and place DYOM files in the DYOM folder',
     'dl.step4': 'Launch the game and enjoy your Los Santos adventure!',
-    
+
     // Trailer Section
     'trailer.title': 'Official Trailer',
     'trailer.subtitle': 'Get a taste of the action and atmosphere',
     'trailer.chapterTitle': 'Chapter 2 Trailer - Updated',
     'trailer.description': 'Watch Ryder navigate the dangerous streets of 1987 Los Santos, facing new enemies and old allies in this action-packed preview of the latest chapter.',
-    
+    // Additional trailer keys
+    'trailer.extra.videos': 'If you want to dive deeper, watch these extra videos:',
+    'trailer.mod.overview': 'Mod Overview – A complete breakdown of the mod\'s content and structure.',
+    'trailer.introduction': 'The Introduction – A brief introduction explaining the story background.',
+
     // Gallery Section
     'gallery.title': 'Game Gallery',
     'gallery.disclaimer': 'Disclaimer: This mod is not affiliated with Rockstar Games in any way. It\'s a fan-made project created purely for entertainment purposes, with no monetization involved.',
-    
+    // Additional gallery keys
+    'gallery.caption.1': 'Scene at Grove Street',
+    'gallery.caption.2': 'Vice City Vibes',
+    'gallery.caption.3': 'Los Santos Skyline',
+    'gallery.caption.4': 'Gang Territory',
+    'gallery.caption.5': 'Weapon Selection',
+    'gallery.caption.6': 'Safehouse Interior',
+    'gallery.caption.7': 'Vintage Billboard',
+    'gallery.caption.8': 'Character Lineup',
+    'gallery.caption.9': 'Mission Briefing',
+    'gallery.caption.10': 'Car Chase',
+    'gallery.caption.11': 'Custom Vehicle',
+    'gallery.caption.12': 'UI Preview',
+    'gallery.caption.13': 'Enhanced Gameplay',
+    'gallery.caption.14': 'Mission Cinematic Scene',
+    'gallery.navigation': 'Previous slideNext slide',
+
     // Credits Section
     'credits.title': 'Development Team',
     'credits.subtitle': 'The talented creators behind GTA San Andreas Stories',
@@ -129,7 +151,7 @@ const translations = {
     'credits.thanks': 'Special Thanks',
     'credits.thanksDesc': 'This mod integrates work from talented creators including:',
     'credits.fullCredits': 'Full credits available in modpack files and many others who contributed to this project.',
-    
+
     // Footer
     'footer.description': 'A fan-made mod bringing you back to 1987 Los Santos with Ryder\'s return. Experience new missions, enhanced graphics, and immersive gang warfare.',
     'footer.quickLinks': 'Quick Links',
@@ -138,12 +160,16 @@ const translations = {
     'footer.downloads': 'Downloads',
     'footer.legal': 'Legal',
     'footer.disclaimer': 'This mod is not affiliated with Rockstar Games. GTA San Andreas Stories is a fan-made project created for entertainment purposes only. No monetization is involved.',
-    
+
     // General
     'loading': 'Loading...',
     'download': 'Download',
     'learnMore': 'Learn More',
     'get': 'Get',
+    // General additions
+    'download.now': 'Download Now',
+    'watch.trailer': 'Watch Trailer',
+    'join.discord': 'Join Discord Community',
   },
   es: {
     // Navigation
@@ -155,14 +181,16 @@ const translations = {
     'nav.gallery': 'Galería',
     'nav.credits': 'Créditos',
     'nav.manual': 'Manual',
-    
+
     // Hero
     'hero.title': 'GTA San Andreas Stories',
     'hero.subtitle': 'Experimenta las calles de San Andreas como nunca antes',
     'hero.description': 'Sumérgete en una experiencia de Grand Theft Auto completamente rediseñada con misiones mejoradas, gráficos mejorados y una historia envolvente que te mantendrá al borde de tu asiento.',
     'hero.playNow': 'Jugar Ahora',
     'hero.watchTrailer': 'Ver Tráiler',
-    
+    'hero.tagline': 'El Regreso de Ryder (1987)',
+    'hero.intro': 'Experimenta una nueva historia gángster en Los Santos, 1987. Ryder regresa de Vice City para ayudar a las Grove Street Families durante la ausencia de CJ. Nuevas pandillas. Nuevas misiones. El mismo caos.',
+
     // Info Section
     'info.title': 'Acerca de GTA SAS',
     'info.description': 'GTA San Andreas Stories es una modificación integral que transforma tu experiencia de juego con nuevas misiones, gráficos mejorados y narrativa inmersiva.',
@@ -173,13 +201,13 @@ const translations = {
     'info.feature3.title': 'Gráficos Mejorados',
     'info.feature3.desc': 'Texturas mejoradas y efectos visuales para una experiencia de juego moderna.',
     'info.joinDiscord': 'Únete a la Comunidad Discord',
-    
+
     // FAQ Section
     'faq.title': 'Preguntas Frecuentes',
     'faq.subtitle': 'Todo lo que necesitas saber sobre el mod',
     'faq.search': 'Buscar preguntas...',
     'faq.noResults': 'No se encontraron preguntas que coincidan con tu búsqueda.',
-    
+
     // FAQ Content
     'faq.q1': '¿Dónde está ambientado el mod?',
     'faq.a1': 'El mod está ambientado en 1987 en la ciudad de Los Santos, un lugar al borde del caos donde las pandillas, incluidas las Grove Street Families, luchan por el control.',
@@ -205,7 +233,7 @@ const translations = {
     'faq.a11': 'Ryder trabajó para Tommy Vercetti en Vice City antes de regresar a Los Santos para reconectarse con las Grove Street Families y continuar su papel en la pandilla.',
     'faq.q12': '¿Hay misiones secundarias en el mod?',
     'faq.a12': 'Sí, el mod incluye misiones secundarias como Entrega de Pizza, Trash Dash y Operación Anti-Drogas, con vehículos disponibles en varios lugares del mapa, incluyendo Idlewood y Willowfield.',
-    
+
     // Requirements Section
     'req.title': 'Requisitos del Sistema',
     'req.subtitle': 'Asegura un rendimiento y estabilidad óptimos',
@@ -227,7 +255,7 @@ const translations = {
     'req.cleoPlusDesc': 'Características mejoradas de CLEO',
     'req.essentials': 'Paquete Esencial',
     'req.essentialsDesc': 'Paquete todo-en-uno de requisitos',
-    
+
     // Download Section
     'dl.title': 'Sección de Descarga',
     'dl.subtitle': 'Obtén todo lo que necesitas para comenzar tu viaje en Los Santos',
@@ -245,17 +273,35 @@ const translations = {
     'dl.step2': 'Descarga el Paquete de Mods y extráelo en tu directorio de GTA San Andreas',
     'dl.step3': 'Descarga la Historia y coloca los archivos DYOM en la carpeta DYOM',
     'dl.step4': '¡Inicia el juego y disfruta tu aventura en Los Santos!',
-    
+
     // Trailer Section
     'trailer.title': 'Tráiler Oficial',
     'trailer.subtitle': 'Obtén una muestra de la acción y la atmósfera',
     'trailer.chapterTitle': 'Tráiler del Capítulo 2 - Actualizado',
     'trailer.description': 'Mira a Ryder navegar las peligrosas calles de Los Santos de 1987, enfrentando nuevos enemigos y viejos aliados en esta vista previa llena de acción del último capítulo.',
-    
+    'trailer.extra.videos': 'Si deseas profundizar más, mira estos videos adicionales:',
+    'trailer.mod.overview': 'Resumen del Mod – Un desglose completo del contenido y estructura del mod.',
+    'trailer.introduction': 'La Introducción – Una breve introducción que explica el trasfondo de la historia.',
+
     // Gallery Section
     'gallery.title': 'Galería del Juego',
     'gallery.disclaimer': 'Descargo de responsabilidad: Este mod no está afiliado con Rockstar Games de ninguna manera. Es un proyecto hecho por fanáticos creado puramente con fines de entretenimiento, sin monetización involucrada.',
-    
+    'gallery.caption.1': 'Escena en Grove Street',
+    'gallery.caption.2': 'Vibraciones de Vice City',
+    'gallery.caption.3': 'Horizonte de Los Santos',
+    'gallery.caption.4': 'Territorio de Pandillas',
+    'gallery.caption.5': 'Selección de Armas',
+    'gallery.caption.6': 'Interior de Casa Segura',
+    'gallery.caption.7': 'Cartelera Vintage',
+    'gallery.caption.8': 'Alineación de Personajes',
+    'gallery.caption.9': 'Briefing de Misión',
+    'gallery.caption.10': 'Persecución en Auto',
+    'gallery.caption.11': 'Vehículo Personalizado',
+    'gallery.caption.12': 'Vista Previa de la Interfaz',
+    'gallery.caption.13': 'Jugabilidad Mejorada',
+    'gallery.caption.14': 'Escena Cinemática de Misión',
+    'gallery.navigation': 'Diapositiva anteriorSiguiente diapositiva',
+
     // Credits Section
     'credits.title': 'Equipo de Desarrollo',
     'credits.subtitle': 'Los talentosos creadores detrás de GTA San Andreas Stories',
@@ -264,7 +310,7 @@ const translations = {
     'credits.thanks': 'Agradecimientos Especiales',
     'credits.thanksDesc': 'Este mod integra trabajo de creadores talentosos incluyendo:',
     'credits.fullCredits': 'Créditos completos disponibles en los archivos del paquete de mods y muchos otros que contribuyeron a este proyecto.',
-    
+
     // Footer
     'footer.description': 'Un mod hecho por fanáticos que te lleva de vuelta a Los Santos de 1987 con el regreso de Ryder. Experimenta nuevas misiones, gráficos mejorados y guerra de pandillas inmersiva.',
     'footer.quickLinks': 'Enlaces Rápidos',
@@ -273,12 +319,15 @@ const translations = {
     'footer.downloads': 'Descargas',
     'footer.legal': 'Legal',
     'footer.disclaimer': 'Este mod no está afiliado con Rockstar Games. GTA San Andreas Stories es un proyecto hecho por fanáticos creado solo con fines de entretenimiento. No hay monetización involucrada.',
-    
+
     // General
     'loading': 'Cargando...',
     'download': 'Descargar',
     'learnMore': 'Saber Más',
     'get': 'Obtener',
+    'download.now': 'Descargar Ahora',
+    'watch.trailer': 'Ver Tráiler',
+    'join.discord': 'Unirse a la Comunidad Discord',
   }
 };
 
@@ -304,8 +353,4 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
-  if (context === undefined) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
-  return context;
-};
+  if
