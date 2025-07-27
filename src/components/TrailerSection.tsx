@@ -19,7 +19,7 @@ const TrailerSection = () => {
         </div>
 
         {/* Main Trailer */}
-        <div className="relative max-w-4xl mx-auto mb-16">
+        <div className="relative max-w-4xl mx-auto">
           <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl hover-glow">
             <iframe
               src="https://www.youtube.com/embed/HwAeEBFTvME?autoplay=0&rel=0&modestbranding=1"
@@ -29,37 +29,14 @@ const TrailerSection = () => {
               allowFullScreen
             />
           </div>
+          {/* Decorative dots */}
           <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary rounded-full animate-pulse opacity-60"></div>
           <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-secondary rounded-full animate-pulse opacity-60"></div>
           <div className="absolute top-1/2 -left-6 w-4 h-4 bg-accent rounded-full animate-pulse opacity-40"></div>
         </div>
 
-        {/* Additional Videos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Introduction Video */}
-          <div className="rounded-2xl overflow-hidden shadow-lg hover-glow aspect-video">
-            <iframe
-              src="https://www.youtube.com/embed/O9SIIMx9lW0?autoplay=0&rel=0&modestbranding=1"
-              title="GTA San Andreas Stories – Introduction"
-              className="w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-          {/* Overview Video */}
-          <div className="rounded-2xl overflow-hidden shadow-lg hover-glow aspect-video">
-            <iframe
-              src="https://www.youtube.com/embed/dxGCcrt5jFU?autoplay=0&rel=0&modestbranding=1"
-              title="GTA San Andreas Stories – Mod Overview"
-              className="w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
-
-        {/* Description */}
-        <div className="text-center mt-12">
+        {/* Description and Extra Links */}
+        <div className="text-center mt-10">
           <div className="card-glass p-6 max-w-2xl mx-auto">
             <h3 className="text-xl font-heading font-bold mb-2 text-secondary">
               {t('trailer.chapterTitle')}
@@ -68,7 +45,27 @@ const TrailerSection = () => {
               {t('trailer.description')}
             </p>
             <p className="mt-4 text-muted-foreground">
-              Watch the official trailer, then dive into the introduction for backstory context, and finish with the overview to grasp how the mod transforms the game experience.
+              If you’d like to dive deeper, check out these extra videos:
+              <br />
+              <a
+                href="https://www.youtube.com/watch?v=dxGCcrt5jFU"
+                className="text-primary hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Mod Overview
+              </a>{" "}
+              – A full breakdown of the mod’s content and structure.
+              <br />
+              <a
+                href="https://www.youtube.com/watch?v=O9SIIMx9lW0"
+                className="text-primary hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                The Introduction
+              </a>{" "}
+              – A short intro explaining the story background.
             </p>
           </div>
         </div>
