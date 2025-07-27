@@ -70,6 +70,14 @@ const Hero = () => {
             <Play className="mr-2 h-5 w-5" />
             Watch Trailer
           </Button>
+          
+          <Button 
+            onClick={() => scrollToSection('news')}
+            variant="ghost"
+            className="text-lg px-8 py-4 hover:bg-primary/10 hover:text-primary transition-colors"
+          >
+            Latest News
+          </Button>
         </div>
 
         {/* Scroll Indicator */}

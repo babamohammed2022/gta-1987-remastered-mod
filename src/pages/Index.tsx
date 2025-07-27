@@ -10,14 +10,22 @@ import GallerySection from "@/components/GallerySection";
 import CreditsSection from "@/components/CreditsSection";
 import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
+import LoadingScreen from "@/components/LoadingScreen";
+import ProgressBar from "@/components/ProgressBar";
+import BackToTop from "@/components/BackToTop";
+import NewsSection from "@/components/NewsSection";
+import SocialLinks from "@/components/SocialLinks";
 
 const Index = () => {
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-background">
+        <LoadingScreen />
+        <ProgressBar />
         <Navigation />
         <Hero />
         <InfoSection />
+        <NewsSection />
         <TrailerSection />
         <GallerySection />
         <CreditsSection />
@@ -26,6 +34,8 @@ const Index = () => {
         <DownloadSection />
         <Footer />
         <ChatBot />
+        <BackToTop />
+        <SocialLinks />
       </div>
     </LanguageProvider>
   );

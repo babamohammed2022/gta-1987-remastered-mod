@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Info, HelpCircle, Settings, Users, Download, Video, Image, BookOpen } from "lucide-react";
+import LanguageToggle from "@/components/LanguageToggle";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,6 +21,7 @@ const Navigation = () => {
 
   const navItems = [
     { id: 'info', label: 'Info', icon: Info },
+    { id: 'news', label: 'News', icon: Video },
     { id: 'trailer', label: 'Trailer', icon: Video },
     { id: 'screenshots', label: 'Gallery', icon: Image },
     { id: 'credits', label: 'Credits', icon: Users },
@@ -70,10 +72,16 @@ const Navigation = () => {
                 Manual
               </a>
             </Button>
+
+            {/* Language Toggle */}
+            <LanguageToggle />
           </div>
 
           {/* Mobile Menu */}
           <div className="flex items-center space-x-2">
+            <div className="md:hidden">
+              <LanguageToggle />
+            </div>
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
