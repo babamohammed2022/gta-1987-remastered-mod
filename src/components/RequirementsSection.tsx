@@ -2,42 +2,40 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Download, Settings, Cpu, HardDrive, Monitor } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+// ❌ Removed: import { useLanguage } from "@/contexts/LanguageContext";
 
 const RequirementsSection = () => {
-  const { t } = useLanguage();
-  
   const requirements = [
-    { icon: Settings, label: t('req.gameVersion'), value: "GTA San Andreas v1.0 HOODLUM EXE" },
-    { icon: Download, label: t('req.dyom'), value: "DYOM 8.1 (included below)" },
-    { icon: Monitor, label: t('req.os'), value: "Windows XP or higher" },
-    { icon: Cpu, label: t('req.ram'), value: "1GB minimum (2GB recommended)" },
-    { icon: HardDrive, label: t('req.graphics'), value: "1GB VRAM minimum" },
-    { icon: HardDrive, label: t('req.storage'), value: "At least 6GB free space" },
+    { icon: Settings, label: "Game Version", value: "GTA San Andreas v1.0 HOODLUM EXE" },
+    { icon: Download, label: "DYOM", value: "DYOM 8.1 (included below)" },
+    { icon: Monitor, label: "Operating System", value: "Windows XP or higher" },
+    { icon: Cpu, label: "RAM", value: "1GB minimum (2GB recommended)" },
+    { icon: HardDrive, label: "Graphics", value: "1GB VRAM minimum" },
+    { icon: HardDrive, label: "Storage", value: "At least 6GB free space" },
   ];
 
   const downloads = [
     {
-      name: t('req.cleo5'),
-      description: t('req.cleo5Desc'),
+      name: "CLEO 5",
+      description: "Required for running CLEO scripts.",
       url: "https://github.com/cleolibrary/CLEO5/releases/download/v5.0.0-RC2/SA.CLEO_v5.0.0-RC2+Silent_ASI_Loader.zip",
       color: "bg-blue-600 hover:bg-blue-700"
     },
     {
       name: "DYOM 8.1",
-      description: t('req.dyomDesc'),
+      description: "Design Your Own Mission tool for GTA SA.",
       url: "https://www.gtagarage.com/mods/download.php?f=35188",
       color: "bg-orange-600 hover:bg-orange-700"
     },
     {
-      name: t('req.cleoPlus'),
-      description: t('req.cleoPlusDesc'),
+      name: "CLEO+",
+      description: "Enhances CLEO with more opcodes and features.",
       url: "https://www.mixmods.com.br/2023/10/cleoplus/",
       color: "bg-purple-600 hover:bg-purple-700"
     },
     {
-      name: t('req.essentials'),
-      description: t('req.essentialsDesc'),
+      name: "Essentials Pack",
+      description: "A bundle with must-have files and plugins.",
       url: "https://www.mediafire.com/file/pw94wuhxg49xli6/GTA_SAS_essentials_pack.rar/file",
       color: "bg-red-600 hover:bg-red-700"
     }
@@ -48,10 +46,10 @@ const RequirementsSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
-            {t('req.title')}
+            Requirements
           </h2>
           <p className="text-xl text-muted-foreground">
-            {t('req.subtitle')}
+            What you need to run GTA San Andreas Stories.
           </p>
         </div>
 
@@ -60,7 +58,7 @@ const RequirementsSection = () => {
           <Card className="card-glass hover-lift">
             <CardHeader>
               <CardTitle className="text-2xl font-heading text-primary">
-                {t('req.minimum')}
+                Minimum Requirements
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -81,7 +79,7 @@ const RequirementsSection = () => {
               
               <div className="mt-6 p-4 bg-warning/10 border border-warning/20 rounded-lg">
                 <p className="text-sm text-warning-foreground">
-                  <strong>Note:</strong> {t('req.note')}
+                  <strong>Note:</strong> You must use a clean GTA SA installation.
                 </p>
               </div>
             </CardContent>
@@ -91,12 +89,12 @@ const RequirementsSection = () => {
           <Card className="card-glass hover-lift">
             <CardHeader>
               <CardTitle className="text-2xl font-heading text-secondary">
-                {t('req.additional')}
+                Additional Downloads
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-6">
-                {t('req.description')}
+                Download the following files to set up GTA San Andreas Stories.
               </p>
               
               <div className="space-y-3">
@@ -113,7 +111,7 @@ const RequirementsSection = () => {
                     >
                       <a href={download.url} target="_blank" rel="noopener noreferrer">
                         <Download className="h-4 w-4 mr-1" />
-                        {t('get')}
+                        Get
                       </a>
                     </Button>
                   </div>
@@ -122,7 +120,7 @@ const RequirementsSection = () => {
 
               <div className="mt-6">
                 <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
-                  {t('req.cleanInstall')}
+                  Clean installation is highly recommended
                 </Badge>
               </div>
             </CardContent>
