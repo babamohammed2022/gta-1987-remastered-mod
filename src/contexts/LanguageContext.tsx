@@ -1,15 +1,17 @@
-// src/contexts/LanguageContext.tsx
+import React, { createContext, useContext } from "react";
 
-import React from "react";
+const LanguageContext = createContext({
+  t: (key: string) => key, // dummy translation function returns the key as-is
+});
 
 export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
-  return <>{children}</>; // Just render children, no context
+  return (
+    <LanguageContext.Provider value={{ t: (key: string) => key }}>
+      {children}
+    </LanguageContext.Provider>
+  );
 };
 
 export const useLanguage = () => {
-  // Return a dummy `t` function that returns the key as-is
-  return {
-    t: (key: string) => key,
-  };
+  return useContext(LanguageContext);
 };
-
