@@ -1,10 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, Star, Heart } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const CreditsSection = () => {
-  const { t } = useLanguage();
   const developmentTeam = [
     { name: "babamohammed2022", role: "Project Owner, Lead Mission Designer, Storywriting" },
     { name: "Abdullah", role: "Website Design, Models, Suggestions, Programming" },
@@ -36,8 +34,8 @@ const CreditsSection = () => {
     { name: "MAHMOGAMER", role: "Project Supervision" },
     { name: "MaxMakoShark", role: "Server Supervision" },
     { name: "Tix", role: "Gameplay Testing" },
-    { name: "Raul", role: "Visual Enhancements, Mission Testing and Enhancing, Storyline Improvements, Video Recording, Supervision, Bug Reports" }, // <-- comma added here
-    { name: "Urafael Games", role: "Coding Expertise and ASI Development" } 
+    { name: "Raul", role: "Visual Enhancements, Mission Testing and Enhancing, Storyline Improvements, Video Recording, Supervision, Bug Reports" },
+    { name: "Urafael Games", role: "Coding Expertise and ASI Development" }
   ];
 
   const specialThanks = [
@@ -49,10 +47,10 @@ const CreditsSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
-            {t('credits.title')}
+            Credits
           </h2>
           <p className="text-xl text-muted-foreground">
-            {t('credits.subtitle')}
+            Meet the amazing team behind this project who made everything possible.
           </p>
         </div>
 
@@ -62,7 +60,7 @@ const CreditsSection = () => {
             <CardHeader>
               <CardTitle className="text-2xl font-heading text-primary flex items-center">
                 <Users className="h-6 w-6 mr-2" />
-                {t('credits.coreTeam')}
+                Core Team
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -82,7 +80,7 @@ const CreditsSection = () => {
             <CardHeader>
               <CardTitle className="text-2xl font-heading text-primary flex items-center">
                 <Star className="h-6 w-6 mr-2" />
-                {t('credits.contributors')}
+                Contributors
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -103,12 +101,12 @@ const CreditsSection = () => {
           <CardHeader>
             <CardTitle className="text-2xl font-heading text-primary flex items-center justify-center">
               <Heart className="h-6 w-6 mr-2" />
-              {t('credits.thanks')}
+              Special Thanks
             </CardTitle>
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-muted-foreground mb-4">
-              {t('credits.thanksDesc')}
+              We want to express our deepest gratitude to everyone who supported this project.
             </p>
             <div className="flex flex-wrap justify-center gap-2 mb-4">
               {specialThanks.map((name, index) => (
@@ -118,7 +116,7 @@ const CreditsSection = () => {
               ))}
             </div>
             <p className="text-sm text-muted-foreground italic">
-              {t('credits.fullCredits')}
+              Full credits can be found on our official website.
             </p>
           </CardContent>
         </Card>
