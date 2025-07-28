@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"; 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Download, Package, BookOpen, Wrench, Clock, AlertTriangle, Check, Zap } from "lucide-react";
@@ -15,17 +15,28 @@ const DownloadSection = () => {
       icon: Package,
       required: true,
       available: true,
+      features: [
+        "Story-style textures",
+        "New models",
+        "New cheat codes",
+        "Enhanced cars",
+        "And more"
+      ]
     },
     {
       id: "storyline",
       title: "Storyline",
       status: "UPDATED · 19 June 2025",
       version: "v1.4.0",
-      description: "Main storyline files to play missions. Contains Chapter 1 and Chapter 2 with voice acting and cinematic cutscenes.",
+      description: "Main storyline files to play missions. Contains chapter 1 and chapter 2 with voice acting.",
       url: "https://drive.google.com/file/d/1w81owBoehbU3ianyG5Czmj-qNobUoAxi/view?usp=sharing",
       icon: BookOpen,
       required: true,
       available: true,
+      features: [
+        "Chapter 1 and Chapter 2",
+        "Voice acting"
+      ]
     },
     {
       id: "patch",
@@ -37,6 +48,11 @@ const DownloadSection = () => {
       icon: Wrench,
       required: false,
       available: false,
+      features: [
+        "Bug fixes",
+        "Performance boost",
+        "QoL improvements"
+      ]
     }
   ];
 
@@ -60,18 +76,15 @@ const DownloadSection = () => {
           {downloads.map((item) => {
             const Icon = item.icon;
             return (
-              <Card
-                key={item.id}
-                className={`relative overflow-hidden group transition-all duration-300 pt-16 pb-8 ${!item.available ? 'opacity-80' : 'hover:shadow-lg hover:-translate-y-2'}`}
-              >
+              <Card key={item.id} className={`relative overflow-hidden group transition-all duration-300 ${!item.available ? 'opacity-80' : 'hover:shadow-lg hover:-translate-y-2'}`}>
                 {/* Glow effect for available items */}
                 {item.available && (
                   <div className="absolute inset-0 bg-primary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                 )}
-
+                
                 {/* Ribbon for required items */}
                 {item.required && (
-                  <div className="absolute -right-10 -top-3 w-40 bg-red-500 text-white text-sm font-bold text-center py-2 transform rotate-45 shadow-lg z-10 tracking-wider">
+                  <div className="absolute -right-8 -top-2 w-32 bg-red-600 text-white text-xs font-bold text-center py-1 transform rotate-45 shadow-lg z-10">
                     REQUIRED
                   </div>
                 )}
@@ -89,29 +102,42 @@ const DownloadSection = () => {
                         </div>
                       </div>
                     </CardTitle>
-                    <Badge
-                      variant={item.status.includes("UPDATED") ? "default" : "secondary"}
+                    <Badge 
+                      variant={item.status.includes("UPDATED") ? "default" : "secondary"} 
                       className={`text-xs ${item.status.includes("UPDATED") ? 'bg-green-500/20 text-green-400' : 'bg-purple-500/20 text-purple-400'}`}
                     >
                       {item.status}
                     </Badge>
                   </div>
                 </CardHeader>
-
-                <CardContent className="space-y-4 mt-4">
+                
+                <CardContent className="space-y-4">
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {item.description}
                   </p>
+                  
+                  <div className="space-y-2">
+                    <h4 className="text-sm font-medium text-primary">Includes:</h4>
+                    <ul className="space-y-2">
+                      {item.features.map((feature, i) => (
+                        <li key={i} className="flex items-center text-sm text-muted-foreground">
+                          <Check className="h-4 w-4 mr-2 text-green-500" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
                   {item.available ? (
-                    <Button asChild className="w-full mt-14 h-16 text-lg font-semibold rounded-lg">
+                    <Button asChild className="w-full mt-4 btn-gaming group">
                       <a href={item.url} target="_blank" rel="noopener noreferrer">
-                        <Download className="mr-2 h-6 w-6 transition-transform group-hover:animate-bounce" />
+                        <Download className="mr-2 h-4 w-4 transition-transform group-hover:animate-bounce" />
                         Download Now
                       </a>
                     </Button>
                   ) : (
-                    <Button disabled className="w-full mt-14 opacity-75 cursor-not-allowed h-16 text-lg font-semibold rounded-lg">
-                      <Clock className="mr-2 h-6 w-6 animate-pulse" />
+                    <Button disabled className="w-full mt-4 opacity-75 cursor-not-allowed">
+                      <Clock className="mr-2 h-4 w-4 animate-pulse" />
                       Coming Soon
                     </Button>
                   )}
@@ -135,7 +161,7 @@ const DownloadSection = () => {
                     <div>
                       <h4 className="font-medium">Download Files</h4>
                       <p className="text-sm text-muted-foreground mt-1">
-                        Get all required files (marked with red badge). Make sure you have enough disk space.
+                        Download all the required files.
                       </p>
                     </div>
                   </div>
@@ -144,7 +170,7 @@ const DownloadSection = () => {
                     <div>
                       <h4 className="font-medium">Follow Instructions</h4>
                       <p className="text-sm text-muted-foreground mt-1">
-                        Check included README files for specific installation notes or requirements.
+                        Follow any README instructions if included.
                       </p>
                     </div>
                   </div>
@@ -153,9 +179,9 @@ const DownloadSection = () => {
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">2</div>
                     <div>
-                      <h4 className="font-medium">Extract to GTA Folder</h4>
+                      <h4 className="font-medium">Extract Files</h4>
                       <p className="text-sm text-muted-foreground mt-1">
-                        Place all the files of the modpack in your clean GTA San Andreas installation directory, while the storyline files need to be placed inside the "GTA San Andreas User Files" folder, which is usually located inside the "Documents" folder on your PC.
+                        Extract the modpack into your GTA San Andreas folder, while the storyline should be extracted into the "GTA San Andreas User Files" directory, which is usually located in the user's Documents folder.
                       </p>
                     </div>
                   </div>
@@ -164,15 +190,14 @@ const DownloadSection = () => {
                     <div>
                       <h4 className="font-medium">Launch and Enjoy</h4>
                       <p className="text-sm text-muted-foreground mt-1">
-                        Start the game through the new launcher and begin your story.
+                        Start the game and enjoy the storyline.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="mt-8 text-sm text-muted-foreground bg-muted/50 p-4 rounded-lg border border-muted">
-                <strong>Note:</strong> For best performance, ensure your game is patched to version 1.0 and running on Windows 10/11. 
-                Some antivirus may flag mod files - add exceptions if needed.
+                <strong>Note:</strong> For best performance, ensure your game is patched to version 1.0 and running on Windows 10/11. Some antivirus software may flag mod files—add exceptions if needed.
               </div>
             </div>
           </div>
