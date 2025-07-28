@@ -1,9 +1,7 @@
 import { ExternalLink } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const { t } = useLanguage();
 
   return (
     <footer className="bg-card border-t border-border py-12 px-4">
@@ -15,14 +13,14 @@ const Footer = () => {
               GTA San Andreas Stories
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              {t('footer.description')}
+              Unofficial mod based on GTA San Andreas. Not affiliated with Rockstar Games.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-heading font-semibold mb-4 text-foreground">
-              {t('footer.quickLinks')}
+              Quick Links
             </h3>
             <div className="space-y-2">
               <a
@@ -32,7 +30,7 @@ const Footer = () => {
                 className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <ExternalLink className="h-3 w-3 mr-2" />
-                {t('footer.discordCommunity')}
+                Discord Community
               </a>
               <a
                 href="https://gtasasmanual.netlify.app/"
@@ -41,7 +39,7 @@ const Footer = () => {
                 className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <ExternalLink className="h-3 w-3 mr-2" />
-                {t('footer.userManual')}
+                User Manual
               </a>
               <a
                 href="#download"
@@ -53,7 +51,7 @@ const Footer = () => {
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                {t('footer.downloads')}
+                Downloads
               </a>
             </div>
           </div>
@@ -61,10 +59,11 @@ const Footer = () => {
           {/* Disclaimer */}
           <div>
             <h3 className="text-lg font-heading font-semibold mb-4 text-foreground">
-              {t('footer.legal')}
+              Legal
             </h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              {t('footer.disclaimer')}
+              This project is a fan-made work and is not affiliated, endorsed, or sponsored by Rockstar Games or Take-Two Interactive.
+              All trademarks belong to their respective owners.
             </p>
           </div>
         </div>
