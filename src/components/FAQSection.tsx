@@ -66,6 +66,10 @@ const FAQSection = () => {
     {
       question: "What are the limitations of this mod?",
       answer: "This mod does not support multiplayer (like SAMP), heavy CLEO mods, or total conversion packs. It's built for clean, single-player gameplay with a focus on custom missions and storyline."
+    },
+    {
+      question: "Are there any special features or hidden easter eggs included in the mod?",
+      answer: "Yes, the mod includes several hidden easter eggs such as secret locations (hint: Visit Big Smoke's crack palace to find something interesting), unique dialogue lines, and references to classic GTA lore that players can discover throughout Los Santos."
     }
   ];
 
