@@ -9,7 +9,7 @@ const DownloadSection = () => {
       id: "modpack",
       title: "Modpack",
       status: "UPDATED · 23 July 2025",
-      description: "A curated collection of essential mods and resources that breathe life into the storyline. Must be installed in your GTA San Andreas CLEAN folder to work flawlessly.",
+      description: "Essential mods and resources for the storyline.",
       url: "https://mega.nz/file/LrwUwKCQ#4WBJR25lvqsWcv3XvvGyoJeXCUOzvdKUwd9x3r6PuFk",
       icon: Package,
       required: true,
@@ -19,7 +19,7 @@ const DownloadSection = () => {
       id: "storyline",
       title: "Storyline",
       status: "UPDATED · 19 June 2025",
-      description: "The core storyline files that bring the missions to life. Place these in your GTA San Andreas USER FILES folder, typically found in the Documents directory on your PC.",
+      description: "Main storyline files to play missions.",
       url: "https://drive.google.com/file/d/1w81owBoehbU3ianyG5Czmj-qNobUoAxi/view?usp=sharing",
       icon: BookOpen,
       required: true,
@@ -29,7 +29,7 @@ const DownloadSection = () => {
       id: "patch",
       title: "Patch",
       status: "v1.0.0",
-      description: "Optional fixes and enhancements designed to improve your gameplay experience. Stay tuned for updates!",
+      description: "Optional fixes or enhancements.",
       url: "#",
       icon: Wrench,
       required: false,
@@ -42,10 +42,10 @@ const DownloadSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
-            Ready to Dive In? Download Now
+            Downloads
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Everything you need to jump straight into the action. Follow the steps carefully to ensure a smooth setup and an unforgettable experience.
+          <p className="text-xl text-muted-foreground">
+            Get everything you need to start the game.
           </p>
         </div>
 
@@ -60,34 +60,32 @@ const DownloadSection = () => {
                       <Icon className="h-5 w-5 mr-2" />
                       {item.title}
                     </CardTitle>
-                    <Badge 
-                      variant={item.status.includes("UPDATED") ? "default" : "secondary"} 
-                      className={item.status.includes("UPDATED") ? "bg-primary text-primary-foreground" : ""}
-                    >
+                    <Badge variant={item.status.includes("UPDATED") ? "default" : "secondary"} 
+                           className={item.status.includes("UPDATED") ? "bg-primary text-primary-foreground" : ""}>
                       {item.status}
                     </Badge>
                   </div>
                   {item.required && (
-                    <Badge variant="outline" className="bg-red-500/10 text-red-400 border-red-500/20 w-fit mt-2">
+                    <Badge variant="outline" className="bg-red-500/10 text-red-400 border-red-500/20 w-fit">
                       Required
                     </Badge>
                   )}
                 </CardHeader>
-
+                
                 <CardContent className="space-y-4">
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {item.description}
                   </p>
-
+                  
                   {item.available ? (
                     <Button asChild className="w-full btn-gaming">
-                      <a href={item.url} target="_blank" rel="noopener noreferrer" aria-label={`Download ${item.title}`}>
+                      <a href={item.url} target="_blank" rel="noopener noreferrer">
                         <Download className="mr-2 h-4 w-4" />
                         Download {item.title}
                       </a>
                     </Button>
                   ) : (
-                    <Button disabled className="w-full opacity-50 cursor-not-allowed" aria-disabled="true">
+                    <Button disabled className="w-full opacity-50 cursor-not-allowed">
                       <Clock className="mr-2 h-4 w-4" />
                       Coming Soon
                     </Button>
@@ -101,32 +99,24 @@ const DownloadSection = () => {
         <div className="mt-12 text-center">
           <div className="card-glass p-6 max-w-3xl mx-auto">
             <h3 className="text-2xl font-heading font-bold mb-4 text-secondary">
-              Installation Guide — Follow These Steps
+              How to Install
             </h3>
-            <div className="text-left space-y-4 text-muted-foreground">
+            <div className="text-left space-y-3 text-muted-foreground">
               <div className="flex items-start space-x-3">
                 <span className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold mt-0.5">1</span>
-                <span>Download all the <strong>required</strong> files listed above.</span>
+                <span>Download all the required files.</span>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold mt-0.5">2</span>
-                <span>
-                  Extract the <strong>Modpack</strong> into your GTA San Andreas <em>clean</em> installation folder — this is where the game is installed, without modifications.
-                </span>
+                <span>Extract them into your GTA San Andreas folder.</span>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold mt-0.5">3</span>
-                <span>
-                  Place the <strong>Storyline</strong> files inside your GTA San Andreas <em>user files</em> folder, typically located in <code>Documents\GTA San Andreas User Files</code> on your PC.
-                </span>
+                <span>Follow any README instructions if included.</span>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold mt-0.5">4</span>
-                <span>If included, follow any additional README instructions for patch or optional files.</span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <span className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold mt-0.5">5</span>
-                <span>Launch the game and immerse yourself in the epic new storyline!</span>
+                <span>Start the game and enjoy the storyline.</span>
               </div>
             </div>
           </div>
