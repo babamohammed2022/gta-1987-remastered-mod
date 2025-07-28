@@ -1,4 +1,3 @@
-import { LanguageProvider } from "@/contexts/LanguageContext";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import InfoSection from "@/components/InfoSection";
@@ -16,26 +15,24 @@ import SocialLinks from "@/components/SocialLinks";
 
 const Index = () => {
   return (
-    <LanguageProvider>
-      <div className="min-h-screen bg-background">
-        {/* <LoadingScreen /> Removed */}
-        <ProgressBar />
-        <Navigation />
-        <Hero />
-        <InfoSection />
-        {/* <NewsSection /> Removed */}
-        <TrailerSection />
-        <GallerySection />
-        <CreditsSection />
-        <FAQSection />
-        <RequirementsSection />
-        <DownloadSection />
-        <Footer />
-        <ChatBot />
-        <BackToTop />
-        <SocialLinks />
-      </div>
-    </LanguageProvider>
+    <div className="min-h-screen bg-background">
+      {/* <LoadingScreen /> Removed */}
+      <ProgressBar />
+      <Navigation />
+      <Hero />
+      <InfoSection />
+      {/* <NewsSection /> Removed */}
+      <TrailerSection />
+      <GallerySection />
+      <CreditsSection />
+      <FAQSection />
+      <RequirementsSection />
+      <DownloadSection />
+      <Footer />
+      <ChatBot />
+      <BackToTop />
+      <SocialLinks />
+    </div>
   );
 };
 
