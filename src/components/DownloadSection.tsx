@@ -66,7 +66,7 @@ const DownloadSection = () => {
           {downloads.map((item) => {
             const Icon = item.icon;
             return (
-              <Card key={item.id} className={`relative overflow-hidden group transition-all duration-300 ${!item.available ? 'opacity-80' : 'hover:shadow-lg hover:-translate-y-2'}`}>
+              <Card key={item.id} className={`relative overflow-hidden group transition-all duration-300 pt-6 ${!item.available ? 'opacity-80' : 'hover:shadow-lg hover:-translate-y-2'}`}>
                 {/* Glow effect for available items */}
                 {item.available && (
                   <div className="absolute inset-0 bg-primary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -74,7 +74,7 @@ const DownloadSection = () => {
                 
                 {/* Ribbon for required items */}
                 {item.required && (
-                  <div className="absolute -right-8 -top-2 w-32 bg-red-500 text-white text-xs font-bold text-center py-1 transform rotate-45 shadow-lg">
+                  <div className="absolute -right-8 -top-2 w-32 bg-red-500 text-white text-xs font-bold text-center py-1 transform rotate-45 shadow-lg z-10">
                     REQUIRED
                   </div>
                 )}
@@ -101,33 +101,20 @@ const DownloadSection = () => {
                   </div>
                 </CardHeader>
                 
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-4 mt-2">
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {item.description}
                   </p>
-                  
-                  <div className="space-y-2">
-                    <h4 className="text-sm font-medium text-primary">Includes:</h4>
-                    <ul className="space-y-2">
-                      {item.features.map((feature, i) => (
-                        <li key={i} className="flex items-center text-sm text-muted-foreground">
-                          <Check className="h-4 w-4 mr-2 text-green-500" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
                   {item.available ? (
-                    <Button asChild className="w-full mt-4 btn-gaming group">
+                    <Button asChild className="w-full mt-8 btn-gaming group h-14 text-base font-semibold rounded-lg">
                       <a href={item.url} target="_blank" rel="noopener noreferrer">
-                        <Download className="mr-2 h-4 w-4 transition-transform group-hover:animate-bounce" />
+                        <Download className="mr-2 h-5 w-5 transition-transform group-hover:animate-bounce" />
                         Download Now
                       </a>
                     </Button>
                   ) : (
-                    <Button disabled className="w-full mt-4 opacity-75 cursor-not-allowed">
-                      <Clock className="mr-2 h-4 w-4 animate-pulse" />
+                    <Button disabled className="w-full mt-8 opacity-75 cursor-not-allowed h-14 text-base font-semibold rounded-lg">
+                      <Clock className="mr-2 h-5 w-5 animate-pulse" />
                       Coming Soon
                     </Button>
                   )}
