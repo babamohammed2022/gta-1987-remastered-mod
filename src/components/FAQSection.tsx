@@ -2,20 +2,62 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const FAQSection = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const { t } = useLanguage();
 
-  // Replaced all t('...') calls with fixed English strings directly
   const faqs = [
     {
-      question: "What is GTA 1987 Remastered Mod?",
-      answer: "It's a mod for GTA San Andreas that remasters the 1987 experience."
+      question: "In what year and location does the mod take place?",
+      answer: "The mod is set in 1987 in Los Santos, a city on the brink of chaos where rival gangs, including the notorious Grove Street Families, battle for control."
     },
     {
-      question: "How do I become a developer/staff?",
-      answer: "Join the Discord server and open a ticket to apply for staff/developer positions. Share at least one of your works, and the owner/staff will decide if you are in or not."
+      question: "Who is the central figure leading the story?",
+      answer: 'The main character is Lance "Ryder" Wilson, a loyal member of the Grove Street Families who returns from Vice City to strengthen the gang during CJ\'s absence.'
     },
+    {
+      question: "What prompted CJ to leave Los Santos originally?",
+      answer: "CJ, or Carl Johnson, departed Los Santos after his brother Brian's death, relocating to Liberty City and leaving the Grove Street Families in the care of his brother Sweet and others."
+    },
+    {
+      question: "Which characters serve as the primary antagonists in this narrative?",
+      answer: 'Victor "Viper" Mendez is the main antagonist, a merciless drug lord connected to a South American cartel aiming to expand his empire throughout Los Santos, targeting the Grove Street Families.'
+    },
+    {
+      question: "Does the storyline consist of multiple parts or chapters?",
+      answer: "Yes, the storyline is structured into three intense chapters featuring brutal gang wars and missions that challenge Ryder and his crew."
+    },
+    {
+      question: "Is there any news about future expansions or additional content?",
+      answer: "Plans include downloadable content (DLC) to extend and enrich the mod’s storyline and gameplay after the initial release."
+    },
+    {
+      question: "Where can I get the latest news and updates about the mod’s development?",
+      answer: 'Updates are available on the official Discord server and the YouTube channel named "cerdopalo."'
+    },
+    {
+      question: "How drastically will this mod alter the original Grand Theft Auto: San Andreas experience?",
+      answer: "The mod significantly revamps many aspects including missions, characters, gameplay systems, and visuals to create an alternative 1987 Los Santos experience."
+    },
+    {
+      question: "Which gangs are featured within the mod’s storyline?",
+      answer: "Gangs such as the Grove Street Families, Ballas, La Sombra del Cuervo, Vagos, Seville Boulevard Families, Temple Drive Families, Aztecas, Russian Mafia, and Sindaccos play roles in the story."
+    },
+    {
+      question: "Who allies with the Grove Street Families throughout the story?",
+      answer: "Their allies include the Seville Boulevard Families, Temple Drive Families, and Tommy Vercetti."
+    },
+    {
+      question: "What is Ryder’s background prior to returning to Los Santos?",
+      answer: "Ryder worked for Tommy Vercetti in Vice City before coming back to rejoin the Grove Street Families."
+    },
+    {
+      question: "Are there optional side missions included in the mod?",
+      answer: "Yes, side missions like Pizza Delivery, Trash Dash, and an upcoming Drug Bust Operation are featured, with mission vehicles accessible in locations such as Idlewood and Willowfield."
+    },
+    // Additional questions you requested to keep:
     {
       question: "Where do I install the modpack?",
       answer: "Install the modpack in your main GTA San Andreas folder. It must be a clean installation without SAMP or any other mods."
@@ -26,9 +68,8 @@ const FAQSection = () => {
     },
     {
       question: "What are the limitations of this mod?",
-      answer: "This mod does not support multiplayer (like SAMP), heavy CLEO mods, or total conversion packs."
-    },
-    // Add more FAQ entries here as needed...
+      answer: "This mod does not support multiplayer (like SAMP), heavy CLEO mods, or total conversion packs. It’s built for clean, single-player gameplay with a focus on custom missions and storyline."
+    }
   ];
 
   const filteredFAQs = faqs.filter(
@@ -42,10 +83,10 @@ const FAQSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
-            FAQ
+            {t('faq.title')}
           </h2>
           <p className="text-xl text-muted-foreground">
-            Frequently Asked Questions
+            {t('faq.subtitle')}
           </p>
         </div>
 
@@ -54,7 +95,7 @@ const FAQSection = () => {
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
           <Input
             type="text"
-            placeholder="Search FAQ"
+            placeholder={t('faq.search')}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="pl-10 bg-card border-border focus:border-primary"
@@ -82,7 +123,7 @@ const FAQSection = () => {
         {filteredFAQs.length === 0 && (
           <div className="text-center py-12">
             <p className="text-muted-foreground text-lg">
-              No results found.
+              {t('faq.noResults')}
             </p>
           </div>
         )}
