@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Download, Package, BookOpen, Wrench, Clock, AlertTriangle, Check, Zap } from "lucide-react";
+import { Download, Package, BookOpen, Wrench, Clock, Info } from "lucide-react";
 
 const DownloadSection = () => {
   const downloads = [
@@ -9,110 +9,108 @@ const DownloadSection = () => {
       id: "modpack",
       title: "Modpack",
       status: "UPDATED · 23 July 2025",
-      version: "v2.3.1",
-      description: "Essential mods and resources for the storyline. Includes all required assets, textures, and gameplay modifications.",
+      description: "Essential mods and resources for the storyline.",
       url: "https://mega.nz/file/LrwUwKCQ#4WBJR25lvqsWcv3XvvGyoJeXCUOzvdKUwd9x3r6PuFk",
       icon: Package,
       required: true,
-      available: true,
+      available: true
     },
     {
       id: "storyline",
       title: "Storyline",
       status: "UPDATED · 19 June 2025",
-      version: "v1.4.0",
-      description: "Main storyline files to play missions. Contains 45+ custom missions with voice acting and cinematic cutscenes.",
+      description: "Main storyline files to play missions.",
       url: "https://drive.google.com/file/d/1w81owBoehbU3ianyG5Czmj-qNobUoAxi/view?usp=sharing",
       icon: BookOpen,
       required: true,
-      available: true,
+      available: true
     },
     {
       id: "patch",
       title: "Patch",
-      status: "COMING SOON",
-      version: "v1.0.0",
-      description: "Optional fixes and enhancements including bug fixes, performance improvements, and quality-of-life changes.",
+      status: "v1.0.0",
+      description: "Optional fixes or enhancements.",
       url: "#",
       icon: Wrench,
       required: false,
-      available: false,
+      available: false
     }
   ];
 
   return (
-    <section id="download" className="py-20 px-4 bg-gradient-to-b from-muted/10 to-muted/30">
+    <section id="download" className="py-12 md:py-20 px-4 bg-muted/20">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 bg-primary/10 text-primary border-primary/20 hover:bg-primary/15">
-            <Zap className="h-4 w-4 mr-2" />
-            Ready to Play
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
-            Download & Install
+        <div className="text-center mb-10 md:mb-14">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-3 text-gradient animate-gradient-xy">
+            Downloads
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Get everything you need to start your 1987 Los Santos adventure
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            Grab the essential files and gear up to dive into the immersive storyline. Download now and embark on your journey through Los Santos!
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {downloads.map((item) => {
             const Icon = item.icon;
+            const isUpdated = item.status.includes("UPDATED");
             return (
               <Card
                 key={item.id}
-                className={`relative overflow-hidden group transition-all duration-300 pt-16 pb-8 ${!item.available ? 'opacity-80' : 'hover:shadow-lg hover:-translate-y-2'}`}
+                className={`card-glass hover-lift relative transition-transform hover:scale-[1.03] ${
+                  !item.available ? "opacity-70 cursor-not-allowed" : "cursor-pointer"
+                }`}
+                title={item.available ? item.description : "Coming soon..."}
+                tabIndex={item.available ? 0 : -1}
+                aria-disabled={!item.available}
               >
-                {/* Glow effect for available items */}
-                {item.available && (
-                  <div className="absolute inset-0 bg-primary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                )}
-
-                {/* Ribbon for required items */}
-                {item.required && (
-                  <div className="absolute -right-10 -top-3 w-40 bg-red-500 text-white text-sm font-bold text-center py-2 transform rotate-45 shadow-lg z-10 tracking-wider">
-                    REQUIRED
-                  </div>
-                )}
-
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-xl font-heading flex items-center gap-3">
-                      <div className={`p-3 rounded-lg ${item.available ? 'bg-primary/10 text-primary' : 'bg-muted text-muted-foreground'}`}>
-                        <Icon className="h-6 w-6" />
-                      </div>
-                      <div>
-                        <div>{item.title}</div>
-                        <div className="text-sm font-normal text-muted-foreground">
-                          {item.version}
-                        </div>
-                      </div>
+                <CardHeader className="pb-3">
+                  <div className="flex items-center justify-between flex-wrap gap-2">
+                    <CardTitle className="text-lg md:text-xl font-heading text-primary flex items-center gap-2">
+                      <Icon className="h-5 w-5 md:h-6 md:w-6 text-primary animate-bounce-slow" />
+                      {item.title}
                     </CardTitle>
                     <Badge
-                      variant={item.status.includes("UPDATED") ? "default" : "secondary"}
-                      className={`text-xs ${item.status.includes("UPDATED") ? 'bg-green-500/20 text-green-400' : 'bg-purple-500/20 text-purple-400'}`}
+                      variant={isUpdated ? "default" : "secondary"}
+                      className={`whitespace-nowrap px-2 py-1 md:px-3 rounded-full text-xs md:text-sm font-semibold ${
+                        isUpdated
+                          ? "bg-primary text-primary-foreground animate-pulse"
+                          : "bg-muted text-muted-foreground"
+                      }`}
+                      aria-label={item.status}
                     >
                       {item.status}
                     </Badge>
                   </div>
+                  {item.required && (
+                    <Badge
+                      variant="outline"
+                      className="bg-red-500/20 text-red-500 border-red-500/40 w-fit mt-1 text-xs md:text-sm font-semibold"
+                      aria-label="Required download"
+                    >
+                      Required
+                    </Badge>
+                  )}
                 </CardHeader>
 
-                <CardContent className="space-y-4 mt-4">
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {item.description}
-                  </p>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground text-sm md:text-base leading-relaxed">{item.description}</p>
+
                   {item.available ? (
-                    <Button asChild className="w-full mt-14 h-16 text-lg font-semibold rounded-lg">
-                      <a href={item.url} target="_blank" rel="noopener noreferrer">
-                        <Download className="mr-2 h-6 w-6 transition-transform group-hover:animate-bounce" />
-                        Download Now
+                    <Button asChild className="w-full btn-gaming shadow-lg hover:shadow-primary/50 flex items-center justify-center gap-2" aria-label={`Download ${item.title}`}>
+                      <a href={item.url} target="_blank" rel="noopener noreferrer" tabIndex={0}>
+                        <Download className="h-4 w-4 md:h-5 md:w-5" />
+                        <span className="text-sm md:text-base">Download {item.title}</span>
                       </a>
                     </Button>
                   ) : (
-                    <Button disabled className="w-full mt-14 opacity-75 cursor-not-allowed h-16 text-lg font-semibold rounded-lg">
-                      <Clock className="mr-2 h-6 w-6 animate-pulse" />
-                      Coming Soon
+                    <Button
+                      disabled
+                      className="w-full opacity-60 cursor-not-allowed flex items-center justify-center gap-2"
+                      aria-label={`${item.title} coming soon`}
+                      title="This download will be available soon"
+                    >
+                      <Clock className="h-4 w-4 md:h-5 md:w-5 animate-pulse" />
+                      <span className="text-sm md:text-base">Coming Soon</span>
                     </Button>
                   )}
                 </CardContent>
@@ -121,60 +119,31 @@ const DownloadSection = () => {
           })}
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-muted/20 to-muted/50 p-0.5">
-            <div className="bg-background rounded-[11px] p-8">
-              <h3 className="text-2xl font-heading font-bold mb-6 text-gradient inline-flex items-center gap-2">
-                <AlertTriangle className="h-6 w-6 text-yellow-500" />
-                Installation Guide
-              </h3>
-              <div className="grid md:grid-cols-2 gap-6 text-left">
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">1</div>
-                    <div>
-                      <h4 className="font-medium">Download Files</h4>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        Get all required files (marked with red badge). Make sure you have enough disk space.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">3</div>
-                    <div>
-                      <h4 className="font-medium">Follow Instructions</h4>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        Check included README files for specific installation notes or requirements.
-                      </p>
-                    </div>
-                  </div>
+        <div className="mt-12 md:mt-16 text-center">
+          <div className="card-glass p-6 md:p-8 max-w-3xl mx-auto border border-primary/40 shadow-lg shadow-primary/10">
+            <h3 className="text-2xl md:text-3xl font-heading font-bold mb-4 md:mb-6 text-secondary flex items-center justify-center gap-2">
+              <Package className="inline-block h-6 w-6 md:h-8 md:w-8 text-secondary animate-spin-slow" />
+              How to Install
+            </h3>
+            <div className="text-left space-y-4 md:space-y-6 text-muted-foreground text-base md:text-lg leading-relaxed">
+              {[
+                "Download all the required files.",
+                "Extract the modpack into your GTA San Andreas folder. The storyline files should be extracted into the 'GTA San Andreas User Files' directory, which is usually located in the user's Documents folder.",
+                "Follow any included README instructions carefully.",
+                "Start the game and enjoy the storyline."
+              ].map((step, idx) => (
+                <div key={idx} className="flex items-start space-x-3 md:space-x-4">
+                  <span className="flex-shrink-0 flex items-center justify-center w-7 h-7 md:w-9 md:h-9 bg-primary text-primary-foreground rounded-full font-bold text-sm md:text-lg shadow-md shadow-primary/40 select-none mt-0.5">
+                    {idx + 1}
+                  </span>
+                  <p>{step}</p>
                 </div>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">2</div>
-                    <div>
-                      <h4 className="font-medium">Extract to GTA Folder</h4>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        Place all files in your clean GTA San Andreas installation directory.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">4</div>
-                    <div>
-                      <h4 className="font-medium">Launch and Enjoy</h4>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        Start the game through the new launcher and begin your story.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-8 text-sm text-muted-foreground bg-muted/50 p-4 rounded-lg border border-muted">
-                <strong>Note:</strong> For best performance, ensure your game is patched to version 1.0 and running on Windows 10/11. 
-                Some antivirus may flag mod files - add exceptions if needed.
-              </div>
+              ))}
             </div>
+            <p className="mt-4 md:mt-6 text-center text-xs md:text-sm text-muted-foreground italic">
+              <Info className="inline-block mr-1 h-3 w-3 md:h-4 md:w-4 text-primary" />
+              Make sure your installation folder is a clean GTA San Andreas setup without other mods for best compatibility.
+            </p>
           </div>
         </div>
       </div>
