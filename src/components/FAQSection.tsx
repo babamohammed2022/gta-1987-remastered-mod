@@ -2,11 +2,9 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const FAQSection = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const { t } = useLanguage();
 
   const faqs = [
     {
@@ -31,10 +29,10 @@ const FAQSection = () => {
     },
     {
       question: "Is there any news about future expansions or additional content?",
-      answer: "Plans include downloadable content (DLC) to extend and enrich the mod’s storyline and gameplay after the initial release."
+      answer: "Plans include downloadable content (DLC) to extend and enrich the mod's storyline and gameplay after the initial release."
     },
     {
-      question: "Where can I get the latest news and updates about the mod’s development?",
+      question: "Where can I get the latest news and updates about the mod's development?",
       answer: 'Updates are available on the official Discord server and the YouTube channel named "cerdopalo."'
     },
     {
@@ -42,7 +40,7 @@ const FAQSection = () => {
       answer: "The mod significantly revamps many aspects including missions, characters, gameplay systems, and visuals to create an alternative 1987 Los Santos experience."
     },
     {
-      question: "Which gangs are featured within the mod’s storyline?",
+      question: "Which gangs are featured within the mod's storyline?",
       answer: "Gangs such as the Grove Street Families, Ballas, La Sombra del Cuervo, Vagos, Seville Boulevard Families, Temple Drive Families, Aztecas, Russian Mafia, and Sindaccos play roles in the story."
     },
     {
@@ -50,14 +48,13 @@ const FAQSection = () => {
       answer: "Their allies include the Seville Boulevard Families, Temple Drive Families, and Tommy Vercetti."
     },
     {
-      question: "What is Ryder’s background prior to returning to Los Santos?",
+      question: "What is Ryder's background prior to returning to Los Santos?",
       answer: "Ryder worked for Tommy Vercetti in Vice City before coming back to rejoin the Grove Street Families."
     },
     {
       question: "Are there optional side missions included in the mod?",
       answer: "Yes, side missions like Pizza Delivery, Trash Dash, and an upcoming Drug Bust Operation are featured, with mission vehicles accessible in locations such as Idlewood and Willowfield."
     },
-    // Additional questions you requested to keep:
     {
       question: "Where do I install the modpack?",
       answer: "Install the modpack in your main GTA San Andreas folder. It must be a clean installation without SAMP or any other mods."
@@ -68,7 +65,7 @@ const FAQSection = () => {
     },
     {
       question: "What are the limitations of this mod?",
-      answer: "This mod does not support multiplayer (like SAMP), heavy CLEO mods, or total conversion packs. It’s built for clean, single-player gameplay with a focus on custom missions and storyline."
+      answer: "This mod does not support multiplayer (like SAMP), heavy CLEO mods, or total conversion packs. It's built for clean, single-player gameplay with a focus on custom missions and storyline."
     }
   ];
 
@@ -83,10 +80,10 @@ const FAQSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
-            {t('faq.title')}
+            Frequently Asked Questions
           </h2>
           <p className="text-xl text-muted-foreground">
-            {t('faq.subtitle')}
+            Find answers to common questions about the mod
           </p>
         </div>
 
@@ -95,7 +92,7 @@ const FAQSection = () => {
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
           <Input
             type="text"
-            placeholder={t('faq.search')}
+            placeholder="Search FAQs..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="pl-10 bg-card border-border focus:border-primary"
@@ -123,7 +120,7 @@ const FAQSection = () => {
         {filteredFAQs.length === 0 && (
           <div className="text-center py-12">
             <p className="text-muted-foreground text-lg">
-              {t('faq.noResults')}
+              No results found
             </p>
           </div>
         )}
