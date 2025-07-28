@@ -1,20 +1,18 @@
 import { useState } from "react";
 import { Play, Volume2, VolumeX } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const TrailerSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const { t } = useLanguage();
 
   return (
     <section id="trailer" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
-            {t('trailer.title')}
+            Official Trailer
           </h2>
           <p className="text-xl text-muted-foreground">
-            {t('trailer.subtitle')}
+            Experience the story, the action, and the world of San Andreas Stories.
           </p>
         </div>
 
@@ -39,10 +37,10 @@ const TrailerSection = () => {
         <div className="text-center mt-10">
           <div className="card-glass p-6 max-w-2xl mx-auto">
             <h3 className="text-xl font-heading font-bold mb-2 text-secondary">
-              {t('trailer.chapterTitle')}
+              About This Trailer
             </h3>
             <p className="text-muted-foreground">
-              {t('trailer.description')}
+              This official trailer gives you a first look at gameplay, story, and new features.
             </p>
             <p className="mt-4 text-muted-foreground">
               If you’d like to dive deeper, check out these extra videos:
