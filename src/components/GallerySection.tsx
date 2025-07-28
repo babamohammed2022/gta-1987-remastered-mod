@@ -104,7 +104,7 @@ const GallerySection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
-            Screenshots
+            Gallery
           </h2>
         </div>
 
@@ -205,7 +205,7 @@ const GallerySection = () => {
         {/* Disclaimer */}
         <div className="text-center">
           <p className="text-sm text-muted-foreground italic">
-            <strong>Disclaimer:</strong> All screenshots are in-game and may not reflect the final version.
+            <strong>Disclaimer:</strong> All images in this gallery are in-game and may not reflect the final version.
           </p>
         </div>
       </div>
