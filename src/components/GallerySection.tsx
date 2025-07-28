@@ -100,7 +100,7 @@ const GallerySection = () => {
   }, []);
 
   return (
-    <section id="screenshots" className="py-20 px-4 bg-muted/20">
+    <section id="gallery" className="py-20 px-4 bg-muted/20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
