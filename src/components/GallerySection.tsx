@@ -12,12 +12,10 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import screenshot5 from "@/assets/screenshot5.webp";
 import screenshot6 from "@/assets/screenshot6.webp";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const GallerySection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
-  const { t } = useLanguage();
 
   const images = useMemo(
     () => [
@@ -81,7 +79,6 @@ const GallerySection = () => {
     []
   );
 
-  // Sync carousel with current index
   useEffect(() => {
     if (carouselApi) {
       setTimeout(() => {
@@ -107,7 +104,7 @@ const GallerySection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
-            {t('gallery.title')}
+            Screenshots
           </h2>
         </div>
 
@@ -208,7 +205,7 @@ const GallerySection = () => {
         {/* Disclaimer */}
         <div className="text-center">
           <p className="text-sm text-muted-foreground italic">
-            <strong>Disclaimer:</strong> {t('gallery.disclaimer')}
+            <strong>Disclaimer:</strong> All screenshots are in-game and may not reflect the final version.
           </p>
         </div>
       </div>
