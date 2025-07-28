@@ -128,9 +128,9 @@ const DownloadSection = () => {
             <div className="text-left space-y-6 text-muted-foreground text-lg leading-relaxed">
               {[
                 "Download all the required files.",
-                'Extract the modpack into your GTA San Andreas folder, while the storyline should be extracted into the "GTA San Andreas User Files" directory, which is usually located in the user\'s Documents folder.',
-                "Follow any README instructions if included.",
-                "Start the game and enjoy the storyline.",
+                "Extract the modpack into your GTA San Andreas folder. The storyline files should be extracted into the 'GTA San Andreas User Files' directory, which is usually located in the user's Documents folder.",
+                "Follow any included README instructions carefully.",
+                "Start the game and enjoy the storyline."
               ].map((step, idx) => (
                 <div key={idx} className="flex items-center space-x-4">
                   <span className="flex items-center justify-center w-9 h-9 bg-primary text-primary-foreground rounded-full font-bold text-lg shadow-md shadow-primary/40 select-none">
