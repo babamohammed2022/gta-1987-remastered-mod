@@ -1,210 +1,136 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"; 
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Download, Package, BookOpen, Wrench, Clock, AlertTriangle, Check, Zap } from "lucide-react";
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Search } from "lucide-react";
 
-const DownloadSection = () => {
-  const downloads = [
+const FAQSection = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const faqs = [
     {
-      id: "modpack",
-      title: "Modpack",
-      status: "UPDATED · 23 July 2025",
-      version: "v2.3.1",
-      description: "Essential mods and resources for the storyline. Includes all required assets, textures, and gameplay modifications.",
-      url: "https://mega.nz/file/LrwUwKCQ#4WBJR25lvqsWcv3XvvGyoJeXCUOzvdKUwd9x3r6PuFk",
-      icon: Package,
-      required: true,
-      available: true,
-      features: [
-        "Story-style textures",
-        "New models",
-        "New cheat codes",
-        "Enhanced cars",
-        "And more"
-      ]
+      question: "In what year and location does the mod take place?",
+      answer: "The mod is set in 1987 in Los Santos, a city on the brink of chaos where rival gangs, including the notorious Grove Street Families, battle for control."
     },
     {
-      id: "storyline",
-      title: "Storyline",
-      status: "UPDATED · 19 June 2025",
-      version: "v1.4.0",
-      description: "Main storyline files to play missions. Contains chapter 1 and chapter 2 with voice acting.",
-      url: "https://drive.google.com/file/d/1w81owBoehbU3ianyG5Czmj-qNobUoAxi/view?usp=sharing",
-      icon: BookOpen,
-      required: true,
-      available: true,
-      features: [
-        "Chapter 1 and Chapter 2",
-        "Voice acting"
-      ]
+      question: "Who is the central figure leading the story?",
+      answer: 'The main character is Lance "Ryder" Wilson, a loyal member of the Grove Street Families who returns from Vice City to strengthen the gang during CJ\'s absence.'
     },
     {
-      id: "patch",
-      title: "Patch",
-      status: "COMING SOON",
-      version: "v1.0.0",
-      description: "Optional fixes and enhancements including bug fixes, performance improvements, and quality-of-life changes.",
-      url: "#",
-      icon: Wrench,
-      required: false,
-      available: false,
-      features: [
-        "Bug fixes",
-        "Performance boost",
-        "QoL improvements"
-      ]
+      question: "What prompted CJ to leave Los Santos originally?",
+      answer: "CJ, or Carl Johnson, departed Los Santos after his brother Brian's death, relocating to Liberty City and leaving the Grove Street Families in the care of his brother Sweet and others."
+    },
+    {
+      question: "Which characters serve as the primary antagonists in this narrative?",
+      answer: 'Victor "Viper" Mendez is the main antagonist, a merciless drug lord connected to a South American cartel aiming to expand his empire throughout Los Santos, targeting the Grove Street Families.'
+    },
+    {
+      question: "Does the storyline consist of multiple parts or chapters?",
+      answer: "Yes, the storyline is structured into three intense chapters featuring brutal gang wars and missions that challenge Ryder and his crew."
+    },
+    {
+      question: "Is there any news about future expansions or additional content?",
+      answer: "Plans include downloadable content (DLC) to extend and enrich the mod's storyline and gameplay after the initial release."
+    },
+    {
+      question: "Where can I get the latest news and updates about the mod's development?",
+      answer: 'Updates are available on the official Discord server and the YouTube channel named "cerdopalo."'
+    },
+    {
+      question: "How drastically will this mod alter the original Grand Theft Auto: San Andreas experience?",
+      answer: "The mod significantly revamps many aspects including missions, characters, gameplay systems, and visuals to create an alternative 1987 Los Santos experience."
+    },
+    {
+      question: "Which gangs are featured within the mod's storyline?",
+      answer: "Gangs such as the Grove Street Families, Ballas, La Sombra del Cuervo, Vagos, Seville Boulevard Families, Temple Drive Families, Aztecas, Russian Mafia, and Sindaccos play roles in the story."
+    },
+    {
+      question: "Who allies with the Grove Street Families throughout the story?",
+      answer: "Their allies include the Seville Boulevard Families, Temple Drive Families, and Tommy Vercetti."
+    },
+    {
+      question: "What is Ryder's background prior to returning to Los Santos?",
+      answer: "Ryder worked for Tommy Vercetti in Vice City before coming back to rejoin the Grove Street Families."
+    },
+    {
+      question: "Are there optional side missions included in the mod?",
+      answer: "Yes, side missions like Pizza Delivery, Trash Dash, and an upcoming Drug Bust Operation are featured, with mission vehicles accessible in locations such as Idlewood and Willowfield."
+    },
+    {
+      question: "Where do I install the modpack?",
+      answer: "Install the modpack in your main GTA San Andreas folder. It must be a clean installation without SAMP or any other mods."
+    },
+    {
+      question: "Where do I install DYOM and the storyline?",
+      answer: "Install DYOM and the storyline into your GTA San Andreas User Files folder (found in Documents). CLEO 5 is required. Do NOT place the storyline into the main game directory or the modpack into the User Files — this will break the mod."
+    },
+    {
+      question: "What are the limitations of this mod?",
+      answer: "This mod does not support multiplayer (like SAMP), heavy CLEO mods, or total conversion packs. It's built for clean, single-player gameplay with a focus on custom missions and storyline."
+    },
+    {
+      question: "Are there any special features or hidden easter eggs included in the mod?",
+      answer: "Yes, the mod includes several hidden easter eggs such as secret locations (hint: Visit Big Smoke's crack palace to find something interesting), unique dialogue lines, and references to classic GTA lore that players can discover throughout Los Santos."
     }
   ];
 
+  const filteredFAQs = faqs.filter(
+    faq =>
+      faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <section id="download" className="py-20 px-4 bg-gradient-to-b from-muted/10 to-muted/30">
+    <section id="faq" className="py-20 px-4 bg-muted/20">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 bg-primary/10 text-primary border-primary/20 hover:bg-primary/15">
-            <Zap className="h-4 w-4 mr-2" />
-            Ready to Play
-          </Badge>
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
-            Download & Install
+            Frequently Asked Questions
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Get everything you need to start your 1987 Los Santos adventure
+          <p className="text-xl text-muted-foreground">
+            Find answers to common questions about the mod
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {downloads.map((item) => {
-            const Icon = item.icon;
-            return (
-              <Card key={item.id} className={`relative overflow-hidden group transition-all duration-300 ${!item.available ? 'opacity-80' : 'hover:shadow-lg hover:-translate-y-2'}`}>
-                {/* Glow effect for available items */}
-                {item.available && (
-                  <div className="absolute inset-0 bg-primary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                )}
-                
-                {/* Ribbon for required items */}
-                {item.required && (
-                  <div className="absolute -right-8 -top-2 w-32 bg-red-600 text-white text-xs font-bold text-center py-1 transform rotate-45 shadow-lg z-10">
-                    REQUIRED
-                  </div>
-                )}
-
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-xl font-heading flex items-center gap-3">
-                      <div className={`p-3 rounded-lg ${item.available ? 'bg-primary/10 text-primary' : 'bg-muted text-muted-foreground'}`}>
-                        <Icon className="h-6 w-6" />
-                      </div>
-                      <div>
-                        <div>{item.title}</div>
-                        <div className="text-sm font-normal text-muted-foreground">
-                          {item.version}
-                        </div>
-                      </div>
-                    </CardTitle>
-                    <Badge 
-                      variant={item.status.includes("UPDATED") ? "default" : "secondary"} 
-                      className={`text-xs ${item.status.includes("UPDATED") ? 'bg-green-500/20 text-green-400' : 'bg-purple-500/20 text-purple-400'}`}
-                    >
-                      {item.status}
-                    </Badge>
-                  </div>
-                </CardHeader>
-                
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {item.description}
-                  </p>
-                  
-                  <div className="space-y-2">
-                    <h4 className="text-sm font-medium text-primary">Includes:</h4>
-                    <ul className="space-y-2">
-                      {item.features.map((feature, i) => (
-                        <li key={i} className="flex items-center text-sm text-muted-foreground">
-                          <Check className="h-4 w-4 mr-2 text-green-500" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  {item.available ? (
-                    <Button asChild className="w-full mt-4 btn-gaming group">
-                      <a href={item.url} target="_blank" rel="noopener noreferrer">
-                        <Download className="mr-2 h-4 w-4 transition-transform group-hover:animate-bounce" />
-                        Download Now
-                      </a>
-                    </Button>
-                  ) : (
-                    <Button disabled className="w-full mt-4 opacity-75 cursor-not-allowed">
-                      <Clock className="mr-2 h-4 w-4 animate-pulse" />
-                      Coming Soon
-                    </Button>
-                  )}
-                </CardContent>
-              </Card>
-            );
-          })}
+        {/* Search Bar */}
+        <div className="relative max-w-md mx-auto mb-12">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+          <Input
+            type="text"
+            placeholder="Search FAQs..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="pl-10 bg-card border-border focus:border-primary"
+          />
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-muted/20 to-muted/50 p-0.5">
-            <div className="bg-background rounded-[11px] p-8">
-              <h3 className="text-2xl font-heading font-bold mb-6 text-gradient inline-flex items-center gap-2">
-                <AlertTriangle className="h-6 w-6 text-yellow-500" />
-                Installation Guide
-              </h3>
-              <div className="grid md:grid-cols-2 gap-6 text-left">
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">1</div>
-                    <div>
-                      <h4 className="font-medium">Download Files</h4>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        Download all the required files.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">3</div>
-                    <div>
-                      <h4 className="font-medium">Follow Instructions</h4>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        Follow any README instructions if included.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">2</div>
-                    <div>
-                      <h4 className="font-medium">Extract Files</h4>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        Extract the modpack into your GTA San Andreas folder, while the storyline should be extracted into the "GTA San Andreas User Files" directory, which is usually located in the user's Documents folder.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">4</div>
-                    <div>
-                      <h4 className="font-medium">Launch and Enjoy</h4>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        Start the game and enjoy the storyline.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-8 text-sm text-muted-foreground bg-muted/50 p-4 rounded-lg border border-muted">
-                <strong>Note:</strong> For best performance, ensure your game is patched to version 1.0 and running on Windows 10/11. Some antivirus software may flag mod files—add exceptions if needed.
-              </div>
-            </div>
+        {/* FAQ Grid */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {filteredFAQs.map((faq, index) => (
+            <Card key={index} className="card-glass hover-lift">
+              <CardHeader>
+                <CardTitle className="text-lg font-heading text-primary">
+                  {faq.question}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">
+                  {faq.answer}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {filteredFAQs.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground text-lg">
+              No results found
+            </p>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
 };
 
-export default DownloadSection;
+export default FAQSection;
