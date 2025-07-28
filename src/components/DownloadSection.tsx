@@ -9,7 +9,7 @@ const DownloadSection = () => {
       id: "modpack",
       title: "Modpack",
       status: "UPDATED · 23 July 2025",
-      description: "Essential mods and resources for the storyline.",
+      description: "Essential modpack for GTA San Andreas Stories, including all the files needed to play.",
       url: "https://mega.nz/file/LrwUwKCQ#4WBJR25lvqsWcv3XvvGyoJeXCUOzvdKUwd9x3r6PuFk",
       icon: Package,
       required: true,
