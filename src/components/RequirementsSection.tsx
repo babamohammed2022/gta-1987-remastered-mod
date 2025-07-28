@@ -1,134 +1,132 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Download, Settings, Cpu, HardDrive, Monitor } from "lucide-react";
-// ❌ Removed: import { useLanguage } from "@/contexts/LanguageContext";
+import { Input } from "@/components/ui/input";
+import { Search } from "lucide-react";
 
-const RequirementsSection = () => {
-  const requirements = [
-    { icon: Settings, label: "Game Version", value: "GTA San Andreas v1.0 HOODLUM EXE" },
-    { icon: Download, label: "DYOM", value: "DYOM 8.1 (included below)" },
-    { icon: Monitor, label: "Operating System", value: "Windows XP or higher" },
-    { icon: Cpu, label: "RAM", value: "1GB minimum (2GB recommended)" },
-    { icon: HardDrive, label: "Graphics", value: "1GB VRAM minimum" },
-    { icon: HardDrive, label: "Storage", value: "At least 6GB free space" },
-  ];
+const FAQSection = () => {
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const downloads = [
+  const faqs = [
     {
-      name: "CLEO 5",
-      description: "Required for running CLEO scripts.",
-      url: "https://github.com/cleolibrary/CLEO5/releases/download/v5.0.0-RC2/SA.CLEO_v5.0.0-RC2+Silent_ASI_Loader.zip",
-      color: "bg-blue-600 hover:bg-blue-700"
+      question: "In what year and location does the mod take place?",
+      answer: "The mod is set in 1987 in Los Santos, a city on the brink of chaos where rival gangs, including the notorious Grove Street Families, battle for control."
     },
     {
-      name: "DYOM 8.1",
-      description: "Design Your Own Mission tool for GTA SA.",
-      url: "https://www.gtagarage.com/mods/download.php?f=35188",
-      color: "bg-orange-600 hover:bg-orange-700"
+      question: "Who is the central figure leading the story?",
+      answer: 'The main character is Lance "Ryder" Wilson, a loyal member of the Grove Street Families who returns from Vice City to strengthen the gang during CJ\'s absence.'
     },
     {
-      name: "CLEO+",
-      description: "Enhances CLEO with more opcodes and features.",
-      url: "https://www.mixmods.com.br/2023/10/cleoplus/",
-      color: "bg-purple-600 hover:bg-purple-700"
+      question: "What prompted CJ to leave Los Santos originally?",
+      answer: "CJ, or Carl Johnson, departed Los Santos after his brother Brian's death, relocating to Liberty City and leaving the Grove Street Families in the care of his brother Sweet and others."
     },
     {
-      name: "Essentials Pack",
-      description: "A bundle with must-have files and plugins.",
-      url: "https://www.mediafire.com/file/pw94wuhxg49xli6/GTA_SAS_essentials_pack.rar/file",
-      color: "bg-red-600 hover:bg-red-700"
+      question: "Which characters serve as the primary antagonists in this narrative?",
+      answer: 'Victor "Viper" Mendez is the main antagonist, a merciless drug lord connected to a South American cartel aiming to expand his empire throughout Los Santos, targeting the Grove Street Families.'
+    },
+    {
+      question: "Does the storyline consist of multiple parts or chapters?",
+      answer: "Yes, the storyline is structured into three intense chapters featuring brutal gang wars and missions that challenge Ryder and his crew."
+    },
+    {
+      question: "Is there any news about future expansions or additional content?",
+      answer: "Plans include downloadable content (DLC) to extend and enrich the mod's storyline and gameplay after the initial release."
+    },
+    {
+      question: "Where can I get the latest news and updates about the mod's development?",
+      answer: 'Updates are available on the official Discord server and the YouTube channel named "cerdopalo."'
+    },
+    {
+      question: "How drastically will this mod alter the original Grand Theft Auto: San Andreas experience?",
+      answer: "The mod significantly revamps many aspects including missions, characters, gameplay systems, and visuals to create an alternative 1987 Los Santos experience."
+    },
+    {
+      question: "Which gangs are featured within the mod's storyline?",
+      answer: "Gangs such as the Grove Street Families, Ballas, La Sombra del Cuervo, Vagos, Seville Boulevard Families, Temple Drive Families, Aztecas, Russian Mafia, and Sindaccos play roles in the story."
+    },
+    {
+      question: "Who allies with the Grove Street Families throughout the story?",
+      answer: "Their allies include the Seville Boulevard Families, Temple Drive Families, and Tommy Vercetti."
+    },
+    {
+      question: "What is Ryder's background prior to returning to Los Santos?",
+      answer: "Ryder worked for Tommy Vercetti in Vice City before coming back to rejoin the Grove Street Families."
+    },
+    {
+      question: "Are there optional side missions included in the mod?",
+      answer: "Yes, side missions like Pizza Delivery, Trash Dash, and an upcoming Drug Bust Operation are featured, with mission vehicles accessible in locations such as Idlewood and Willowfield."
+    },
+    {
+      question: "Where do I install the modpack?",
+      answer: "Install the modpack in your main GTA San Andreas folder. It must be a clean installation without SAMP or any other mods."
+    },
+    {
+      question: "Where do I install DYOM and the storyline?",
+      answer: "Install DYOM and the storyline into your GTA San Andreas User Files folder (found in Documents). CLEO 5 is required. Do NOT place the storyline into the main game directory or the modpack into the User Files — this will break the mod."
+    },
+    {
+      question: "What are the limitations of this mod?",
+      answer: "This mod does not support multiplayer (like SAMP), heavy CLEO mods, or total conversion packs. It's built for clean, single-player gameplay with a focus on custom missions and storyline."
     }
   ];
 
+  const filteredFAQs = faqs.filter(
+    faq =>
+      faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <section id="requirements" className="py-20 px-4">
+    <section id="faq" className="py-20 px-4 bg-muted/20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
-            Requirements
+            Frequently Asked Questions
           </h2>
           <p className="text-xl text-muted-foreground">
-            What you need to run GTA San Andreas Stories.
+            Find answers to common questions about the mod
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          {/* Requirements List */}
-          <Card className="card-glass hover-lift">
-            <CardHeader>
-              <CardTitle className="text-2xl font-heading text-primary">
-                Minimum Requirements
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {requirements.map((req, index) => {
-                  const Icon = req.icon;
-                  return (
-                    <div key={index} className="flex items-start space-x-3 p-3 rounded-lg bg-muted/20">
-                      <Icon className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
-                      <div>
-                        <div className="font-semibold text-foreground">{req.label}</div>
-                        <div className="text-muted-foreground text-sm">{req.value}</div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-              
-              <div className="mt-6 p-4 bg-warning/10 border border-warning/20 rounded-lg">
-                <p className="text-sm text-warning-foreground">
-                  <strong>Note:</strong> You must use a clean GTA SA installation.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Additional Tools */}
-          <Card className="card-glass hover-lift">
-            <CardHeader>
-              <CardTitle className="text-2xl font-heading text-secondary">
-                Additional Downloads
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-6">
-                Download the following files to set up GTA San Andreas Stories.
-              </p>
-              
-              <div className="space-y-3">
-                {downloads.map((download, index) => (
-                  <div key={index} className="flex items-center justify-between p-3 border border-border rounded-lg hover:bg-muted/20 transition-colors">
-                    <div>
-                      <div className="font-semibold text-foreground">{download.name}</div>
-                      <div className="text-sm text-muted-foreground">{download.description}</div>
-                    </div>
-                    <Button
-                      asChild
-                      size="sm"
-                      className={`${download.color} text-white hover:scale-105 transition-transform`}
-                    >
-                      <a href={download.url} target="_blank" rel="noopener noreferrer">
-                        <Download className="h-4 w-4 mr-1" />
-                        Get
-                      </a>
-                    </Button>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-6">
-                <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
-                  Clean installation is highly recommended
-                </Badge>
-              </div>
-            </CardContent>
-          </Card>
+        {/* Search Bar */}
+        <div className="relative max-w-md mx-auto mb-12">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+          <Input
+            type="text"
+            placeholder="Search FAQs..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="pl-10 bg-card border-border focus:border-primary"
+          />
         </div>
+
+        {/* FAQ Grid */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {filteredFAQs.map((faq, index) => (
+            <Card key={index} className="card-glass hover-lift">
+              <CardHeader>
+                <CardTitle className="text-lg font-heading text-primary">
+                  {faq.question}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">
+                  {faq.answer}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {filteredFAQs.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground text-lg">
+              No results found
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
 };
 
-export default RequirementsSection;
+export default FAQSection;
