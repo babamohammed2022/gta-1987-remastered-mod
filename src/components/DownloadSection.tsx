@@ -15,19 +15,17 @@ const DownloadSection = () => {
       icon: Package,
       required: true,
       available: true,
-      features: ["HD Textures", "Custom Animations", "Enhanced Audio"]
     },
     {
       id: "storyline",
       title: "Storyline",
       status: "UPDATED · 19 June 2025",
       version: "v1.4.0",
-      description: "Main storyline files to play missions. Contains 45+ custom missions with voice acting and cinematic cutscenes.",
+      description: "Main storyline files to play missions. Contains Chapter 1 and Chapter 2 with voice acting and cinematic cutscenes.",
       url: "https://drive.google.com/file/d/1w81owBoehbU3ianyG5Czmj-qNobUoAxi/view?usp=sharing",
       icon: BookOpen,
       required: true,
       available: true,
-      features: ["45+ Missions", "Voice Acting", "Cinematic Cutscenes"]
     },
     {
       id: "patch",
@@ -39,7 +37,6 @@ const DownloadSection = () => {
       icon: Wrench,
       required: false,
       available: false,
-      features: ["Bug Fixes", "Performance Boost", "QoL Improvements"]
     }
   ];
 
@@ -63,15 +60,18 @@ const DownloadSection = () => {
           {downloads.map((item) => {
             const Icon = item.icon;
             return (
-              <Card key={item.id} className={`relative overflow-hidden group transition-all duration-300 pt-6 ${!item.available ? 'opacity-80' : 'hover:shadow-lg hover:-translate-y-2'}`}>
+              <Card
+                key={item.id}
+                className={`relative overflow-hidden group transition-all duration-300 pt-16 pb-8 ${!item.available ? 'opacity-80' : 'hover:shadow-lg hover:-translate-y-2'}`}
+              >
                 {/* Glow effect for available items */}
                 {item.available && (
                   <div className="absolute inset-0 bg-primary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                 )}
-                
+
                 {/* Ribbon for required items */}
                 {item.required && (
-                  <div className="absolute -right-8 -top-2 w-32 bg-red-500 text-white text-xs font-bold text-center py-1 transform rotate-45 shadow-lg z-10">
+                  <div className="absolute -right-10 -top-3 w-40 bg-red-500 text-white text-sm font-bold text-center py-2 transform rotate-45 shadow-lg z-10 tracking-wider">
                     REQUIRED
                   </div>
                 )}
@@ -85,33 +85,33 @@ const DownloadSection = () => {
                       <div>
                         <div>{item.title}</div>
                         <div className="text-sm font-normal text-muted-foreground">
-                          {item.version} · {item.size}
+                          {item.version}
                         </div>
                       </div>
                     </CardTitle>
-                    <Badge 
-                      variant={item.status.includes("UPDATED") ? "default" : "secondary"} 
+                    <Badge
+                      variant={item.status.includes("UPDATED") ? "default" : "secondary"}
                       className={`text-xs ${item.status.includes("UPDATED") ? 'bg-green-500/20 text-green-400' : 'bg-purple-500/20 text-purple-400'}`}
                     >
                       {item.status}
                     </Badge>
                   </div>
                 </CardHeader>
-                
-                <CardContent className="space-y-4 mt-2">
+
+                <CardContent className="space-y-4 mt-4">
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {item.description}
                   </p>
                   {item.available ? (
-                    <Button asChild className="w-full mt-8 btn-gaming group h-14 text-base font-semibold rounded-lg">
+                    <Button asChild className="w-full mt-14 h-16 text-lg font-semibold rounded-lg">
                       <a href={item.url} target="_blank" rel="noopener noreferrer">
-                        <Download className="mr-2 h-5 w-5 transition-transform group-hover:animate-bounce" />
+                        <Download className="mr-2 h-6 w-6 transition-transform group-hover:animate-bounce" />
                         Download Now
                       </a>
                     </Button>
                   ) : (
-                    <Button disabled className="w-full mt-8 opacity-75 cursor-not-allowed h-14 text-base font-semibold rounded-lg">
-                      <Clock className="mr-2 h-5 w-5 animate-pulse" />
+                    <Button disabled className="w-full mt-14 opacity-75 cursor-not-allowed h-16 text-lg font-semibold rounded-lg">
+                      <Clock className="mr-2 h-6 w-6 animate-pulse" />
                       Coming Soon
                     </Button>
                   )}
@@ -155,7 +155,7 @@ const DownloadSection = () => {
                     <div>
                       <h4 className="font-medium">Extract to GTA Folder</h4>
                       <p className="text-sm text-muted-foreground mt-1">
-                        Place all files in your clean GTA San Andreas installation directory.
+                        Place all the files of the modpack in your clean GTA San Andreas installation directory, while the storyline files need to be placed inside the "GTA San Andreas User Files" folder, which is usually located inside the "Documents" folder on your PC.
                       </p>
                     </div>
                   </div>
