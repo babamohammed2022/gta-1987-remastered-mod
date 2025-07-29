@@ -15,7 +15,7 @@ import screenshot6 from "@/assets/screenshot6.webp";
 
 const GallerySection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
 
   const images = useMemo(
     () => [
@@ -79,11 +79,18 @@ const GallerySection = () => {
     []
   );
 
+  // Prefetch all images on mount to force loading
+  useEffect(() => {
+    images.forEach(({ url }) => {
+      const img = new Image();
+      img.src = typeof url === "string" ? url : url.src || url;
+    });
+  }, [images]);
+
+  // Scroll carousel to current index immediately when api or index changes
   useEffect(() => {
     if (carouselApi) {
-      setTimeout(() => {
-        carouselApi.scrollTo(currentIndex, false);
-      }, 100);
+      carouselApi.scrollTo(currentIndex, false);
     }
   }, [currentIndex, carouselApi]);
 
@@ -117,9 +124,7 @@ const GallerySection = () => {
               className="w-full h-full object-contain transition-all duration-500 ease-in-out transform"
               loading="lazy"
               decoding="async"
-              style={{
-                transform: "translateX(0%)",
-              }}
+              style={{ transform: "translateX(0%)" }}
             />
 
             {/* Navigation Buttons */}
@@ -128,6 +133,7 @@ const GallerySection = () => {
               size="icon"
               onClick={prevImage}
               className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white"
+              aria-label="Previous Image"
             >
               <ChevronLeft className="h-6 w-6" />
             </Button>
@@ -137,6 +143,7 @@ const GallerySection = () => {
               size="icon"
               onClick={nextImage}
               className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white"
+              aria-label="Next Image"
             >
               <ChevronRight className="h-6 w-6" />
             </Button>
@@ -180,25 +187,26 @@ const GallerySection = () => {
                 >
                   <button
                     onClick={() => goToImage(index)}
-                    className={relative aspect-video rounded-lg overflow-hidden transition-all duration-200 will-change-transform w-full ${
+                    className={`relative aspect-video rounded-lg overflow-hidden transition-all duration-200 will-change-transform w-full ${
                       index === currentIndex
                         ? "ring-2 ring-primary shadow-neon scale-105"
                         : "opacity-70 hover:opacity-100 hover:scale-105"
-                    }}
+                    }`}
+                    aria-label={`Go to image ${index + 1}`}
                   >
                     <img
                       src={image.url}
                       alt={image.alt}
                       className="w-full h-full object-contain"
-                      loading="lazy"
+                      loading="eager" // Force eager loading to preload all thumbnails
                       decoding="async"
                     />
                   </button>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-0" />
-            <CarouselNext className="right-0" />
+            <CarouselPrevious className="left-0" aria-label="Previous Carousel" />
+            <CarouselNext className="right-0" aria-label="Next Carousel" />
           </Carousel>
         </div>
 
