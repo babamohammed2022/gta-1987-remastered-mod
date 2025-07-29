@@ -27,8 +27,8 @@ const Hero = () => {
         }}
       />
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[hsl(var(--background)/0.85)] backdrop-brightness-75" />
+      {/* Enhanced: Brighter overlay for less darkness & softer effect */}
+      <div className="absolute inset-0 bg-[hsl(var(--background)/0.6)] backdrop-brightness-90" />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-4xl mx-auto text-center px-4">
