@@ -160,6 +160,28 @@ const GallerySection = () => {
           </div>
         </div>
 
+        {/* Additional Screenshots Section */}
+        <div className="max-w-4xl mx-auto mb-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src={screenshot5}
+              alt="Screenshot 5"
+              className="w-full h-auto object-contain"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src={screenshot6}
+              alt="Screenshot 6"
+              className="w-full h-auto object-contain"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+
         {/* Scrolling Thumbnail Carousel */}
         <div className="mb-8">
           <Carousel
@@ -198,7 +220,7 @@ const GallerySection = () => {
                       src={image.url}
                       alt={image.alt}
                       className="w-full h-full object-contain"
-                      loading="eager" // Force eager loading to preload all thumbnails
+                      loading="eager"
                       decoding="async"
                     />
                   </button>
