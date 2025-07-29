@@ -2,7 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Download, Settings, Cpu, HardDrive, Monitor } from "lucide-react";
-// ❌ Removed: import { useLanguage } from "@/contexts/LanguageContext";
 
 const RequirementsSection = () => {
   const requirements = [
@@ -18,7 +17,7 @@ const RequirementsSection = () => {
     {
       name: "CLEO 5",
       description: "Required for running CLEO scripts.",
-      url: "https://github.com/cleolibrary/CLEO5/releases/download/v5.0.0-RC2/SA.CLEO_v5.0.0-RC2+Silent_ASI_Loader.zip",
+      url: "https://github.com/cleolibrary/CLEO5/releases",
       color: "bg-blue-600 hover:bg-blue-700"
     },
     {
@@ -76,7 +75,7 @@ const RequirementsSection = () => {
                   );
                 })}
               </div>
-              
+
               <div className="mt-6 p-4 bg-warning/10 border border-warning/20 rounded-lg">
                 <p className="text-sm text-warning-foreground">
                   <strong>Note:</strong> You must use a clean GTA SA installation.
@@ -96,7 +95,7 @@ const RequirementsSection = () => {
               <p className="text-muted-foreground mb-6">
                 Download the following files to set up GTA San Andreas Stories.
               </p>
-              
+
               <div className="space-y-3">
                 {downloads.map((download, index) => (
                   <div key={index} className="flex items-center justify-between p-3 border border-border rounded-lg hover:bg-muted/20 transition-colors">
