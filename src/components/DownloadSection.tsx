@@ -13,7 +13,7 @@ const DownloadSection = () => {
       url: "https://mega.nz/file/LrwUwKCQ#4WBJR25lvqsWcv3XvvGyoJeXCUOzvdKUwd9x3r6PuFk",
       icon: Package,
       required: true,
-      available: true
+      available: true,
     },
     {
       id: "storyline",
@@ -23,7 +23,7 @@ const DownloadSection = () => {
       url: "https://drive.google.com/file/d/1w81owBoehbU3ianyG5Czmj-qNobUoAxi/view?usp=sharing",
       icon: BookOpen,
       required: true,
-      available: true
+      available: true,
     },
     {
       id: "patch",
@@ -33,15 +33,15 @@ const DownloadSection = () => {
       url: "#",
       icon: Wrench,
       required: false,
-      available: false
-    }
+      available: false,
+    },
   ];
 
   return (
-    <section id="download" className="py-12 md:py-20 px-4 bg-muted/20">
+    <section id="download" className="py-14 md:py-24 px-4 bg-muted/20">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-10 md:mb-14">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-3 text-gradient animate-gradient-xy">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold mb-4 text-gradient animate-gradient-xy">
             Downloads
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -53,11 +53,12 @@ const DownloadSection = () => {
           {downloads.map((item) => {
             const Icon = item.icon;
             const isUpdated = item.status.includes("UPDATED");
+
             return (
               <Card
                 key={item.id}
-                className={`card-glass hover-lift relative transition-transform hover:scale-[1.03] ${
-                  !item.available ? "opacity-70 cursor-not-allowed" : "cursor-pointer"
+                className={`card-glass hover-lift group relative transition-transform hover:scale-[1.03] ${
+                  !item.available ? "opacity-60 cursor-not-allowed" : "cursor-pointer"
                 }`}
                 title={item.available ? item.description : "Coming soon..."}
                 tabIndex={item.available ? 0 : -1}
@@ -65,8 +66,8 @@ const DownloadSection = () => {
               >
                 <CardHeader className="pb-3">
                   <div className="flex items-center justify-between flex-wrap gap-2">
-                    <CardTitle className="text-lg md:text-xl font-heading text-primary flex items-center gap-2">
-                      <Icon className="h-5 w-5 md:h-6 md:w-6 text-primary animate-bounce-slow" />
+                    <CardTitle className="text-xl font-heading text-primary flex items-center gap-2">
+                      <Icon className="h-5 w-5 md:h-6 md:w-6 text-primary group-hover:animate-bounce" />
                       {item.title}
                     </CardTitle>
                     <Badge
@@ -84,7 +85,7 @@ const DownloadSection = () => {
                   {item.required && (
                     <Badge
                       variant="outline"
-                      className="bg-red-500/20 text-red-500 border-red-500/40 w-fit mt-1 text-xs md:text-sm font-semibold"
+                      className="bg-destructive/20 text-destructive border-destructive/40 w-fit mt-1 text-xs md:text-sm font-semibold"
                       aria-label="Required download"
                     >
                       Required
@@ -96,7 +97,11 @@ const DownloadSection = () => {
                   <p className="text-muted-foreground text-sm md:text-base leading-relaxed">{item.description}</p>
 
                   {item.available ? (
-                    <Button asChild className="w-full btn-gaming shadow-lg hover:shadow-primary/50 flex items-center justify-center gap-2" aria-label={`Download ${item.title}`}>
+                    <Button
+                      asChild
+                      className="w-full btn-gaming shadow-md hover:shadow-primary/40 transition-all flex items-center justify-center gap-2"
+                      aria-label={`Download ${item.title}`}
+                    >
                       <a href={item.url} target="_blank" rel="noopener noreferrer" tabIndex={0}>
                         <Download className="h-4 w-4 md:h-5 md:w-5" />
                         <span className="text-sm md:text-base">Download {item.title}</span>
@@ -119,29 +124,29 @@ const DownloadSection = () => {
           })}
         </div>
 
-        <div className="mt-12 md:mt-16 text-center">
-          <div className="card-glass p-6 md:p-8 max-w-3xl mx-auto border border-primary/40 shadow-lg shadow-primary/10">
-            <h3 className="text-2xl md:text-3xl font-heading font-bold mb-4 md:mb-6 text-secondary flex items-center justify-center gap-2">
+        <div className="mt-16 md:mt-20 text-center">
+          <div className="card-glass p-6 md:p-8 max-w-3xl mx-auto border border-primary/40 shadow-xl shadow-primary/10">
+            <h3 className="text-2xl md:text-3xl font-heading font-bold mb-6 text-secondary flex items-center justify-center gap-2">
               <Package className="inline-block h-6 w-6 md:h-8 md:w-8 text-secondary animate-spin-slow" />
               How to Install
             </h3>
-            <div className="text-left space-y-4 md:space-y-6 text-muted-foreground text-base md:text-lg leading-relaxed">
+            <div className="text-left space-y-5 md:space-y-6 text-muted-foreground text-base md:text-lg leading-relaxed">
               {[
                 "Download all the required files.",
                 "Extract the modpack into your GTA San Andreas folder. The storyline files should be extracted into the 'GTA San Andreas User Files' directory, which is usually located in the user's Documents folder.",
                 "Follow any included README instructions carefully.",
-                "Start the game and enjoy the storyline."
+                "Start the game and enjoy the storyline.",
               ].map((step, idx) => (
-                <div key={idx} className="flex items-start space-x-3 md:space-x-4">
-                  <span className="flex-shrink-0 flex items-center justify-center w-7 h-7 md:w-9 md:h-9 bg-primary text-primary-foreground rounded-full font-bold text-sm md:text-lg shadow-md shadow-primary/40 select-none mt-0.5">
+                <div key={idx} className="flex items-start gap-4">
+                  <span className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-primary text-primary-foreground rounded-full font-bold text-sm md:text-lg shadow-md">
                     {idx + 1}
                   </span>
                   <p>{step}</p>
                 </div>
               ))}
             </div>
-            <p className="mt-4 md:mt-6 text-center text-xs md:text-sm text-muted-foreground italic">
-              <Info className="inline-block mr-1 h-3 w-3 md:h-4 md:w-4 text-primary" />
+            <p className="mt-6 text-center text-sm text-muted-foreground italic">
+              <Info className="inline-block mr-1 h-4 w-4 text-primary" />
               Make sure your installation folder is a clean GTA San Andreas setup without other mods for best compatibility.
             </p>
           </div>
