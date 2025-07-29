@@ -75,11 +75,18 @@ const GallerySection = () => {
         url: screenshot6,
         alt: "Mission Cutscene",
       },
+      {
+        url: "https://raw.githubusercontent.com/babamohammed2022/gta-1987-remastered-mod/main/src/assets/image%20(4).png",
+        alt: "Screenshot 4 - GTA 1987 Remastered",
+      },
+      {
+        url: "https://raw.githubusercontent.com/babamohammed2022/gta-1987-remastered-mod/main/src/assets/image%20(5).png",
+        alt: "Screenshot 5 - GTA 1987 Remastered",
+      },
     ],
     []
   );
 
-  // Prefetch all images on mount to force loading
   useEffect(() => {
     images.forEach(({ url }) => {
       const img = new Image();
@@ -87,7 +94,6 @@ const GallerySection = () => {
     });
   }, [images]);
 
-  // Scroll carousel to current index immediately when api or index changes
   useEffect(() => {
     if (carouselApi) {
       carouselApi.scrollTo(currentIndex, false);
@@ -127,7 +133,6 @@ const GallerySection = () => {
               style={{ transform: "translateX(0%)" }}
             />
 
-            {/* Navigation Buttons */}
             <Button
               variant="ghost"
               size="icon"
@@ -148,37 +153,13 @@ const GallerySection = () => {
               <ChevronRight className="h-6 w-6" />
             </Button>
 
-            {/* Image Counter */}
             <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
               {currentIndex + 1} / {images.length}
             </div>
 
-            {/* Zoom Icon */}
             <div className="absolute bottom-4 right-4 bg-black/50 text-white p-2 rounded-full">
               <ZoomIn className="h-4 w-4" />
             </div>
-          </div>
-        </div>
-
-        {/* Additional Screenshots Section */}
-        <div className="max-w-4xl mx-auto mb-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="rounded-2xl overflow-hidden shadow-2xl">
-            <img
-              src={screenshot5}
-              alt="Screenshot 5"
-              className="w-full h-auto object-contain"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div className="rounded-2xl overflow-hidden shadow-2xl">
-            <img
-              src={screenshot6}
-              alt="Screenshot 6"
-              className="w-full h-auto object-contain"
-              loading="lazy"
-              decoding="async"
-            />
           </div>
         </div>
 
