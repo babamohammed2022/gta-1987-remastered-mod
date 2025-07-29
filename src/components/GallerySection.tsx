@@ -79,14 +79,6 @@ const GallerySection = () => {
     []
   );
 
-  useEffect(() => {
-    if (carouselApi) {
-      setTimeout(() => {
-        carouselApi.scrollTo(currentIndex, false);
-      }, 100);
-    }
-  }, [currentIndex, carouselApi]);
-
   const nextImage = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
   }, [images.length]);
@@ -108,40 +100,51 @@ const GallerySection = () => {
           </h2>
         </div>
 
-        {/* Main Image Display */}
+        {/* Image Carousel with Scroll Transition */}
         <div className="relative mb-8">
           <div className="relative aspect-video max-h-96 mx-auto rounded-2xl overflow-hidden shadow-2xl">
-            <img
-              src={images[currentIndex].url}
-              alt={images[currentIndex].alt}
-              className="w-full h-full object-contain transition-all duration-500 ease-in-out transform"
-              loading="lazy"
-              decoding="async"
+            <div
+              className="flex transition-transform duration-700 ease-in-out w-full h-full"
               style={{
-                transform: "translateX(0%)",
+                width: `${images.length * 100}%`,
+                transform: `translateX(-${currentIndex * (100 / images.length)}%)`,
               }}
-            />
+            >
+              {images.map((image, index) => (
+                <div
+                  key={index}
+                  className="w-full flex-shrink-0 flex-grow-0 basis-full h-full"
+                >
+                  <img
+                    src={image.url}
+                    alt={image.alt}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              ))}
+            </div>
 
             {/* Navigation Buttons */}
             <Button
               variant="ghost"
               size="icon"
               onClick={prevImage}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white z-10"
             >
               <ChevronLeft className="h-6 w-6" />
             </Button>
-
             <Button
               variant="ghost"
               size="icon"
               onClick={nextImage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white z-10"
             >
               <ChevronRight className="h-6 w-6" />
             </Button>
 
-            {/* Image Counter */}
+            {/* Counter */}
             <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
               {currentIndex + 1} / {images.length}
             </div>
