@@ -116,7 +116,7 @@ const CreditsSection = () => {
               ))}
             </div>
             <p className="text-sm text-muted-foreground italic">
-              Full credits can be found on our official website.
+              
             </p>
           </CardContent>
         </Card>
