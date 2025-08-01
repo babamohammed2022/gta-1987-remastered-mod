@@ -225,7 +225,7 @@ const DownloadSection = () => {
             {/* Success indicator */}
             <div className="mt-6 flex items-center justify-center gap-2 text-sm text-primary">
               <CheckCircle className="w-4 h-4" />
-              <span>Trusted by the community since 2024</span>
+              <span>Download these files and enjoy 1987 Los Santos</span>
             </div>
           </CardContent>
         </Card>
