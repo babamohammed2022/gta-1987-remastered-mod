@@ -69,7 +69,7 @@ const DownloadSection = () => {
           </h2>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Grab the essential files and gear up to dive into the immersive storyline. Download now and embark on
+            Download the essential files and gear up to dive into the immersive storyline. Download now and embark on
             your journey through Los Santos!
           </p>
         </div>
