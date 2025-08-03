@@ -3,31 +3,21 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown, Download, Play } from "lucide-react";
 
 const Hero = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Parallax */}
+      {/* Background Image (now static) */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('https://raw.githubusercontent.com/babamohammed2022/CLEO_Snippet_Fetcher/refs/heads/main/file_00000000ff5461fa9664a4620095ba2b_conversation_id67fce5d9-13d0-800c-906f-586df3adde0bmessage_ide03c0d3b-617e-4327-81f3-013a4e376e40.webp')`,
-          transform: `translateY(${scrollY * 0.5}px)`,
-          transition: "transform 0.1s ease-out",
         }}
       />
 
-      {/* Enhanced: Brighter overlay for less darkness & softer effect */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-[hsl(var(--background)/0.6)] backdrop-brightness-90" />
 
       {/* Content */}
@@ -69,7 +59,6 @@ const Hero = () => {
             <Play className="mr-2 h-5 w-5" />
             Watch Trailer
           </Button>
-          {/* News button removed */}
         </div>
 
         {/* Scroll Indicator */}
