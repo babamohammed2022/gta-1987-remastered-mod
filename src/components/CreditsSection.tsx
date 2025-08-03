@@ -35,7 +35,8 @@ const CreditsSection = () => {
     { name: "MaxMakoShark", role: "Server Supervision" },
     { name: "Tix", role: "Gameplay Testing" },
     { name: "Raul", role: "Visual Enhancements, Mission Testing and Enhancing, Storyline Improvements, Video Recording, Supervision, Bug Reports" },
-    { name: "Urafael Games", role: "Coding Expertise and ASI Development" }
+    { name: "Urafael Games", role: "Coding Expertise and ASI Development" },
+    { name: "Fikan", role: "Remapping Artist" }
   ];
 
   const specialThanks = [
