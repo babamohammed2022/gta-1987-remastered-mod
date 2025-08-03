@@ -21,6 +21,7 @@ const CreditsSection = () => {
     { name: "Forge", role: "Scripting Help" },
     { name: "Elrico", role: "Mission Testing, Promotional Screenshots, Server Contribution" },
     { name: "Reaper", role: "HUD improvements, Weapon Icons, Supervision" },
+    { name: "Sadiya/Fieros", role: "Supervision" }, // <-- Aggiunta qui
   ];
 
   const specialContributors = [
@@ -116,9 +117,7 @@ const CreditsSection = () => {
                 </Badge>
               ))}
             </div>
-            <p className="text-sm text-muted-foreground italic">
-              
-            </p>
+            <p className="text-sm text-muted-foreground italic"></p>
           </CardContent>
         </Card>
       </div>
