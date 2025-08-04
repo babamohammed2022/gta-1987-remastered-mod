@@ -27,7 +27,7 @@ const Hero = () => {
           <img 
             src="https://raw.githubusercontent.com/AdevAbdullah/Mod-website/main/lenchmobnigga.png" 
             alt="GTA San Andreas Stories Logo"
-            className="mx-auto h-32 md:h-48 object-contain filter drop-shadow-2xl"
+            className="mx-auto h-32 md:h-48 object-contain filter drop-shadow-2xl scale-[1.15]"
           />
         </div>
 
