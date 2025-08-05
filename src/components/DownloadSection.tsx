@@ -22,7 +22,7 @@ const DownloadSection = () => {
       id: "storyline",
       title: "Storyline",
       status: "UPDATED · 19 June 2025",
-      description: "Main storyline files to play missions.",
+      description: "Main storyline files to play missions, includes the narratives of chapter 1 and chapter 2 (with  integrated AI voices).",
       url: "https://drive.google.com/file/d/1w81owBoehbU3ianyG5Czmj-qNobUoAxi/view?usp=sharing",
       icon: BookOpen,
       required: true,
