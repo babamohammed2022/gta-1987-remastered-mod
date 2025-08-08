@@ -12,6 +12,7 @@ import ChatBot from "@/components/ChatBot";
 import ProgressBar from "@/components/ProgressBar";
 import BackToTop from "@/components/BackToTop";
 import SocialLinks from "@/components/SocialLinks";
+import ModFeedbackSection from "@/components/ModFeedbackSection"; // ✅ Added import
 
 const Index = () => {
   return (
@@ -28,6 +29,10 @@ const Index = () => {
       <FAQSection />
       <RequirementsSection />
       <DownloadSection />
+
+      {/* ✅ Feedback form added here */}
+      <ModFeedbackSection />
+
       <Footer />
       <ChatBot />
       <BackToTop />
@@ -35,4 +40,5 @@ const Index = () => {
     </div>
   );
 };
+
 export default Index;
