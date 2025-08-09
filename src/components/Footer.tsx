@@ -13,7 +13,7 @@ const Footer = () => {
               GTA San Andreas Stories
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Unofficial mod based on GTA San Andreas. Not affiliated with Rockstar Games.
+              This mod was created by fans and is not affiliated with Rockstar Games. It is a non-commercial, fan-made project for entertainment purposes only.
             </p>
           </div>
 
