@@ -83,6 +83,10 @@ const GallerySection = () => {
         url: "https://raw.githubusercontent.com/babamohammed2022/gta-1987-remastered-mod/main/src/assets/image%20(5).png",
         alt: "Screenshot 5 - GTA 1987 Remastered",
       },
+      {
+        url: "https://raw.githubusercontent.com/babamohammed2022/gta-1987-remastered-mod/main/src/assets/Media_Player_12_10_2024_10_11_09.png",
+        alt: "Media Player Screenshot 3",
+      },
       // Newly added images
       {
         url: "https://raw.githubusercontent.com/babamohammed2022/gta-1987-remastered-mod/main/src/assets/Media_Player_7_27_2025_9_49_30_A.png",
@@ -229,7 +233,8 @@ const GallerySection = () => {
         {/* Disclaimer */}
         <div className="text-center">
           <p className="text-sm text-muted-foreground italic">
-            <strong>Disclaimer:</strong> All images in this gallery are in-game and may not reflect the final version.
+            <strong>Disclaimer:</strong> All images in this gallery are in-game
+            and may not reflect the final version.
           </p>
         </div>
       </div>
