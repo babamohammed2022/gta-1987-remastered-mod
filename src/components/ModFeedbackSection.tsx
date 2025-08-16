@@ -61,7 +61,7 @@ const ModFeedbackSection: React.FC = () => {
     <>
       {/* Toggle button to show/hide the section */}
       <button onClick={() => setIsVisible(!isVisible)} style={{ margin: "1rem", padding: "0.5rem 1rem" }}>
-        {isVisible ? "Hide Feedback Section" : "Show Feedback Section"}
+        {isVisible ? "Hide Feedback Section" : ""}
       </button>
 
       {isVisible && (
