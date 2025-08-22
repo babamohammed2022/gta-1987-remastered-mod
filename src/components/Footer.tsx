@@ -59,7 +59,7 @@ const Footer = () => {
           {/* Disclaimer */}
           <div>
             <h3 className="text-lg font-heading font-semibold mb-4 text-foreground">
-              Legal
+              Disclaimer
             </h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
               This project is a fan-made work and is not affiliated, endorsed, or sponsored by Rockstar Games or Take-Two Interactive.
