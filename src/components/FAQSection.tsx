@@ -52,6 +52,14 @@ const FAQSection = () => {
       answer: "Ryder worked for Tommy Vercetti in Vice City before coming back to rejoin the Grove Street Families."
     },
     {
+      question: "Are there new characters introduced specifically for this mod?",
+      answer: "Yeah, there are some new characters included, like new officers, new enemies (like Victor Mendez), and new allies such as LB."
+    },
+    {
+      question: "Does AI behavior change compared to the original game?",
+      answer: "Yes, it partially changes. Some mechanics are now more similar to those in older GTA titles, such as GTA LCS and GTA VCS. For example, the Good Citizen Bonus (a small cash reward, usually $50, earned by knocking over criminals or gang members who are being chased by police on foot) has been reintroduced with very similar mechanics."
+    },
+    {
       question: "Are there optional side missions included in the mod?",
       answer: "Yes, side missions like Pizza Delivery, Trash Dash, and an upcoming Drug Bust Operation are featured, with mission vehicles accessible in locations such as Idlewood and Willowfield."
     },
@@ -65,7 +73,7 @@ const FAQSection = () => {
     },
     {
       question: "What are the limitations of this mod?",
-      answer: "This mod does not support multiplayer (like SAMP), heavy CLEO mods, or total conversion packs. It's built for clean, single-player gameplay with a focus on custom missions and storyline."
+      answer: "This mod does not support multiplayer (like SAMP), heavy CLEO mods, or total conversion packs. It's built for a single-player gameplay with a focus on custom missions and storyline."
     },
     {
       question: "Are there any special features or hidden easter eggs included in the mod?",
