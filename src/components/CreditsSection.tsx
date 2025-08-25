@@ -15,7 +15,7 @@ const CreditsSection = () => {
     { name: "GTAMissionsCreator", role: "Video Production" },
     { name: "Noobshakespeare", role: "Retexturing, Mission Testing, Bug Report" },
     { name: "karammii", role: "Billboards Design" },
-    { name: "Jmanuc", role: "Screenshots, Suggestions, Supervision, Optimization, Artworks" },
+    { name: "Jmanuc", role: "Screenshots, Suggestions, Supervision, Optimization, Artworks, Atmosphere Enhancements" },
     { name: "Rayane", role: "Suggestions, Voices, Supervision" },
     { name: "Seve267", role: "Scripting Help, DYOM Modder, Bug Fixer, Miscellaneous" },
     { name: "Forge", role: "Scripting Help" },
