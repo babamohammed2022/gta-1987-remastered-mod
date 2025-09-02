@@ -116,6 +116,19 @@ const GallerySection = () => {
         url: "https://raw.githubusercontent.com/babamohammed2022/gta-1987-remastered-mod/main/src/assets/Media_Player_8_11_2025_1_04_40_P.png",
         alt: "Media Player Screenshot 4",
       },
+      // Newly added raw GitHub images
+      {
+        url: "https://raw.githubusercontent.com/babamohammed2022/gta-1987-remastered-mod/main/src/assets/Media_Player_8_25_2025_1_18_00_PM.webp",
+        alt: "Media Player Screenshot 5",
+      },
+      {
+        url: "https://raw.githubusercontent.com/babamohammed2022/gta-1987-remastered-mod/main/src/assets/Media_Player_8_25_2025_1_20_37_PM.webp",
+        alt: "Media Player Screenshot 6",
+      },
+      {
+        url: "https://raw.githubusercontent.com/babamohammed2022/gta-1987-remastered-mod/main/src/assets/image%20(15).png",
+        alt: "Screenshot 15 - GTA 1987 Remastered",
+      },
     ],
     []
   );
