@@ -53,7 +53,7 @@ const DownloadSection = () => {
   };
 
   return (
-    <section id="download" className="relative py-16 md:py-24 px-4 overflow-hidden bg-background">
+    <section id="download" className="relative py-16 md:py-24 px-4 overflow-hidden bg-gradient-to-b from-background to-muted/10">
       {/* Background Effects */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
       <div
@@ -64,11 +64,11 @@ const DownloadSection = () => {
       <div className="relative max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold mb-6 text-gradient leading-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold mb-6 text-gradient leading-tight animate-fadeIn">
             Get Started
           </h2>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fadeIn delay-200">
             Download the essential files and gear up to dive into the immersive storyline. Download now and embark on
             your journey through Los Santos!
           </p>
@@ -84,7 +84,7 @@ const DownloadSection = () => {
             return (
               <Card
                 key={item.id}
-                className={`group relative overflow-hidden border-0 card-glass hover-lift ${
+                className={`group relative overflow-hidden border-0 card-glass hover-lift shadow-lg transition-transform duration-300 ${
                   !item.available ? "opacity-70" : ""
                 } ${item.required ? "ring-1 ring-primary/30" : ""}`}
                 style={{ animationDelay: `${index * 100}ms`, animationFillMode: "forwards" }}
@@ -95,14 +95,14 @@ const DownloadSection = () => {
                 {/* Required Badge */}
                 {item.required && (
                   <div className="absolute top-3 right-3 z-10">
-                    <Badge className="bg-primary/20 text-primary border-primary/30 text-xs font-medium">Required</Badge>
+                    <Badge className="bg-primary/20 text-primary border-primary/30 text-xs font-medium animate-pulse">Required</Badge>
                   </div>
                 )}
 
                 <CardHeader className="pb-4">
                   <div className="flex items-start justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-lg bg-primary/20 group-hover:bg-primary/30 transition-colors">
+                      <div className="p-2 rounded-lg bg-primary/20 group-hover:bg-primary/40 transition-colors shadow-inner">
                         <Icon className="h-6 w-6 text-primary" />
                       </div>
                       <div>
@@ -112,7 +112,7 @@ const DownloadSection = () => {
                             variant={isUpdated ? "default" : "secondary"}
                             className={`text-xs font-medium ${
                               isUpdated
-                                ? "bg-primary/20 text-primary border-primary/30"
+                                ? "bg-primary/20 text-primary border-primary/30 animate-pulse"
                                 : "bg-muted text-muted-foreground"
                             }`}
                           >
@@ -133,8 +133,8 @@ const DownloadSection = () => {
                       onClick={() => handleDownload(item.id, item.url)}
                       disabled={isDownloading}
                       className={`w-full btn-gaming relative overflow-hidden ${
-                        isDownloading ? "cursor-not-allowed" : ""
-                      }`}
+                        isDownloading ? "cursor-not-allowed opacity-80" : ""
+                      } shadow-md hover:scale-105 transform transition-all duration-300`}
                       size="lg"
                       aria-live="polite"
                     >
@@ -159,7 +159,7 @@ const DownloadSection = () => {
                   ) : (
                     <Button
                       disabled
-                      className="w-full bg-muted/20 text-muted-foreground cursor-not-allowed border border-muted/30"
+                      className="w-full bg-muted/20 text-muted-foreground cursor-not-allowed border border-muted/30 shadow-inner"
                       variant="secondary"
                       size="lg"
                     >
@@ -174,18 +174,18 @@ const DownloadSection = () => {
         </div>
 
         {/* Installation Guide */}
-        <Card className="relative overflow-hidden border-0 card-glass">
+        <Card className="relative overflow-hidden border-0 card-glass shadow-xl hover:shadow-2xl transition-shadow duration-300">
           {/* Background decoration */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl" />
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-secondary/5 rounded-full blur-2xl" />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl animate-float" />
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-secondary/5 rounded-full blur-2xl animate-float" />
 
           <CardContent className="relative p-8 md:p-10">
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/20 rounded-2xl mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/20 rounded-2xl mb-4 animate-pulse">
                 <Package className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-3xl md:text-4xl font-heading font-bold mb-3 text-foreground">Installation Guide</h3>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              <h3 className="text-3xl md:text-4xl font-heading font-bold mb-3 text-foreground animate-fadeIn">Installation Guide</h3>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto animate-fadeIn delay-200">
                 Follow these simple steps to get started with your GTA San Andreas Stories experience
               </p>
             </div>
@@ -197,8 +197,8 @@ const DownloadSection = () => {
                 "Follow any included README instructions carefully for proper setup.",
                 "Start the game and enjoy the immersive storyline experience!",
               ].map((step, idx) => (
-                <div key={idx} className="flex items-start gap-4 group">
-                  <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 bg-primary/20 text-primary rounded-xl font-bold text-lg transition-all duration-300 group-hover:bg-primary/30 group-hover:scale-110">
+                <div key={idx} className="flex items-start gap-4 group hover:bg-primary/5 transition-colors rounded-lg p-2">
+                  <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 bg-primary/20 text-primary rounded-xl font-bold text-lg transition-all duration-300 group-hover:bg-primary/30 group-hover:scale-110 shadow-inner">
                     {idx + 1}
                   </div>
                   <div className="flex-1 pt-2">
@@ -209,7 +209,7 @@ const DownloadSection = () => {
             </div>
 
             {/* Warning */}
-            <div className="mt-8 p-6 bg-primary/10 border border-primary/20 rounded-xl">
+            <div className="mt-8 p-6 bg-primary/10 border border-primary/20 rounded-xl shadow-inner animate-pulse">
               <div className="flex items-start gap-3">
                 <Info className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <div>
@@ -223,7 +223,7 @@ const DownloadSection = () => {
             </div>
 
             {/* Success indicator */}
-            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-primary">
+            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-primary animate-fadeIn delay-400">
               <CheckCircle className="w-4 h-4" />
               <span>Download these files and enjoy 1987 Los Santos</span>
             </div>
