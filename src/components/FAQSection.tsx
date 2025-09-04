@@ -93,7 +93,7 @@ const FAQSection = () => {
     },
     {
       question: "Is there a mobile port of the mod?",
-      answer: "An unofficial mobile port was created by GTA Mobile Modding. This version is based on an older build and may lack features and improvements from the official release. You can watch a visual representation of the first version of this fan project [here](https://www.youtube.com/watch?v=c1ujc_W_C6M)."
+      answer: "An unofficial mobile port was created by GTA Mobile Modding. This version is based on an older build and may lack features and improvements from the official release. You can watch a visual representation of the first version of this fan project <a href='https://www.youtube.com/watch?v=c1ujc_W_C6M' style='text-decoration: underline;' target='_blank'>here</a>.";"
     }
   ];
 
