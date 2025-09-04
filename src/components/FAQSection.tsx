@@ -79,14 +79,21 @@ const FAQSection = () => {
       question: "Are there any special features or hidden easter eggs included in the mod?",
       answer: "Yes, the mod includes several hidden easter eggs such as secret locations (hint: Visit Big Smoke's crack palace to find something interesting), unique dialogue lines, and references to classic GTA lore that players can discover throughout Los Santos."
     },
-    // New entries added here
     {
       question: "Are there special collectibles or hidden items unique to this mod?",
       answer: "Yes, GTA SAS features unique collectibles, such as cigarettes, scattered throughout Los Santos for players to find."
     },
     {
-      question: "Are there any rampages inspired by GTA VCS or GTA VC in the mod?",
-      answer: "Yes, the mod includes 10 new rampages inspired by GTA VCS. These include:\n- Killing Rampages: Eliminate a set number of enemies within a time limit.\n- Vehicle Destroying Rampages: Destroy vehicles within the allotted time.\nSpecial thanks to Abdullah for scripting and Mariner for creating the second video."
+      question: "Are there any rampages inspired by GTA VCS/GTA VC in the mod?",
+      answer: "Yes, the modification introduces 10 new rampages inspired by GTA VCS/GTA VC. These include Killing Rampages, in which the player must eliminate a specified number of enemies within a set time frame, and Vehicle Destroying Rampages, in which the objective is to destroy vehicles within the allotted time."
+    },
+    {
+      question: "Are there cheat codes or special scripts included?",
+      answer: "Yes, the game does include several cheat codes and special scripts. Among these are codes that allow players to change outfits, as well as others that provide access to various weapons."
+    },
+    {
+      question: "Is there a mobile port of the mod?",
+      answer: "An unofficial mobile port was created by GTA Mobile Modding. This version is based on an older build and may lack features and improvements from the official release. You can watch a visual representation of the first version of this fan project [here](https://www.youtube.com/watch?v=c1ujc_W_C6M)."
     }
   ];
 
