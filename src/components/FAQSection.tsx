@@ -78,6 +78,15 @@ const FAQSection = () => {
     {
       question: "Are there any special features or hidden easter eggs included in the mod?",
       answer: "Yes, the mod includes several hidden easter eggs such as secret locations (hint: Visit Big Smoke's crack palace to find something interesting), unique dialogue lines, and references to classic GTA lore that players can discover throughout Los Santos."
+    },
+    // New entries added here
+    {
+      question: "Are there special collectibles or hidden items unique to this mod?",
+      answer: "Yes, GTA SAS features unique collectibles, such as cigarettes, scattered throughout Los Santos for players to find."
+    },
+    {
+      question: "Are there any rampages inspired by GTA VCS or GTA VC in the mod?",
+      answer: "Yes, the mod includes 10 new rampages inspired by GTA VCS. These include:\n- Killing Rampages: Eliminate a set number of enemies within a time limit.\n- Vehicle Destroying Rampages: Destroy vehicles within the allotted time.\nSpecial thanks to Abdullah for scripting and Mariner for creating the second video."
     }
   ];
 
