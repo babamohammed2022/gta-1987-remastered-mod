@@ -91,6 +91,14 @@ const faqs = [
     answer: "Yes, the game does include several cheat codes and special scripts. Among these are codes that allow players to change outfits, as well as others that provide access to various weapons."
   },
   {
+    question: "Is the mod playable on GTA SA Definitive Edition?",
+    answer: "No, the mod is made solely for GTA San Andreas standard PC. There’s an unofficial alpha Android version that could be enhanced in the future."
+  },
+  {
+    question: "Can I use my existing save files with this mod?",
+    answer: "No. This mod uses a completely different storyline and setup, so old save files won’t work. You’ll need to start a new save for GTA SAS."
+  },
+  {
     question: "Is there a mobile port of the mod?",
     answer: (
       <>
