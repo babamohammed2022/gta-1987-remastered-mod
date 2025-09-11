@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Download, Package, BookOpen, Wrench, Clock, Info, CheckCircle } from "lucide-react";
+import { Download, Package, BookOpen, Wrench, Clock, Info, CheckCircle, AlertTriangle } from "lucide-react";
 import { useState } from "react";
 
 const DownloadSection = () => {
@@ -217,6 +217,21 @@ const DownloadSection = () => {
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Make sure your installation folder is a clean GTA San Andreas setup without other mods for best
                     compatibility. Always backup your save files before installing any modifications.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* DYOM Case Sensitivity Notice */}
+            <div className="mt-6 p-6 bg-yellow-100 border border-yellow-300 rounded-xl shadow-inner">
+              <div className="flex items-start gap-3">
+                <AlertTriangle className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-semibold text-yellow-700 mb-2">DYOM is Case Sensitive</h4>
+                  <p className="text-sm text-yellow-700 leading-relaxed">
+                    DYOM is <strong>case sensitive</strong>. Therefore, it is fundamental to rename the <code>dsl</code> folder
+                    of the chapter you want to play to <code>DSL</code>. <br />
+                    Example: rename <code>DSL Chapter 1</code> to <code>DSL</code>. Otherwise, the storyline cannot be played.
                   </p>
                 </div>
               </div>
