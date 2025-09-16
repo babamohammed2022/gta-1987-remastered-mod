@@ -87,7 +87,6 @@ const GallerySection = () => {
         url: "https://raw.githubusercontent.com/babamohammed2022/gta-1987-remastered-mod/main/src/assets/Media_Player_12_10_2024_10_11_09.png",
         alt: "Media Player Screenshot 3",
       },
-      // Newly added images
       {
         url: "https://raw.githubusercontent.com/babamohammed2022/gta-1987-remastered-mod/main/src/assets/Media_Player_7_27_2025_9_49_30_A.png",
         alt: "Media Player Screenshot 1",
@@ -180,10 +179,9 @@ const GallerySection = () => {
             <img
               src={images[currentIndex].url}
               alt={images[currentIndex].alt}
-              className="w-full h-full object-contain transition-all duration-500 ease-in-out transform"
+              className="w-full h-full object-cover transition-all duration-500 ease-in-out transform"
               loading="lazy"
               decoding="async"
-              style={{ transform: "translateX(0%)" }}
             />
 
             <Button
@@ -253,7 +251,7 @@ const GallerySection = () => {
                     <img
                       src={image.url}
                       alt={image.alt}
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-cover"
                       loading="eager"
                       decoding="async"
                     />
