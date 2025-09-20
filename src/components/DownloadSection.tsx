@@ -11,9 +11,9 @@ const DownloadSection = () => {
     {
       id: "modpack",
       title: "Modpack",
-      status: "UPDATED · 23 July 2025",
+      status: "UPDATED · 20 September 2025",
       description: "Essential modpack for GTA San Andreas Stories, including all the files needed to play.",
-      url: "https://mega.nz/file/LrwUwKCQ#4WBJR25lvqsWcv3XvvGyoJeXCUOzvdKUwd9x3r6PuFk",
+      url: "https://mega.nz/file/uzgi1ayA#DCF_tsbgM-NRPZkgMaWCH5nxEPGovLV-uGi4REzRzeM",
       icon: Package,
       required: true,
       available: true,
@@ -53,7 +53,7 @@ const DownloadSection = () => {
   };
 
   return (
-    <section id="download" className="relative py-16 md:py-24 px-4 overflow-hidden bg-gradient-to-b from-background to-muted/10">
+    <section id="download" className="relative py-16 md:py-24 px-4 overflow-hidden bg-gradient-to-b from-background via-muted/5 to-muted/20">
       {/* Background Effects */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
       <div
@@ -84,18 +84,20 @@ const DownloadSection = () => {
             return (
               <Card
                 key={item.id}
-                className={`group relative overflow-hidden border-0 card-glass hover-lift shadow-lg transition-transform duration-300 ${
+                className={`group relative overflow-hidden border-0 card-glass hover:shadow-2xl hover:scale-[1.02] shadow-lg transition-transform duration-500 ease-out ${
                   !item.available ? "opacity-70" : ""
                 } ${item.required ? "ring-1 ring-primary/30" : ""}`}
                 style={{ animationDelay: `${index * 100}ms`, animationFillMode: "forwards" }}
               >
                 {/* Shimmer Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
 
                 {/* Required Badge */}
                 {item.required && (
                   <div className="absolute top-3 right-3 z-10">
-                    <Badge className="bg-primary/20 text-primary border-primary/30 text-xs font-medium animate-pulse">Required</Badge>
+                    <Badge className="bg-primary/20 text-primary border-primary/30 text-xs font-medium animate-pulse shadow-sm">
+                      Required
+                    </Badge>
                   </div>
                 )}
 
@@ -110,7 +112,7 @@ const DownloadSection = () => {
                         <div className="flex items-center gap-2 flex-wrap">
                           <Badge
                             variant={isUpdated ? "default" : "secondary"}
-                            className={`text-xs font-medium ${
+                            className={`text-xs font-medium shadow-sm ${
                               isUpdated
                                 ? "bg-primary/20 text-primary border-primary/30 animate-pulse"
                                 : "bg-muted text-muted-foreground"
@@ -134,7 +136,7 @@ const DownloadSection = () => {
                       disabled={isDownloading}
                       className={`w-full btn-gaming relative overflow-hidden ${
                         isDownloading ? "cursor-not-allowed opacity-80" : ""
-                      } shadow-md hover:scale-105 transform transition-all duration-300`}
+                      } shadow-md hover:scale-105 transform transition-all duration-300 rounded-xl`}
                       size="lg"
                       aria-live="polite"
                     >
@@ -181,10 +183,12 @@ const DownloadSection = () => {
 
           <CardContent className="relative p-8 md:p-10">
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/20 rounded-2xl mb-4 animate-pulse">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/20 rounded-2xl mb-4 animate-pulse shadow-inner">
                 <Package className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-3xl md:text-4xl font-heading font-bold mb-3 text-foreground animate-fadeIn">Installation Guide</h3>
+              <h3 className="text-3xl md:text-4xl font-heading font-bold mb-3 text-foreground animate-fadeIn">
+                Installation Guide
+              </h3>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto animate-fadeIn delay-200">
                 Follow these simple steps to get started with your GTA San Andreas Stories experience
               </p>
@@ -197,7 +201,10 @@ const DownloadSection = () => {
                 "Follow any included README instructions carefully for proper setup.",
                 "Start the game and enjoy the immersive storyline experience!",
               ].map((step, idx) => (
-                <div key={idx} className="flex items-start gap-4 group hover:bg-primary/5 transition-colors rounded-lg p-2">
+                <div
+                  key={idx}
+                  className="flex items-start gap-4 group hover:bg-primary/5 transition-colors rounded-lg p-2"
+                >
                   <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 bg-primary/20 text-primary rounded-xl font-bold text-lg transition-all duration-300 group-hover:bg-primary/30 group-hover:scale-110 shadow-inner">
                     {idx + 1}
                   </div>
