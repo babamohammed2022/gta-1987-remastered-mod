@@ -96,7 +96,7 @@ const faqs = [
   },
   {
     question: "Can I use my existing save files with this mod?",
-    answer: "No. This mod uses a completely different storyline and setup, so old save files won’t work. You’ll need to start a new save for GTA SAS."
+    answer: "No. This mod uses a completely different storyline and setup, so old save files from original GTA SA/other mods won’t work. You’ll need to start a new save for GTA SAS as it was made using the DYOM envinronment and a different SCM."
   },
   {
     question: "Is there a mobile port of the mod?",
