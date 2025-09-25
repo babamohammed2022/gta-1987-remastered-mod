@@ -21,9 +21,9 @@ const DownloadSection = () => {
     {
       id: "storyline",
       title: "Storyline",
-      status: "UPDATED · 19 June 2025",
-      description: "Main storyline files to play missions, includes the narratives of chapter 1 and chapter 2 (with  integrated AI voices).",
-      url: "https://drive.google.com/file/d/1w81owBoehbU3ianyG5Czmj-qNobUoAxi/view?usp=sharing",
+      status: "UPDATED · 25 September 2025",
+      description: "Main storyline files with minor fixes and patched bugs that prevented crashes. Includes narratives of chapter 1 and chapter 2 with integrated AI voices.",
+      url: "https://drive.google.com/file/d/1c_-TU1DVh1u2GGYDausrpa-Jy8mYbuSp/view?usp=sharing",
       icon: BookOpen,
       required: true,
       available: true,
