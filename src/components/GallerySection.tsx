@@ -84,6 +84,10 @@ const GallerySection = () => {
         alt: "Screenshot 5 - GTA 1987 Remastered",
       },
       {
+        url: "https://raw.githubusercontent.com/babamohammed2022/gta-1987-remastered-mod/main/src/assets/oold.png",
+        alt: "Old GTA 1987 Remastered Screenshot",
+      },
+      {
         url: "https://raw.githubusercontent.com/babamohammed2022/gta-1987-remastered-mod/main/src/assets/Media_Player_12_10_2024_10_11_09.png",
         alt: "Media Player Screenshot 3",
       },
