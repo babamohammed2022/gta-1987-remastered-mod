@@ -120,11 +120,11 @@ const GallerySection = () => {
         alt: "Media Player Screenshot 4",
       },
       {
-        url: "https://raw.githubusercontent.com/babamohammed2022/gta-1987-remastered-mod/main/src/assets/igna.png",
+        url: "https://raw.githubusercontent.com/babamohammed2022/gta-1987-remastered-mod/main/src/assets/WIP.png",
         alt: "Media Player Screenshot 5",
       },
       {
-        url: "https://raw.githubusercontent.com/babamohammed2022/gta-1987-remastered-mod/main/src/assets/ig.png",
+        url: "https://raw.githubusercontent.com/babamohammed2022/gta-1987-remastered-mod/main/src/assets/NO_cleanup%20(1).png",
         alt: "Media Player Screenshot 6",
       },
       {
