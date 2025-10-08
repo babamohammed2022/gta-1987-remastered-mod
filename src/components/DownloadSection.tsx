@@ -22,7 +22,7 @@ const DownloadSection = () => {
       id: "storyline",
       title: "Storyline",
       status: "UPDATED · 25 September 2025",
-      description: "Main storyline files with minor fixes and patched bugs that prevented crashes. Includes narratives of chapter 1 and chapter 2 with integrated AI voices.",
+      description: "Main storyline files with minor fixes and patched bugs that prevented crashes. Includes narratives of chapter 1 and chapter 2 with various improvements.",
       url: "https://drive.google.com/file/d/1c_-TU1DVh1u2GGYDausrpa-Jy8mYbuSp/view?usp=sharing",
       icon: BookOpen,
       required: true,
