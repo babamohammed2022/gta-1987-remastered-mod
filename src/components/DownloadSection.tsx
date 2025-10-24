@@ -11,9 +11,9 @@ const DownloadSection = () => {
     {
       id: "modpack",
       title: "Modpack",
-      status: "UPDATED · 20 September 2025",
+      status: "UPDATED · 24 October 2025",
       description: "Essential modpack for GTA San Andreas Stories, including all the files needed to play.",
-      url: "https://mega.nz/file/uzgi1ayA#DCF_tsbgM-NRPZkgMaWCH5nxEPGovLV-uGi4REzRzeM",
+      url: "https://www.mediafire.com/file/xqds0kpk4v3z22l/GTA_SAS_october_2025.rar/file",
       icon: Package,
       required: true,
       available: true,
@@ -45,7 +45,6 @@ const DownloadSection = () => {
 
     setDownloadingStates((prev) => ({ ...prev, [id]: true }));
 
-    // Simulate download time
     setTimeout(() => {
       setDownloadingStates((prev) => ({ ...prev, [id]: false }));
       window.open(url, "_blank", "noopener,noreferrer");
@@ -54,27 +53,20 @@ const DownloadSection = () => {
 
   return (
     <section id="download" className="relative py-16 md:py-24 px-4 overflow-hidden bg-gradient-to-b from-background via-muted/5 to-muted/20">
-      {/* Background Effects */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
-      <div
-        className="absolute bottom-1/4 -right-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-float"
-        style={{ animationDelay: "1s" }}
-      />
+      <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
 
       <div className="relative max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-16 md:mb-20">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold mb-6 text-gradient leading-tight animate-fadeIn">
             Get Started
           </h2>
-
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fadeIn delay-200">
             Download the essential files and gear up to dive into the immersive storyline. Download now and embark on
             your journey through Los Santos!
           </p>
         </div>
 
-        {/* Download Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {downloads.map((item, index) => {
             const Icon = item.icon;
@@ -89,10 +81,8 @@ const DownloadSection = () => {
                 } ${item.required ? "ring-1 ring-primary/30" : ""}`}
                 style={{ animationDelay: `${index * 100}ms`, animationFillMode: "forwards" }}
               >
-                {/* Shimmer Effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
 
-                {/* Required Badge */}
                 {item.required && (
                   <div className="absolute top-3 right-3 z-10">
                     <Badge className="bg-primary/20 text-primary border-primary/30 text-xs font-medium animate-pulse shadow-sm">
@@ -129,7 +119,6 @@ const DownloadSection = () => {
                 <CardContent className="space-y-4">
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
 
-                  {/* Download Button */}
                   {item.available ? (
                     <Button
                       onClick={() => handleDownload(item.id, item.url)}
@@ -140,11 +129,7 @@ const DownloadSection = () => {
                       size="lg"
                       aria-live="polite"
                     >
-                      <div
-                        className={`flex items-center justify-center gap-2 transition-all duration-300 ${
-                          isDownloading ? "scale-95" : ""
-                        }`}
-                      >
+                      <div className={`flex items-center justify-center gap-2 transition-all duration-300 ${isDownloading ? "scale-95" : ""}`}>
                         {isDownloading ? (
                           <>
                             <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
@@ -175,9 +160,7 @@ const DownloadSection = () => {
           })}
         </div>
 
-        {/* Installation Guide */}
         <Card className="relative overflow-hidden border-0 card-glass shadow-xl hover:shadow-2xl transition-shadow duration-300">
-          {/* Background decoration */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl animate-float" />
           <div className="absolute bottom-0 left-0 w-24 h-24 bg-secondary/5 rounded-full blur-2xl animate-float" />
 
@@ -201,10 +184,7 @@ const DownloadSection = () => {
                 "Follow any included README instructions carefully for proper setup.",
                 "Start the game and enjoy the immersive storyline experience!",
               ].map((step, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-start gap-4 group hover:bg-primary/5 transition-colors rounded-lg p-2"
-                >
+                <div key={idx} className="flex items-start gap-4 group hover:bg-primary/5 transition-colors rounded-lg p-2">
                   <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 bg-primary/20 text-primary rounded-xl font-bold text-lg transition-all duration-300 group-hover:bg-primary/30 group-hover:scale-110 shadow-inner">
                     {idx + 1}
                   </div>
@@ -215,7 +195,6 @@ const DownloadSection = () => {
               ))}
             </div>
 
-            {/* Warning */}
             <div className="mt-8 p-6 bg-primary/10 border border-primary/20 rounded-xl shadow-inner animate-pulse">
               <div className="flex items-start gap-3">
                 <Info className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -229,7 +208,6 @@ const DownloadSection = () => {
               </div>
             </div>
 
-            {/* DYOM Case Sensitivity Notice */}
             <div className="mt-6 p-6 bg-yellow-100 border border-yellow-300 rounded-xl shadow-inner">
               <div className="flex items-start gap-3">
                 <AlertTriangle className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
@@ -244,7 +222,6 @@ const DownloadSection = () => {
               </div>
             </div>
 
-            {/* Success indicator */}
             <div className="mt-6 flex items-center justify-center gap-2 text-sm text-primary animate-fadeIn delay-400">
               <CheckCircle className="w-4 h-4" />
               <span>Download these files and enjoy 1987 Los Santos</span>
