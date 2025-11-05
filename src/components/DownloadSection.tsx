@@ -239,4 +239,15 @@ const DownloadSection = () => {
               </div>
             </div>
 
-            <div className="mt-6 flex i
+            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-primary animate-fadeIn delay-400">
+              <CheckCircle className="w-4 h-4" />
+              <span>Download these files and enjoy 1987 Los Santos</span>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+  );
+};
+
+export default DownloadSection;
