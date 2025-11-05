@@ -11,9 +11,10 @@ const DownloadSection = () => {
     {
       id: "modpack",
       title: "Modpack",
-      status: "UPDATED · 24 October 2025",
-      description: "Essential modpack for GTA San Andreas Stories, including all the files needed to play.",
-      url: "https://www.mediafire.com/file/xqds0kpk4v3z22l/GTA_SAS_october_2025.rar/file",
+      status: "UPDATED · 5 November 2025",
+      description:
+        "November 2025 Modpack for GTA San Andreas Stories. This update fixes crashes when the protagonist is busted or wasted, corrects misplaced map objects, and improves overall performance and optimization.",
+      url: "https://www.mediafire.com/file/eqyooo0dbck55nu/GTA_SAS_november_2025.rar/file",
       icon: Package,
       required: true,
       available: true,
@@ -22,7 +23,8 @@ const DownloadSection = () => {
       id: "storyline",
       title: "Storyline",
       status: "UPDATED · 25 September 2025",
-      description: "Main storyline files with minor fixes and patched bugs that prevented crashes. Includes narratives of chapter 1 and chapter 2 with various improvements.",
+      description:
+        "Main storyline files with minor fixes and patched bugs that prevented crashes. Includes narratives of chapter 1 and chapter 2 with various improvements.",
       url: "https://drive.google.com/file/d/1c_-TU1DVh1u2GGYDausrpa-Jy8mYbuSp/view?usp=sharing",
       icon: BookOpen,
       required: true,
@@ -52,9 +54,15 @@ const DownloadSection = () => {
   };
 
   return (
-    <section id="download" className="relative py-16 md:py-24 px-4 overflow-hidden bg-gradient-to-b from-background via-muted/5 to-muted/20">
+    <section
+      id="download"
+      className="relative py-16 md:py-24 px-4 overflow-hidden bg-gradient-to-b from-background via-muted/5 to-muted/20"
+    >
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
+      <div
+        className="absolute bottom-1/4 -right-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-float"
+        style={{ animationDelay: "1s" }}
+      />
 
       <div className="relative max-w-7xl mx-auto">
         <div className="text-center mb-16 md:mb-20">
@@ -98,7 +106,9 @@ const DownloadSection = () => {
                         <Icon className="h-6 w-6 text-primary" />
                       </div>
                       <div>
-                        <CardTitle className="text-xl font-heading font-bold text-foreground mb-1">{item.title}</CardTitle>
+                        <CardTitle className="text-xl font-heading font-bold text-foreground mb-1">
+                          {item.title}
+                        </CardTitle>
                         <div className="flex items-center gap-2 flex-wrap">
                           <Badge
                             variant={isUpdated ? "default" : "secondary"}
@@ -129,7 +139,11 @@ const DownloadSection = () => {
                       size="lg"
                       aria-live="polite"
                     >
-                      <div className={`flex items-center justify-center gap-2 transition-all duration-300 ${isDownloading ? "scale-95" : ""}`}>
+                      <div
+                        className={`flex items-center justify-center gap-2 transition-all duration-300 ${
+                          isDownloading ? "scale-95" : ""
+                        }`}
+                      >
                         {isDownloading ? (
                           <>
                             <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
@@ -184,7 +198,10 @@ const DownloadSection = () => {
                 "Follow any included README instructions carefully for proper setup.",
                 "Start the game and enjoy the immersive storyline experience!",
               ].map((step, idx) => (
-                <div key={idx} className="flex items-start gap-4 group hover:bg-primary/5 transition-colors rounded-lg p-2">
+                <div
+                  key={idx}
+                  className="flex items-start gap-4 group hover:bg-primary/5 transition-colors rounded-lg p-2"
+                >
                   <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 bg-primary/20 text-primary rounded-xl font-bold text-lg transition-all duration-300 group-hover:bg-primary/30 group-hover:scale-110 shadow-inner">
                     {idx + 1}
                   </div>
@@ -222,15 +239,4 @@ const DownloadSection = () => {
               </div>
             </div>
 
-            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-primary animate-fadeIn delay-400">
-              <CheckCircle className="w-4 h-4" />
-              <span>Download these files and enjoy 1987 Los Santos</span>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    </section>
-  );
-};
-
-export default DownloadSection;
+            <div className="mt-6 flex i
