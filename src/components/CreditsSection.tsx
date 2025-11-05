@@ -21,7 +21,7 @@ const CreditsSection = () => {
     { name: "Forge", role: "Scripting Help" },
     { name: "Elrico", role: "Mission Testing, Promotional Screenshots, Server Contribution" },
     { name: "Reaper", role: "HUD improvements, Weapon Icons, Supervision" },
-    { name: "Sadiya/Fieros", role: "Supervision" }, // <-- Aggiunta qui
+    { name: "Sadie", role: "Supervision" }, // <-- Aggiunta qui
   ];
 
   const specialContributors = [
