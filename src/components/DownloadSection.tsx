@@ -13,7 +13,7 @@ const DownloadSection = () => {
       title: "Modpack",
       status: "UPDATED · 5 November 2025",
       description:
-        "November 2025 Modpack for GTA San Andreas Stories. This update fixes crashes when the protagonist is busted or wasted, corrects misplaced map objects, and improves overall performance and optimization.",
+        "November 2025 Modpack for GTA San Andreas Stories. This update improves overall performance and optimization and fixes bugs.",
       url: "https://www.mediafire.com/file/eqyooo0dbck55nu/GTA_SAS_november_2025.rar/file",
       icon: Package,
       required: true,
