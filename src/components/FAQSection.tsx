@@ -69,6 +69,18 @@ const FAQSection = () => {
       answer: "No, the mod does not support GInput or controller mods. It is designed for keyboard controls only. If you manage to get a controller working with the mod, please inform the development team or the project owner."
     },
 
+    /* --- NEW FAQ #2: MISSION REPLAY --- */
+    {
+      question: "Can I replay missions or choose mission order?",
+      answer: "You can replay missions by restarting the storyline, but the mission order cannot be changed. The storyline remains linear."
+    },
+
+    /* --- NEW FAQ #3: WINDOWS OS COMPATIBILITY --- */
+    {
+      question: "Does the mod work on Windows 10/11 or only older PCs?",
+      answer: "From various tests, the mod is confirmed to work on Windows 7 (with solid performance), Windows 10, and Windows 11. It is unknown if the mod works on older operating systems like Windows Vista."
+    },
+
     {
       question: "Where do I install the modpack?",
       answer: "Install the modpack in your main GTA San Andreas folder. It must be a clean installation without SAMP or any other mods."
@@ -77,13 +89,10 @@ const FAQSection = () => {
       question: "Where do I install DYOM and the storyline?",
       answer: "Install DYOM and the storyline into your GTA San Andreas User Files folder (found in Documents). CLEO 5 is required. Do NOT place the storyline into the main game directory or the modpack into the User Files — this will break the mod."
     },
-
-    /* --- NEW FAQ #2: DYOM INSTALL LOCATION --- */
     {
       question: "Can I install DYOM inside the GTA San Andreas directory?",
       answer: "No. DYOM must be installed in Documents/GTA San Andreas User Files, not inside the main game directory. Placing it in the wrong folder will cause crashes or prevent the mod from loading."
     },
-
     {
       question: "What are the limitations of this mod?",
       answer: "This mod does not support multiplayer (like SAMP), heavy CLEO mods, or total conversion packs. It's built for a single-player gameplay with a focus on custom missions and storyline."
@@ -104,19 +113,14 @@ const FAQSection = () => {
       question: "Are there cheat codes or special scripts included?",
       answer: "Yes, the game includes several cheat codes and special scripts, including outfit-changing cheats and weapon access codes."
     },
-
-    /* --- NEW FAQ #3: MISSION SOFTLOCK / CRASH --- */
     {
       question: "Why does a mission softlock or crash?",
       answer: 'If you encounter a mission bug, freeze, or softlock, you can temporarily bypass it by typing the cheat code "SKIP", that allows you to omit the on-going mission. This will allow you to continue playing while the bug is being investigated or fixed.'
     },
-
-    /* --- NEW FAQ #4: RED MARKER DISAPPEARING --- */
     {
       question: "Why does the red mission marker disappear after long play sessions?",
-      answer: "This can happen due to engine memory leakage during extended gameplay sessions. Restarting the game is recommended to restore the markers. (Note: Saving your story progress is recommended."
+      answer: "This can happen due to engine memory leakage during extended gameplay sessions. Restarting the game is recommended to restore the markers. (Note: Saving your story progress is recommended.)"
     },
-
     {
       question: "Is the mod playable on GTA SA Definitive Edition?",
       answer: "No, the mod is made solely for GTA San Andreas standard PC. There's an unofficial alpha Android version that could be enhanced in the future."
