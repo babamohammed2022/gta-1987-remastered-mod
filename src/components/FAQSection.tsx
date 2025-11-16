@@ -56,12 +56,19 @@ const FAQSection = () => {
     },
     {
       question: "Does AI behavior change compared to the original game?",
-      answer: "Yes, it partially changes. Some mechanics are now more similar to those in older GTA titles, such as GTA LCS and GTA VCS. For example, the Good Citizen Bonus (a small cash reward, usually $50, earned by knocking over criminals or gang members who are being chased by police on foot) has been reintroduced with very similar mechanics."
+      answer: "Yes, it partially changes. Some mechanics are now more similar to those in older GTA titles, such as GTA LCS and GTA VCS. For example, the Good Citizen Bonus has been reintroduced with very similar mechanics."
     },
     {
       question: "Are there optional side missions included in the mod?",
       answer: "Yes, side missions like Pizza Delivery, Trash Dash, and an upcoming Drug Bust Operation are featured, with mission vehicles accessible in locations such as Idlewood and Willowfield."
     },
+
+    /* --- NEW FAQ #1: GINPUT / CONTROLLER NOT SUPPORTED --- */
+    {
+      question: "Does the mod support GInput or controller mods?",
+      answer: "No, the mod does not support GInput or controller mods. It is designed for keyboard controls only. If you manage to get a controller working with the mod, please inform the development team or the project owner."
+    },
+
     {
       question: "Where do I install the modpack?",
       answer: "Install the modpack in your main GTA San Andreas folder. It must be a clean installation without SAMP or any other mods."
@@ -70,13 +77,20 @@ const FAQSection = () => {
       question: "Where do I install DYOM and the storyline?",
       answer: "Install DYOM and the storyline into your GTA San Andreas User Files folder (found in Documents). CLEO 5 is required. Do NOT place the storyline into the main game directory or the modpack into the User Files — this will break the mod."
     },
+
+    /* --- NEW FAQ #2: DYOM INSTALL LOCATION --- */
+    {
+      question: "Can I install DYOM inside the GTA San Andreas directory?",
+      answer: "No. DYOM must be installed in Documents/GTA San Andreas User Files, not inside the main game directory. Placing it in the wrong folder will cause crashes or prevent the mod from loading."
+    },
+
     {
       question: "What are the limitations of this mod?",
       answer: "This mod does not support multiplayer (like SAMP), heavy CLEO mods, or total conversion packs. It's built for a single-player gameplay with a focus on custom missions and storyline."
     },
     {
       question: "Are there any special features or hidden easter eggs included in the mod?",
-      answer: "Yes, the mod includes several hidden easter eggs such as secret locations (hint: Visit Big Smoke's crack palace to find something interesting), unique dialogue lines, and references to classic GTA lore that players can discover throughout Los Santos."
+      answer: "Yes, the mod includes several hidden easter eggs such as secret locations, unique dialogue lines, and references to classic GTA lore that players can discover throughout Los Santos."
     },
     {
       question: "Are there special collectibles or hidden items unique to this mod?",
@@ -84,25 +98,38 @@ const FAQSection = () => {
     },
     {
       question: "Are there any rampages inspired by GTA VCS/GTA VC in the mod?",
-      answer: "Yes, the modification introduces 10 new rampages inspired by GTA VCS/GTA VC. These include Killing Rampages, in which the player must eliminate a specified number of enemies within a set time frame, and Vehicle Destroying Rampages, in which the objective is to destroy vehicles within the allotted time."
+      answer: "Yes, the modification introduces 10 new rampages inspired by GTA VCS/GTA VC."
     },
     {
       question: "Are there cheat codes or special scripts included?",
-      answer: "Yes, the game does include several cheat codes and special scripts. Among these are codes that allow players to change outfits, as well as others that provide access to various weapons."
+      answer: "Yes, the game includes several cheat codes and special scripts, including outfit-changing cheats and weapon access codes."
     },
+
+    /* --- NEW FAQ #3: MISSION SOFTLOCK / CRASH --- */
+    {
+      question: "Why does a mission softlock or crash?",
+      answer: 'If you encounter a mission bug, freeze, or softlock, you can temporarily bypass it by typing the cheat code "SKIP". This will allow you to continue playing while the bug is being investigated or fixed.'
+    },
+
+    /* --- NEW FAQ #4: RED MARKER DISAPPEARING --- */
+    {
+      question: "Why does the red mission marker disappear after long play sessions?",
+      answer: "This can happen due to engine memory leakage during extended gameplay sessions. Restarting the game is recommended to restore the markers."
+    },
+
     {
       question: "Is the mod playable on GTA SA Definitive Edition?",
-      answer: "No, the mod is made solely for GTA San Andreas standard PC. There’s an unofficial alpha Android version that could be enhanced in the future."
+      answer: "No, the mod is made solely for GTA San Andreas standard PC. There's an unofficial alpha Android version that could be enhanced in the future."
     },
     {
       question: "Can I use my existing save files with this mod?",
-      answer: "No. This mod uses a completely different storyline and setup, so old save files from original GTA SA/other mods won’t work. You’ll need to start a new save for GTA SAS as it was made using the DYOM envinronment and a different SCM."
+      answer: "No. This mod uses a completely different storyline and setup. Old save files are not compatible."
     },
     {
       question: "Is there a mobile port of the mod?",
       answer: (
         <>
-          An unofficial mobile port was created by GTA Mobile Modding. This version is based on an older build and may lack features and improvements from the official release. You can watch a visual representation of the first version of this fan project{" "}
+          An unofficial mobile port was created by GTA Mobile Modding. This version is based on an older build and may lack features and improvements from the official release. You can watch a visual representation{" "}
           <a
             href="https://www.youtube.com/watch?v=c1ujc_W_C6M"
             style={{ textDecoration: "underline" }}
@@ -143,7 +170,6 @@ const FAQSection = () => {
           </p>
         </div>
 
-        {/* Search Bar */}
         <div className="relative max-w-md mx-auto mb-12">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
           <Input
@@ -155,7 +181,6 @@ const FAQSection = () => {
           />
         </div>
 
-        {/* FAQ Grid */}
         <div className="grid md:grid-cols-2 gap-6">
           {filteredFAQs.map((faq, index) => (
             <Card key={index} className="card-glass hover-lift">
@@ -175,9 +200,7 @@ const FAQSection = () => {
 
         {filteredFAQs.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-muted-foreground text-lg">
-              No results found
-            </p>
+            <p className="text-muted-foreground text-lg">No results found</p>
           </div>
         )}
       </div>
