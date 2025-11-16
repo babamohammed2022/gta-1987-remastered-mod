@@ -108,13 +108,13 @@ const FAQSection = () => {
     /* --- NEW FAQ #3: MISSION SOFTLOCK / CRASH --- */
     {
       question: "Why does a mission softlock or crash?",
-      answer: 'If you encounter a mission bug, freeze, or softlock, you can temporarily bypass it by typing the cheat code "SKIP". This will allow you to continue playing while the bug is being investigated or fixed.'
+      answer: 'If you encounter a mission bug, freeze, or softlock, you can temporarily bypass it by typing the cheat code "SKIP", that allows you to omit the on-going mission. This will allow you to continue playing while the bug is being investigated or fixed.'
     },
 
     /* --- NEW FAQ #4: RED MARKER DISAPPEARING --- */
     {
       question: "Why does the red mission marker disappear after long play sessions?",
-      answer: "This can happen due to engine memory leakage during extended gameplay sessions. Restarting the game is recommended to restore the markers."
+      answer: "This can happen due to engine memory leakage during extended gameplay sessions. Restarting the game is recommended to restore the markers. (Note: Saving your story progress is recommended."
     },
 
     {
