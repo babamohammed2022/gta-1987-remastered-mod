@@ -63,19 +63,16 @@ const FAQSection = () => {
       answer: "Yes, side missions like Pizza Delivery, Trash Dash, and an upcoming Drug Bust Operation are featured, with mission vehicles accessible in locations such as Idlewood and Willowfield."
     },
 
-    /* --- NEW FAQ #1: GINPUT / CONTROLLER NOT SUPPORTED --- */
     {
       question: "Does the mod support GInput or controller mods?",
       answer: "No, the mod does not support GInput or controller mods. It is designed for keyboard controls only. If you manage to get a controller working with the mod, please inform the development team or the project owner."
     },
 
-    /* --- NEW FAQ #2: MISSION REPLAY --- */
     {
       question: "Can I replay missions or choose mission order?",
       answer: "You can replay missions by restarting the storyline, but the mission order cannot be changed. The storyline remains linear."
     },
 
-    /* --- NEW FAQ #3: WINDOWS OS COMPATIBILITY --- */
     {
       question: "Does the mod work on Windows 10/11 or only older PCs?",
       answer: "From various tests, the mod is confirmed to work on Windows 7 (with solid performance), Windows 10, and Windows 11. It is unknown if the mod works on older operating systems like Windows Vista."
@@ -153,6 +150,31 @@ const FAQSection = () => {
     {
       question: "Can I free roam outside of missions?",
       answer: "Yes, you can explore Los Santos freely between missions, with side activities and collectibles available."
+    },
+
+    /* ---------------------------------------- */
+    /*            NEWLY ADDED QUESTIONS         */
+    /* ---------------------------------------- */
+
+    {
+      question: "Is the mod compatible with other GTA San Andreas modifications?",
+      answer: "The team aims to maintain compatibility, but the mod is not compatible with SA-MP or ragdoll-based mods. Installing external mods outside the official modpack is discouraged unless approved by the owner."
+    },
+    {
+      question: "How can I become a tester?",
+      answer: "Join the official Discord server and send a direct message to the owner to apply."
+    },
+    {
+      question: "How can I become a developer or helper?",
+      answer: "Join the Discord server and open a ticket. A staff member or developer will guide you through the process."
+    },
+    {
+      question: "Are there new weapons and vehicles in the mod?",
+      answer: "Yes. The mod adds new vehicles, including classic models like the Deluxo and Sabre Turbo, along with new weapons such as the Taser. Several existing weapons have been adjusted to better match the 1987 setting."
+    },
+    {
+      question: "Are there new mapping updates in the mod?",
+      answer: "Yes, new mapping changes have been implemented across Los Santos to represent the 1987 environment and the Stories-style aesthetic."
     }
   ];
 
