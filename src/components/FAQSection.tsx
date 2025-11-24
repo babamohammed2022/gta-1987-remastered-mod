@@ -176,6 +176,10 @@ const FAQSection = () => {
       question: "Are there new mapping updates in the mod?",
       answer: "Yes, new mapping changes have been implemented across Los Santos to represent the 1987 environment and the Stories-style aesthetic."
     }
+    {
+      question: "Will players be able to add their own mods or skins safely?",
+      answer: "Adding external mods or custom skins is strongly discouraged, as improper files can easily break the modpack or cause instability. If you want to see a new skin included, simply suggest it to the project owner, who will review it and decide whether to implement it in an official update."
+    }
   ];
 
   const filteredFAQs = faqs.filter(
