@@ -72,7 +72,7 @@ const FAQSection = () => {
     },
     {
       question: "Does the mod work on Windows 10/11 or only older PCs?",
-      answer: "From various tests, the mod is confirmed to work on Windows 7 (with solid performance), Windows 10, and Windows 11. It is unknown if the mod works on older operating systems like Windows Vista."
+      answer: "From various tests, the mod is confirmed to work on Windows 7 (with solid performance), Windows 8.1, Windows 10, and Windows 11. It is unknown if the mod works on older operating systems like Windows Vista."
     },
     {
       question: "Where do I install the modpack?",
