@@ -11,9 +11,9 @@ const DownloadSection = () => {
     {
       id: "modpack",
       title: "Modpack",
-      status: "UPDATED · January 2026",
+      status: "UPDATED · 5 January 2026",
       description:
-        "January 2026 Modpack for GTA San Andreas Stories. This update includes further performance improvements, optimizations, and additional bug fixes.",
+        "January 2026 Modpack for GTA San Andreas Stories. This update includes further performance improvements, new models, optimizations, and additional bug fixes.",
       url: "https://www.mediafire.com/file/j6lmxfrduj6ouby/GTA_SAS_january_2026.rar/file",
       icon: Package,
       required: true,
@@ -231,9 +231,9 @@ const DownloadSection = () => {
                 <div>
                   <h4 className="font-semibold text-yellow-700 mb-2">DYOM is Case Sensitive</h4>
                   <p className="text-sm text-yellow-700 leading-relaxed">
-                    DYOM is <strong>case sensitive</strong>. Therefore, it is fundamental to rename the <code>dsl</code> folder
+                    DYOM is <strong>case sensitive</strong>. Therefore, it is fundamental to rename the <code>DSL</code> folder
                     of the chapter you want to play to <code>DSL</code>. <br />
-                    Example: rename <code>DSL Chapter 1</code> to <code>DSL</code>. Otherwise, the storyline cannot be played.
+                    Example: rename <code>"DSL Chapter 1"</code> to <code>"DSL"</code>. Otherwise, the storyline cannot be played.
                   </p>
                 </div>
               </div>
