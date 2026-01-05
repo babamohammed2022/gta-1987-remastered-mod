@@ -11,10 +11,10 @@ const DownloadSection = () => {
     {
       id: "modpack",
       title: "Modpack",
-      status: "UPDATED · 5 November 2025",
+      status: "UPDATED · January 2026",
       description:
-        "November 2025 Modpack for GTA San Andreas Stories. This update improves overall performance and optimization and fixes bugs.",
-      url: "https://www.mediafire.com/file/eqyooo0dbck55nu/GTA_SAS_november_2025.rar/file",
+        "January 2026 Modpack for GTA San Andreas Stories. This update includes further performance improvements, optimizations, and additional bug fixes.",
+      url: "https://www.mediafire.com/file/j6lmxfrduj6ouby/GTA_SAS_january_2026.rar/file",
       icon: Package,
       required: true,
       available: true,
