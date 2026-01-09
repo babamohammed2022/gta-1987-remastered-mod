@@ -51,17 +51,14 @@ const CreditsSection = () => {
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
             Credits
           </h2>
-          <p className="text-xl text-muted-foreground">
-            Meet the amazing team behind this project who made everything possible.
-          </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 mb-8">
           {/* Core Development Team */}
           <Card className="card-glass hover-lift border border-gray-700/20 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl font-heading text-red-500 flex items-center">
-                <Users className="h-6 w-6 mr-2 text-red-400" />
+              <CardTitle className="text-2xl font-heading text-purple-400 flex items-center">
+                <Users className="h-6 w-6 mr-2 text-purple-300" />
                 Core Team
               </CardTitle>
             </CardHeader>
@@ -80,7 +77,7 @@ const CreditsSection = () => {
           {/* Special Contributors */}
           <Card className="card-glass hover-lift border border-gray-700/20 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl font-heading text-red-500 flex items-center">
+              <CardTitle className="text-2xl font-heading text-green-400 flex items-center">
                 <Star className="h-6 w-6 mr-2 text-yellow-400" />
                 Contributors
               </CardTitle>
@@ -101,18 +98,19 @@ const CreditsSection = () => {
         {/* Special Thanks */}
         <Card className="card-glass hover-lift border border-gray-700/20 shadow-lg">
           <CardHeader>
-            <CardTitle className="text-2xl font-heading text-red-500 flex items-center justify-center">
-              <Heart className="h-6 w-6 mr-2 text-pink-400" />
+            <CardTitle className="text-2xl font-heading text-pink-400 flex items-center justify-center">
+              <Heart className="h-6 w-6 mr-2 text-pink-300" />
               Special Thanks
             </CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <p className="text-gray-300 mb-4">
-              We want to express our deepest gratitude to everyone who supported this project.
-            </p>
             <div className="flex flex-wrap justify-center gap-2 mb-4">
               {specialThanks.map((name, index) => (
-                <Badge key={index} variant="outline" className="bg-gray-800/10 text-white border-gray-600/30">
+                <Badge
+                  key={index}
+                  variant="outline"
+                  className="bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 text-white border-none shadow-md"
+                >
                   {name}
                 </Badge>
               ))}
