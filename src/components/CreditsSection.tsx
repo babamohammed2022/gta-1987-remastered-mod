@@ -11,7 +11,7 @@ const CreditsSection = () => {
     { name: "The Small Chese", role: "Mission Design, Creative Direction" },
     { name: "Armando", role: "Sounds, Retexture, Supervisor, Tester, Screenshots, Missions Designer, Administration, Moderation, Suggestions, Videos and Clips, Bug Reports" },
     { name: "Mike", role: "Missions, In-game Photography" },
-    { name: "Cerdquad/Ertugrul", role: "Animations, Modelling, Suggestions, Screenshots, Artistic collaboration" },
+    { name: "JoGamer", role: "Animations, Modelling, Suggestions, Screenshots, Artistic collaboration" },
     { name: "GTAMissionsCreator", role: "Video Production" },
     { name: "Noobshakespeare", role: "Retexturing, Mission Testing, Bug Report" },
     { name: "karammii", role: "Billboards Design" },
