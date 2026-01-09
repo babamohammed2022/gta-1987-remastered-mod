@@ -31,7 +31,7 @@ const CreditsSection = () => {
     { name: "NorthStationX", role: "Billboards Design, Logo Creation" },
     { name: "FrankoU", role: "Special Mods (Vehicles Parked in Airport LS, Beta Sweet House, and others)" },
     { name: "Lost MC Claude", role: "Bug Testing" },
-    { name: "Cerdquad", role: "Fixed radar icons" },
+    { name: "JoGamer", role: "Fixed radar icons" },
     { name: "MAHMOGAMER", role: "Project Supervision" },
     { name: "MaxMakoShark", role: "Server Supervision" },
     { name: "Tix", role: "Gameplay Testing" },
