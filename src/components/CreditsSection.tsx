@@ -65,9 +65,12 @@ const CreditsSection = () => {
             <CardContent>
               <div className="space-y-4">
                 {developmentTeam.map((member, index) => (
-                  <div key={index} className="flex flex-col space-y-1 p-3 rounded-lg bg-gray-800/10 hover:bg-gray-800/20 transition-colors border border-gray-700/20">
-                    <div className="font-semibold text-white">{member.name}</div>
-                    <div className="text-sm text-gray-300">{member.role}</div>
+                  <div
+                    key={index}
+                    className="flex flex-col space-y-1 p-3 rounded-lg bg-gray-800/10 hover:bg-gray-800/20 transition-colors border border-gray-700/20"
+                  >
+                    <div className="font-semibold text-neon-cyan">{member.name}</div>
+                    <div className="text-sm text-neon-green">{member.role}</div>
                   </div>
                 ))}
               </div>
@@ -85,9 +88,12 @@ const CreditsSection = () => {
             <CardContent>
               <div className="space-y-4">
                 {specialContributors.map((contributor, index) => (
-                  <div key={index} className="flex flex-col space-y-1 p-3 rounded-lg bg-gray-800/10 hover:bg-gray-800/20 transition-colors border border-gray-700/20">
-                    <div className="font-semibold text-white">{contributor.name}</div>
-                    <div className="text-sm text-gray-300">{contributor.role}</div>
+                  <div
+                    key={index}
+                    className="flex flex-col space-y-1 p-3 rounded-lg bg-gray-800/10 hover:bg-gray-800/20 transition-colors border border-gray-700/20"
+                  >
+                    <div className="font-semibold text-neon-cyan">{contributor.name}</div>
+                    <div className="text-sm text-neon-green">{contributor.role}</div>
                   </div>
                 ))}
               </div>
@@ -109,7 +115,7 @@ const CreditsSection = () => {
                 <Badge
                   key={index}
                   variant="outline"
-                  className="bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 text-white border-none shadow-md"
+                  className="bg-gray-800/10 text-white border-gray-600/30"
                 >
                   {name}
                 </Badge>
