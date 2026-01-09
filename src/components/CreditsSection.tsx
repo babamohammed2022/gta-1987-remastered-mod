@@ -45,33 +45,31 @@ const CreditsSection = () => {
   ];
 
   return (
-    <section id="credits" className="py-20 px-4 bg-gradient-to-b from-gray-900 to-gray-800">
+    <section id="credits" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
             Credits
           </h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl text-muted-foreground">
             Meet the amazing team behind this project who made everything possible.
           </p>
         </div>
 
-        {/* Core Team & Contributors */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid lg:grid-cols-2 gap-8 mb-8">
           {/* Core Development Team */}
-          <Card className="card-glass hover-lift border border-purple-600/20 shadow-lg">
+          <Card className="card-glass hover-lift border border-gray-700/20 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl font-heading text-purple-400 flex items-center">
-                <Users className="h-6 w-6 mr-2" />
+              <CardTitle className="text-2xl font-heading text-red-500 flex items-center">
+                <Users className="h-6 w-6 mr-2 text-red-400" />
                 Core Team
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 {developmentTeam.map((member, index) => (
-                  <div key={index} className="flex flex-col p-4 rounded-xl bg-purple-900/10 hover:bg-purple-700/20 transition-all border border-purple-600/20 shadow-sm">
-                    <div className="font-semibold text-purple-300">{member.name}</div>
+                  <div key={index} className="flex flex-col space-y-1 p-3 rounded-lg bg-gray-800/10 hover:bg-gray-800/20 transition-colors border border-gray-700/20">
+                    <div className="font-semibold text-white">{member.name}</div>
                     <div className="text-sm text-gray-300">{member.role}</div>
                   </div>
                 ))}
@@ -80,18 +78,18 @@ const CreditsSection = () => {
           </Card>
 
           {/* Special Contributors */}
-          <Card className="card-glass hover-lift border border-yellow-500/20 shadow-lg">
+          <Card className="card-glass hover-lift border border-gray-700/20 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl font-heading text-yellow-400 flex items-center">
-                <Star className="h-6 w-6 mr-2" />
+              <CardTitle className="text-2xl font-heading text-red-500 flex items-center">
+                <Star className="h-6 w-6 mr-2 text-yellow-400" />
                 Contributors
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 {specialContributors.map((contributor, index) => (
-                  <div key={index} className="flex flex-col p-4 rounded-xl bg-yellow-900/10 hover:bg-yellow-700/20 transition-all border border-yellow-500/20 shadow-sm">
-                    <div className="font-semibold text-yellow-300">{contributor.name}</div>
+                  <div key={index} className="flex flex-col space-y-1 p-3 rounded-lg bg-gray-800/10 hover:bg-gray-800/20 transition-colors border border-gray-700/20">
+                    <div className="font-semibold text-white">{contributor.name}</div>
                     <div className="text-sm text-gray-300">{contributor.role}</div>
                   </div>
                 ))}
@@ -101,10 +99,10 @@ const CreditsSection = () => {
         </div>
 
         {/* Special Thanks */}
-        <Card className="card-glass hover-lift border border-pink-500/20 shadow-lg">
+        <Card className="card-glass hover-lift border border-gray-700/20 shadow-lg">
           <CardHeader>
-            <CardTitle className="text-2xl font-heading text-pink-400 flex items-center justify-center">
-              <Heart className="h-6 w-6 mr-2" />
+            <CardTitle className="text-2xl font-heading text-red-500 flex items-center justify-center">
+              <Heart className="h-6 w-6 mr-2 text-pink-400" />
               Special Thanks
             </CardTitle>
           </CardHeader>
@@ -112,9 +110,9 @@ const CreditsSection = () => {
             <p className="text-gray-300 mb-4">
               We want to express our deepest gratitude to everyone who supported this project.
             </p>
-            <div className="flex flex-wrap justify-center gap-3 mb-4">
+            <div className="flex flex-wrap justify-center gap-2 mb-4">
               {specialThanks.map((name, index) => (
-                <Badge key={index} variant="outline" className="bg-pink-900/20 text-pink-400 border-pink-500/30">
+                <Badge key={index} variant="outline" className="bg-gray-800/10 text-white border-gray-600/30">
                   {name}
                 </Badge>
               ))}
