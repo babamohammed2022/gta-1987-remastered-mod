@@ -45,22 +45,21 @@ const CreditsSection = () => {
   ];
 
   return (
-    <section id="credits" className="py-20 px-4 bg-red-500/20">
+    <section id="credits" className="py-20 px-4 bg-muted/20">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-red-500">
             Credits
           </h2>
-          {/* Paragraph removed */}
         </div>
 
         {/* Core Team & Contributors */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           {/* Core Development Team */}
-          <Card className="card-glass hover-lift border border-purple-600/20 shadow-lg">
+          <Card className="card-glass hover-lift border border-red-500/20 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl font-heading text-purple-400 flex items-center">
+              <CardTitle className="text-2xl font-heading text-red-500 flex items-center">
                 <Users className="h-6 w-6 mr-2" />
                 Core Team
               </CardTitle>
@@ -70,10 +69,10 @@ const CreditsSection = () => {
                 {developmentTeam.map((member, index) => (
                   <div
                     key={index}
-                    className="flex flex-col p-4 rounded-xl bg-purple-900/10 hover:bg-purple-700/20 transition-all border border-purple-600/20 shadow-sm"
+                    className="flex flex-col p-4 rounded-xl bg-red-900/10 hover:bg-red-700/20 transition-all border border-red-500/20 shadow-sm"
                   >
-                    <div className="font-semibold text-purple-300">{member.name}</div>
-                    <div className="text-sm text-gray-300">{member.role}</div>
+                    <div className="font-semibold text-red-400">{member.name}</div>
+                    <div className="text-sm text-red-200">{member.role}</div>
                   </div>
                 ))}
               </div>
@@ -81,9 +80,9 @@ const CreditsSection = () => {
           </Card>
 
           {/* Special Contributors */}
-          <Card className="card-glass hover-lift border border-yellow-500/20 shadow-lg">
+          <Card className="card-glass hover-lift border border-red-500/20 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl font-heading text-yellow-400 flex items-center">
+              <CardTitle className="text-2xl font-heading text-red-500 flex items-center">
                 <Star className="h-6 w-6 mr-2" />
                 Contributors
               </CardTitle>
@@ -93,10 +92,10 @@ const CreditsSection = () => {
                 {specialContributors.map((contributor, index) => (
                   <div
                     key={index}
-                    className="flex flex-col p-4 rounded-xl bg-yellow-900/10 hover:bg-yellow-700/20 transition-all border border-yellow-500/20 shadow-sm"
+                    className="flex flex-col p-4 rounded-xl bg-red-900/10 hover:bg-red-700/20 transition-all border border-red-500/20 shadow-sm"
                   >
-                    <div className="font-semibold text-yellow-300">{contributor.name}</div>
-                    <div className="text-sm text-gray-300">{contributor.role}</div>
+                    <div className="font-semibold text-red-400">{contributor.name}</div>
+                    <div className="text-sm text-red-200">{contributor.role}</div>
                   </div>
                 ))}
               </div>
@@ -105,9 +104,9 @@ const CreditsSection = () => {
         </div>
 
         {/* Special Thanks */}
-        <Card className="card-glass hover-lift border border-pink-500/20 shadow-lg">
+        <Card className="card-glass hover-lift border border-red-500/20 shadow-lg">
           <CardHeader>
-            <CardTitle className="text-2xl font-heading text-pink-400 flex items-center justify-center">
+            <CardTitle className="text-2xl font-heading text-red-500 flex items-center justify-center">
               <Heart className="h-6 w-6 mr-2" />
               Special Thanks
             </CardTitle>
@@ -118,7 +117,7 @@ const CreditsSection = () => {
                 <Badge
                   key={index}
                   variant="outline"
-                  className="bg-pink-900/20 text-pink-400 border-pink-500/30"
+                  className="bg-red-900/20 text-red-400 border-red-500/30"
                 >
                   {name}
                 </Badge>
