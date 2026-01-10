@@ -126,14 +126,14 @@ const RequirementsSection = () => {
               </div>
 
               <p className="mt-6 text-sm text-center text-muted-foreground">
-                For more information, visit{" "}
+                For more information, join our{" "}
                 <a
-                  href="https://gtasasmanual.netlify.app/"
+                  href="https://discord.com/invite/t5SjMrAJNh"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline hover:text-primary"
+                  className="underline text-blue-600 hover:text-blue-500"
                 >
-                  the manual
+                  Discord server
                 </a>
                 . Report any issues on Discord for adjustments.
               </p>
