@@ -131,7 +131,7 @@ const RequirementsSection = () => {
                   href="https://discord.com/invite/t5SjMrAJNh"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline text-blue-600 hover:text-blue-500"
+                  className="underline text-muted-foreground hover:text-blue-500"
                 >
                   Discord server
                 </a>
