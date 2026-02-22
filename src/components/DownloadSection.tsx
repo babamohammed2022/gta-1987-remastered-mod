@@ -20,6 +20,7 @@ const DownloadSection = () => {
     {
       id: "modpack",
       title: "Modpack",
+      version: "v1.5.0",
       status: "UPDATED · 19 February 2026",
       description:
         "February 2026 update including performance improvements, new models, optimizations, and additional bug fixes.",
@@ -67,7 +68,6 @@ const DownloadSection = () => {
       id="download"
       className="relative py-16 md:py-24 px-4 overflow-hidden bg-gradient-to-b from-background via-muted/5 to-muted/20"
     >
-      {/* Background effects (original style) */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
       <div
         className="absolute bottom-1/4 -right-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-float"
@@ -75,7 +75,6 @@ const DownloadSection = () => {
       />
 
       <div className="relative max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-16 md:mb-20">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold mb-6 text-gradient leading-tight animate-fadeIn">
             Get Started
@@ -85,7 +84,6 @@ const DownloadSection = () => {
           </p>
         </div>
 
-        {/* Download Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {downloads.map((item, index) => {
             const Icon = item.icon;
@@ -119,9 +117,14 @@ const DownloadSection = () => {
                       </CardTitle>
                       <Badge
                         variant={isUpdated ? "default" : "secondary"}
-                        className="text-xs mt-1"
+                        className="text-xs mt-1 flex items-center gap-1"
                       >
                         {item.status}
+                        {item.version && (
+                          <span className="bg-primary/10 text-primary px-1 rounded text-[0.6rem]">
+                            {item.version}
+                          </span>
+                        )}
                       </Badge>
                     </div>
                   </div>
@@ -168,7 +171,6 @@ const DownloadSection = () => {
           })}
         </div>
 
-        {/* Installation Guide */}
         <Card className="relative overflow-hidden border-0 card-glass shadow-xl">
           <CardContent className="p-8 md:p-10 space-y-8">
             <div className="text-center">
