@@ -30,6 +30,18 @@ const DownloadSection = () => {
       available: true,
     },
     {
+      id: "modpack_april_2026",
+      title: "Modpack",
+      version: "v1.6.0",
+      status: "UPDATED · 14 April 2026",
+      description:
+        "April 2026 update including further optimizations, stability improvements, and additional refinements to gameplay systems.",
+      url: "https://www.mediafire.com/file/p4qj8cccnamxplr/GTA_SAS_april_2026.rar/file",
+      icon: Package,
+      required: true,
+      available: true,
+    },
+    {
       id: "storyline",
       title: "Storyline",
       status: "UPDATED · 25 September 2025",
@@ -155,12 +167,7 @@ const DownloadSection = () => {
                       )}
                     </Button>
                   ) : (
-                    <Button
-                      disabled
-                      variant="secondary"
-                      className="w-full"
-                      size="lg"
-                    >
+                    <Button disabled variant="secondary" className="w-full" size="lg">
                       <Clock className="h-4 w-4 mr-2" />
                       Coming Soon
                     </Button>
@@ -240,5 +247,6 @@ const DownloadSection = () => {
     </section>
   );
 };
+
 
 export default DownloadSection;
