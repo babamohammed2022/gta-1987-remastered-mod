@@ -18,18 +18,6 @@ const DownloadSection = () => {
 
   const downloads = [
     {
-      id: "modpack",
-      title: "Modpack",
-      version: "v1.5.0",
-      status: "UPDATED · 19 February 2026",
-      description:
-        "February 2026 update including performance improvements, new models, optimizations, and additional bug fixes.",
-      url: "https://www.mediafire.com/file/qm1wxxizo9vsvf5/GTA_SAS_february_2026.rar/file",
-      icon: Package,
-      required: true,
-      available: true,
-    },
-    {
       id: "modpack_april_2026",
       title: "Modpack",
       version: "v1.6.0",
@@ -239,7 +227,7 @@ const DownloadSection = () => {
 
             <div className="flex items-center justify-center gap-2 text-sm text-primary">
               <CheckCircle className="w-4 h-4" />
-              Ready to enjoy 1987 Los Santos
+              Modpack v1.6.0 · Ready to enjoy 1987 Los Santos
             </div>
           </CardContent>
         </Card>
@@ -247,6 +235,5 @@ const DownloadSection = () => {
     </section>
   );
 };
-
 
 export default DownloadSection;
