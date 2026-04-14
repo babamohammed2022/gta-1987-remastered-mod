@@ -115,17 +115,22 @@ const DownloadSection = () => {
                       <CardTitle className="text-xl font-heading font-bold">
                         {item.title}
                       </CardTitle>
-                      <Badge
-                        variant={isUpdated ? "default" : "secondary"}
-                        className="text-xs mt-1 flex items-center gap-1"
-                      >
-                        {item.status}
+
+                      {/* VERSION BADGE FIXED HERE */}
+                      <div className="flex items-center gap-2 mt-1">
+                        <Badge
+                          variant={isUpdated ? "default" : "secondary"}
+                          className="text-xs flex items-center gap-1"
+                        >
+                          {item.status}
+                        </Badge>
+
                         {item.version && (
-                          <span className="bg-primary/10 text-primary px-1 rounded text-[0.6rem]">
+                          <Badge className="text-xs bg-primary/10 text-primary border-primary/20">
                             {item.version}
-                          </span>
+                          </Badge>
                         )}
-                      </Badge>
+                      </div>
                     </div>
                   </div>
                 </CardHeader>
@@ -225,6 +230,7 @@ const DownloadSection = () => {
               </div>
             </div>
 
+            {/* FOOTER FIXED */}
             <div className="flex items-center justify-center gap-2 text-sm text-primary">
               <CheckCircle className="w-4 h-4" />
               Modpack v1.6.0 · Ready to enjoy 1987 Los Santos
