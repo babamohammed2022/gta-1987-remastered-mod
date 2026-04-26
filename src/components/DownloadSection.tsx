@@ -35,7 +35,7 @@ const DownloadSection = () => {
       status: "UPDATED · 25 September 2025",
       description:
         "Main storyline files with minor fixes and patched bugs that prevented crashes. Includes Chapter 1 and Chapter 2 improvements.",
-      url: "https://drive.google.com/file/d/1c_-TU1DVh1u2GGYDausrpa-Jy8mYbuSp/view?usp=sharing",
+      url: "https://www.mediafire.com/file/6ubs6aqndztis28/GTA_SAS_STORYLINE_%2528CHAP_1_AND_CHAP_2%2529_-_SEPTEMBER_2025.rar/file",
       icon: BookOpen,
       required: true,
       available: true,
