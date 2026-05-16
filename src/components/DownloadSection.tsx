@@ -2,7 +2,7 @@ const downloads = [
   {
     id: "modpack_april_2026",
     title: "Modpack",
-    version: "v1.6.0",
+    version: "v1.7.0",
     status: "UPDATED · 16 May 2026",
     description:
       "May 2026 update including further optimizations, stability improvements, and additional refinements to gameplay systems.",
