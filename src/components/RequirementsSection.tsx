@@ -39,10 +39,18 @@ const downloads = [
   }
 ];
 
-const RequirementItem = ({ icon: Icon, label, value }: { icon: any; label: string; value: string }) => {
+const RequirementItem = ({
+  icon: Icon,
+  label,
+  value
+}: {
+  icon: any;
+  label: string;
+  value: string;
+}) => {
   return (
     <div className="flex items-start space-x-3 p-3 rounded-lg bg-muted/20 hover:bg-muted/30 transition-colors">
-      <Icon className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" aria-hidden="true" />
+      <Icon className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
       <div>
         <div className="font-semibold text-foreground">{label}</div>
         <div className="text-sm text-muted-foreground">{value}</div>
@@ -89,6 +97,7 @@ const RequirementsSection = () => {
     <section id="requirements" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
 
+        {/* HEADER */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-gradient">
             Requirements
@@ -133,28 +142,32 @@ const RequirementsSection = () => {
 
             <CardContent>
 
+              {/* IMPORTANT NOTICE (PRIMARY POSITION) */}
               <div className="mb-6 p-4 bg-secondary/10 border border-secondary/20 rounded-lg">
                 <p className="text-sm text-muted-foreground">
                   <strong>Important:</strong> GTA San Andreas Stories already includes all required dependencies.
-                  The storyline is built on DYOM 8.1, which is already included and fully configured in the modpack.
+                  The storyline is built on DYOM 8.1, which is already included and fully configured within the modpack.
                   <br /><br />
-                  The links below are intended only for debugging, manual troubleshooting, compatibility testing,
+                  These downloads are provided only for debugging, manual troubleshooting, compatibility testing,
                   or advanced users who need individual components.
                   <br /><br />
-                  In a standard installation, no additional downloads are required.
+                  A standard installation does not require any additional downloads.
                 </p>
               </div>
 
+              {/* DOWNLOAD LIST */}
               <div className="space-y-3">
                 {downloads.map((dl, idx) => (
                   <DownloadItem key={idx} {...dl} />
                 ))}
               </div>
 
+              {/* SUPPORT FOOTER */}
               <p className="mt-6 text-sm text-center text-muted-foreground">
                 For support, join our Discord server and report any issues for troubleshooting assistance.
               </p>
 
+              {/* STATUS BADGE */}
               <div className="mt-6 text-center">
                 <Badge
                   variant="outline"
