@@ -142,8 +142,15 @@ const RequirementsSection = () => {
 
             <CardContent>
 
-              {/* IMPORTANT NOTICE (PRIMARY POSITION) */}
-              <div className="mb-6 p-4 bg-secondary/10 border border-secondary/20 rounded-lg">
+              {/* DOWNLOAD LIST FIRST */}
+              <div className="space-y-3">
+                {downloads.map((dl, idx) => (
+                  <DownloadItem key={idx} {...dl} />
+                ))}
+              </div>
+
+              {/* IMPORTANT (AFTER DOWNLOADS, BEFORE SUPPORT) */}
+              <div className="mt-6 p-4 bg-secondary/10 border border-secondary/20 rounded-lg">
                 <p className="text-sm text-muted-foreground">
                   <strong>Important:</strong> GTA San Andreas Stories already includes all required dependencies.
                   The storyline is built on DYOM 8.1, which is already included and fully configured within the modpack.
@@ -155,19 +162,12 @@ const RequirementsSection = () => {
                 </p>
               </div>
 
-              {/* DOWNLOAD LIST */}
-              <div className="space-y-3">
-                {downloads.map((dl, idx) => (
-                  <DownloadItem key={idx} {...dl} />
-                ))}
-              </div>
-
-              {/* SUPPORT FOOTER */}
+              {/* SUPPORT */}
               <p className="mt-6 text-sm text-center text-muted-foreground">
                 For support, join our Discord server and report any issues for troubleshooting assistance.
               </p>
 
-              {/* STATUS BADGE */}
+              {/* BADGE */}
               <div className="mt-6 text-center">
                 <Badge
                   variant="outline"
