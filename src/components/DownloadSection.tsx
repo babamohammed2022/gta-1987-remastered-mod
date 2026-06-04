@@ -20,11 +20,11 @@ const DownloadSection = () => {
     {
       id: "modpack_may_2026",
       title: "Modpack",
-      version: "v1.7.0",
-      status: "UPDATED · 16 May 2026",
+      version: "v1.8.0",
+      status: "UPDATED · 5 June 2026",
       description:
-        "May 2026 update including further optimizations, stability improvements, and additional refinements to gameplay systems.",
-      url: "https://www.mediafire.com/file/89cjozi9ctb67o3/GTA_SAS_may_2026.rar/file",
+        "June 2026 update including further optimizations, stability improvements, and additional refinements to gameplay systems.",
+      url: "https://www.mediafire.com/file/7e4lbbv76k3s0c8/GTA_SAS_june_2026.rar/file",
       icon: Package,
       required: true,
       available: true,
@@ -231,7 +231,7 @@ const DownloadSection = () => {
 
             <div className="flex items-center justify-center gap-2 text-sm text-primary">
               <CheckCircle className="w-4 h-4" />
-              Modpack v1.7.0 · Ready to enjoy 1987 Los Santos
+              Modpack v1.8.0 · Ready to enjoy 1987 Los Santos
             </div>
           </CardContent>
         </Card>
