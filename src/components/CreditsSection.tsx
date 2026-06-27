@@ -22,7 +22,7 @@ const CreditsSection = () => {
     },
     {
       name: "adel0280",
-      role: "Lead Texture Optimization, Texture Compression, Texture Quality Control, Visual Enhancements, Environment Polish, Performance Optimization, Asset Integration, Quality Assurance, Bug Testing"
+      role: "Texture Optimization, Texture Compression, Sounds contribution, Quality Assurance, Bug Testing"
     },
     {
       name: "FrankoU",
