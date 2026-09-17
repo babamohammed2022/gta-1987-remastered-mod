@@ -1,4 +1,3 @@
-```tsx
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -168,7 +167,12 @@ const DownloadSection = () => {
                       )}
                     </Button>
                   ) : (
-                    <Button disabled variant="secondary" className="w-full" size="lg">
+                    <Button
+                      disabled
+                      variant="secondary"
+                      className="w-full"
+                      size="lg"
+                    >
                       <Clock className="h-4 w-4 mr-2" />
                       Coming Soon
                     </Button>
@@ -260,4 +264,4 @@ const DownloadSection = () => {
 };
 
 export default DownloadSection;
-```
+
